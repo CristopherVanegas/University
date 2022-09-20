@@ -17,8 +17,8 @@ Algoritmo promedioTresNotas
 	Si (promedioNota >= 69) Entonces
 		Escribir "Aprobado!";
 	SiNo
-		Si ((promedioNota > 62) && (promedioNota < 70)) Entonces
-			Escribir "Directito a supletorio papi";
+		Si ((promedioNota > 62) & (promedioNota < 70)) Entonces
+			Escribir "Directito a supletorio.";
 		SiNo
 			Escribir "Reprobado";
 		finSi	
