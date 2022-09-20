@@ -1,3 +1,4 @@
+// Promedio de 3 notas con condicional al final
 Algoritmo promedioTresNotas
 	Definir nota_1, nota_2, nota_3 Como Entero;
 	Definir promedioNota Como Real;
@@ -16,9 +17,8 @@ Algoritmo promedioTresNotas
 	Si (promedioNota >= 69) Entonces
 		Escribir "Aprobado!";
 	SiNo
-			Si ((promedioNota > 62) && (promedioNota < 70)) Entonces
-				Escribir "Directito a supletorio papi";
-			finSi
+		Si ((promedioNota > 62) && (promedioNota < 70)) Entonces
+			Escribir "Directito a supletorio papi";
 		SiNo
 			Escribir "Reprobado";
 		finSi	
