@@ -1,3 +1,4 @@
+// CREAR UN MENU PARA MULTIPLICAR O DIVIDIR Y PEDIR DOS NÚMEROS PARA EFECTUAR DICHAS OPERACIONES.
 Algoritmo menuCalculadora
 	Definir num_A, num_B, opt Como Entero;
 	Definir resultado Como Real;
