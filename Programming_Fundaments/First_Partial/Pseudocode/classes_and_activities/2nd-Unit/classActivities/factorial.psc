@@ -7,7 +7,7 @@ Algoritmo factorial
 	resultado = 1;
 	Para i = 1 Hasta numToFactorial Con Paso 1 Hacer
 		resultado = resultado * i;
-	Fin Para
+	FinPara
 	
 	Escribir "Resultado: " , resultado;
 FinAlgoritmo

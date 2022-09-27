@@ -16,7 +16,7 @@ Algoritmo sumaDeNumerosBucleRepetir
 			Escribir "No se puede ingresar 0!";
 			contador = lim;
 			
-		Fin Si
+		FinSi
 		contador = contador + 1;
 	Hasta Que contador >= lim
 	Escribir "El resultado es: ", resultado;

@@ -15,9 +15,9 @@ Algoritmo sumaNumerosBucleHacer
 		SiNo
 			Escribir "No se puede ingresar 0!";
 			contador = lim;
-		Fin Si
+		FinSi
 		contador = contador + 1;
-	Fin Mientras
+	FinMientras
 	
 	Escribir "El resultado es: ", resultado;
 FinAlgoritmo
