@@ -1,5 +1,5 @@
+// Create a programa to send values by parameters in threads.
 Funcion escribirMensaje(param1)
-	//Escribir "Esto es un mensaje nuevo ;)"
 	Escribir param1;
 FinFuncion
 
