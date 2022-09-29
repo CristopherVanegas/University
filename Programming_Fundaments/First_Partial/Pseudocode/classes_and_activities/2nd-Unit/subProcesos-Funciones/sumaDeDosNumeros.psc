@@ -12,5 +12,5 @@ Algoritmo main
 	Leer num2;
 	
 	result = sumOfNum(num1, num2);
-	Escribir " [+] The result of " num1, " plus ", num2, " is ", result;
+	Escribir " [+] The result of " num1, " + ", num2, " is ", result;
 FinAlgoritmo
