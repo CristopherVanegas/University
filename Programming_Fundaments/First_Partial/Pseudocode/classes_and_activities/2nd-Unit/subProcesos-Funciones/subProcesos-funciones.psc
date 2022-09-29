@@ -1,10 +1,10 @@
-Funcion escribirMensaje()
-	Definir t Como Caracter
-	Leer t;
+Funcion escribirMensaje(param1)
 	//Escribir "Esto es un mensaje nuevo ;)"
-	Escribir t;
+	Escribir param1;
 FinFuncion
 
 Algoritmo subProcesos
-	escribirMensaje();
+	Definir t Como Caracter
+	Leer t;
+	escribirMensaje(t);
 FinAlgoritmo
