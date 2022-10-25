@@ -77,7 +77,7 @@ SubAlgoritmo enterData()
 FinSubAlgoritmo
 
 SubAlgoritmo decimalToBin()
-	Definir dec, decBinModel, binArr Como Entero;
+	Definir dec, decBinModel, binArr, acum Como Entero;
 	Escribir " > Please enter a decimal number not higher to 255 to convert to Binary: ";
 	Leer dec;
 	
@@ -94,7 +94,20 @@ SubAlgoritmo decimalToBin()
 		decBinModel[7] = 1;
 		
 		// COMPROBAR QUE EL NUMERO SEA MAYOR AL VALOER EN LA POSICIÓN PARA RESTARLO Y QUE EL RESIDUO SE PUEDA RESTAR CON OTRO VALOR EN EL NÚMERO.
-		// LUEGO SE LEE TODO EL ARRAY Y DONDE HAYAN NUMERO RESTADOS SE ESCRIBEN 1 Y LOS QUE NO SE ESCRIBEN 0
+		Definir i Como Entero;
+		acum = dec;
+		Para i=0 Hasta 7 Con Paso 1 Hacer
+			Si acum >= decBinModel[i] Entonces
+				acum = acum - decBinModel[i];
+				decBinModel[i] = 1;
+			Sino
+				decBinModel[i] = 0;
+			FinSi
+		FinPara
+		
+		Escribir " > The binary number for ", dec, " is ", decBinModel[0], decBinModel[1], decBinModel[2], decBinModel[3], decBinModel[4], decBinModel[5], decBinModel[6],decBinModel[7];
+
+
 		// FINALMENTE SE ESCRIBE EL ARRAY DEL BINARIO YA SEA POSICIÓN POR POSCIÓN O SE CREA UN NUEVO STRING.
 		
 	SiNo
