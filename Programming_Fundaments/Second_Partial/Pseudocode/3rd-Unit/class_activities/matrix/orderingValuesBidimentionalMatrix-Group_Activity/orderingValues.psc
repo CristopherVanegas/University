@@ -35,30 +35,56 @@ Proceso main
 	j = 0;
 	// order
 	// [Pares]
-	// [Impares]
-	// [Primos]
-	Para k=0 Hasta 5 Con Paso 1 Hacer
-		// pair
-		Si container[k] mod 2 == 0 Entonces
-			bidimentionalMatrix[0, j] = container[k];
+	Para i=0 Hasta m-1 Con Paso 1 Hacer
+		Si container[i] mod 2 == 0 Entonces
+			bidimentionalMatrix[0, j] = container[i];
+			j = j + 1;
 		FinSi
-		
-		// impairs
-		Si container[k] mod 2 <> 0 Entonces
-			bidimentionalMatrix[1, j] = container[k];
-		FinSi
-		
-		// cousins
-		Si cousinValidation(container[k]) Entonces
-			bidimentionalMatrix[2, j] = container[k];
-		FinSi
-		
-		j = j + 1;
 	FinPara
+	
+	// [Impares]
+	j = 0;
+	Para i=0 Hasta m-1 Con Paso 1 Hacer
+		Si container[i] mod 2 <> 0 Entonces
+			bidimentionalMatrix[1, j] = container[i];
+			j = j + 1;
+		FinSi
+	FinPara
+	
+	// [Primos]
+	j = 0;
+	Para i=0 Hasta m-1 Con Paso 1 Hacer
+		Si cousinValidation(container[i]) Entonces
+			bidimentionalMatrix[2, j] = container[i];
+			j = j + 1;
+		FinSi
+	FinPara
+	
+//	Para k=0 Hasta 5 Con Paso 1 Hacer
+//		// pair
+//		// ADDED OCT/27/2022
+//		Para i=0 Hasta m-1 Con Paso 1 Hacer
+//			Si container[i] mod 2 == 0 Entonces
+//				bidimentionalMatrix[0, i] = container[k];
+//			FinSi
+//		FinPara
+//		
+//		// impairs
+//		Si container[k] mod 2 <> 0 Entonces
+//			bidimentionalMatrix[1, j] = container[k];
+//		FinSi
+//		
+//		// cousins
+//		Si cousinValidation(container[k]) Entonces
+//			bidimentionalMatrix[2, j] = container[k];
+//		FinSi
+//		
+//		j = j + 1;
+//	FinPara
 	
 	
 	// shows the matrix
-//	Escribir "Pairs", Sin Saltar;
+	Escribir "Pairs", Sin Saltar;
 	Para j=0 Hasta n-1 Con Paso 1 Hacer
 		Escribir "   [", bidimentionalMatrix[0, j], "]   ", Sin Saltar;
 	FinPara
@@ -84,17 +110,22 @@ SubProceso isCousin = cousinValidation(num)
 	Definir isCousin Como Logico;
 	
 	count = 0;
-	Para i=1 Hasta num Con Paso 1 Hacer
-		Si num%i=0 Entonces
-			count = count + 1;
-		FinSi
-	FinPara
-	
-	Si count == 2 Entonces
-		//Escribir "Is a cousin number ", n;
-		isCousin = Verdadero;
-	SiNo
-		//Escribir "Not a cousin number ", n;
+	Si num == 0 O num == 1 Entonces
 		isCousin = Falso;
+	SiNo
+		Para i=1 Hasta num Con Paso 1 Hacer
+			Si num%i=0 Entonces
+				count = count + 1;
+			FinSi
+		FinPara
+		
+		Si count == 2 Entonces
+			//Escribir "Is a cousin number ", n;
+			isCousin = Verdadero;
+		SiNo
+			//Escribir "Not a cousin number ", n;
+			isCousin = Falso;
+		FinSi
 	FinSi
+	
 FinSubProceso
