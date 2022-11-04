@@ -8,13 +8,12 @@
 // [Impares]
 // [Primos]
 
-// Trabajo individual.
+// Trabajo Individual.
 // Est. Cristopher Vanegas.
 // NOTA: MODIFICADO EL NUMERO DE COLUMNNAS POR CASO ESPECIAL DE REPETICIÓN DE DATOS.
 
 Proceso main
 	Definir bidimentionalMatrix, m, n Como Entero;
-	
 	
 	m = 3;	// initializing rows
 	n = 6;	// initializing columns
@@ -173,7 +172,7 @@ SubProceso decreasingMatrixOrder(matrix, n)
 		Para j = i+1 Hasta n-1 Con Paso 1 Hacer
 			Si matrix[0, i] < matrix[0, j] Y matrix[0, j] <> 0 Entonces
 				m = matrix[0, i];
-				
+				 
 				matrix[0, i] = matrix[0, j];
 				matrix[0, j] = m;
 			Finsi
