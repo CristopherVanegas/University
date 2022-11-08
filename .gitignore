@@ -5,6 +5,7 @@
 
 # for mac
 .DS_STORE
+.DS_Store
 # User-specific files
 *.rsuser
 *.suo
