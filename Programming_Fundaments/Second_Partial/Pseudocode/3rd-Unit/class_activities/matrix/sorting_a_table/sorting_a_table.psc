@@ -91,7 +91,7 @@ SubProceso askForAndSetToTheTable(matrix, m, n)
 			pairs(matrix, uNum, pair_c);
 			pair_c = pair_c + 1;
 		FinSi
-	
+		
 		
 		// impairs
 		Si uNum mod 2 <> 0 Entonces
@@ -172,7 +172,7 @@ SubProceso decreasingMatrixOrder(matrix, n)
 		Para j = i+1 Hasta n-1 Con Paso 1 Hacer
 			Si matrix[0, i] < matrix[0, j] Y matrix[0, j] <> 0 Entonces
 				m = matrix[0, i];
-				 
+				
 				matrix[0, i] = matrix[0, j];
 				matrix[0, j] = m;
 			Finsi
