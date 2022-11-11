@@ -10,7 +10,7 @@ Proceso main
 	matrixDeCeros(matrix, m, n);
 	showMatrix(matrix, m, n);				// Muestra la matrix
 	promPartials(matrix, m, n);				// Promedio de los parciales
-	ordenAscentente(matrix, n);			// Los ordena
+	menu(matrix, m, n);						// Menu para ordenar
 	showMatrix(matrix, m, n);				// Muestra la matrix
 FinProceso
 
@@ -47,7 +47,7 @@ SubProceso promPartials(matrix, m, n)
 				Escribir "";
 		FinSegun
 	FinPara
-	
+	Escribir "";
 FinSubProceso
 
 SubProceso matrixDeCeros(matrix, m, n)
@@ -86,46 +86,76 @@ SubAlgoritmo showMatrix(matrix, m, n)
 	Escribir "";
 FinSubAlgoritmo
 
-SubProceso ordenAscentente(matrix, n)
-	Definir m, i, j Como Entero;
-	Escribir "Ordenando la matriz de forma ascendente", Sin Saltar;
+SubProceso menu(matrix, m, n)
+	Definir opt Como Entero;
+	Escribir "Desea ordenar las columnas o filas de sus datos?";
+	Escribir " [1] Columnas";
+	Escribir " [2] Filas";
+	Leer opt;
+	Escribir "";
+	
+	Segun opt Hacer
+		1:
+			ordenAscententeCol(matrix, m, n);			// Ordena Columnas
+		2:
+			ordenAscententeFil(matrix, m, n);			// Ordena Filas
+
+		De Otro Modo:
+			Escribir "Error 404 Option Not Found!";
+			Escribir "End Of Program.";
+	FinSegun
+FinSubProceso
+
+SubProceso ordenAscententeFil(matrix, m, n)
+	Definir minor, i, j, k Como Entero;
+	Escribir "Ordenando filas de forma ascendente", Sin Saltar;
+	// CARGANDO
 	Para i = 0 Hasta 2 Con Paso 1 Hacer
 		Escribir ".", Sin Saltar;
 		Esperar 1 Segundos;
 	FinPara
 	Escribir "";
-	Para i = 0 Hasta n-1 Con Paso 1 Hacer
-		Para j = i+1 Hasta n-1 Con Paso 1 Hacer
-			Si matrix[0, i] > matrix[0, j] Entonces
-				m = matrix[0, i];
+	Escribir "Listo!";
+	Escribir "";
+	
+	Para i = 0 Hasta m-1 Con Paso 1 Hacer
+		Para j = 0 Hasta n-1 Con Paso 1 Hacer
+			Para k = j + 1 Hasta n-1 Con Paso 1 Hacer
+				Si matrix[i, j] > matrix[i, k] Entonces
+					minor = matrix[i, k];
+					
+					// SWITCH
+					matrix[i, k] = matrix[i, j];		// Row + 1 pasa a ser mayor que Row.
+					matrix[i, j] = minor;			// Row	  pasa a ser el menor.
+				FinSi
+			FinPara
+		FinPara
+	FinPara
+FinSubProceso
+
+SubProceso ordenAscententeCol(matrix, m, n)
+	Definir minor, i, j, k Como Entero;
+	Escribir "Ordenando columnas de forma ascendente", Sin Saltar;
+	Para i = 0 Hasta 2 Con Paso 1 Hacer
+		Escribir ".", Sin Saltar;
+		Esperar 1 Segundos;
+	FinPara
+	Escribir "";
+	Escribir "Listo!";
+	Escribir "";
+	
+	Para j=0 Hasta n-1 Con Paso 1 Hacer	// ITERATES COLUMNS
+		Para i=0 Hasta m-1 Con Paso 1 Hacer	// ITERATES ROW
+			Para k=i+1 Hasta m-1 Con Paso 1 Hacer // ITERATES ROWS + 1
 				
-				matrix[0, i] = matrix[0, j];
-				matrix[0, j] = m;
-			Finsi
-			Si matrix[1, i] > matrix[1, j] Entonces
-				m = matrix[1, i];
-				
-				matrix[1, i] = matrix[1, j];
-				matrix[1, j] = m;
-			Finsi
-			Si matrix[2, i] > matrix[2, j] Entonces
-				
-				m = matrix[2, i];
-				matrix[2, i] = matrix[2, j];
-				matrix[2, j] = m;
-			Finsi
-			Si matrix[3, i] > matrix[3, j] Entonces
-				m = matrix[3, i];
-				
-				matrix[3, i] = matrix[3, j];
-				matrix[3, j] = m;
-			Finsi
-			Si matrix[4, i] > matrix[4, j] Entonces
-				
-				m = matrix[4, i];
-				matrix[4, i] = matrix[4, j];
-				matrix[4, j] = m;
-			Finsi
+				Si matrix[i, j] > matrix[k, j] Entonces	// Si matrix[ROW] > matrix[ROW + 1]
+					minor = matrix[k, j];
+					
+					// SWITCH
+					matrix[k, j] = matrix[i, j];		// Column + 1 pasa a ser Column.
+					matrix[i, j] = minor;			// Column pasa a ser el menor.
+				FinSi
+			FinPara
 		FinPara
 	FinPara
 FinSubProceso
