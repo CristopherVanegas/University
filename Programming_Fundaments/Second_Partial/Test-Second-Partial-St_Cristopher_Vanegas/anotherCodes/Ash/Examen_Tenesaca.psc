@@ -9,13 +9,27 @@ FinSubProceso
 
 SubProceso ord_matriz_asc (arreglo)
 	Definir f, c, aux, k como Real;
+	//	Ash's Algorythm
 	Para f=0 Hasta 4 Con Paso 1 Hacer
 		Para c=0 Hasta 2 Con Paso 1 Hacer
+			Para k=c+1 Hasta 2 Con Paso 1 Hacer
+				Si arreglo[f,k] < arreglo[f,c] Entonces
+					aux=arreglo[f,c];
+					arreglo[f,k]=arreglo[f,c];
+					arreglo[f,c]=aux;
+				FinSi
+			FinPara
+		FinPara
+	FinPara
+	
+	//	Cristopher's Algorythm
+	Para c=0 Hasta 2 Con Paso 1 Hacer
+		Para f=0 Hasta 4 Con Paso 1 Hacer
 			Para k=f+1 Hasta 4 Con Paso 1 Hacer
 				Si arreglo[k,c] < arreglo[f,c] Entonces
-					aux=arreglo[f,c];
-					arreglo[f,c]=arreglo[k,c];
-					arreglo[k,c]=aux;
+					aux=arreglo[k,c];
+					arreglo[k,c]=arreglo[f,c];
+					arreglo[f,c]=aux;
 				FinSi
 			FinPara
 		FinPara
