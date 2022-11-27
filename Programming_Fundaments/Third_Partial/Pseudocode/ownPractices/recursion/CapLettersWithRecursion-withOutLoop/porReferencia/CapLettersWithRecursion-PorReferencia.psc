@@ -1,6 +1,6 @@
 // ////////////////////////////////////////////// //
 // 			  Est. Cristopher Vanegas			  //
-//               Date: Nov 24 2022                //
+//               Date: Nov 27 2022                //
 // ////////////////////////////////////////////// //
 
 SubProceso nP = withoutLoopForCapLetters(nP Por Referencia, p Por Referencia, longitudP, i) 
