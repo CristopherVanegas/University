@@ -7,7 +7,7 @@ SubProceso loopForCapLetters()
 	Definir phrase, aux, nPhrase Como Caracter;
 	Definir capLetter Como Logico;
 	Definir i Como Entero;
-	Escribir "Ingrese una frase: ";
+	Escribir "Enter a phrase: ";
 	Escribir ">>> ", Sin Saltar;
 	Leer phrase;							// lee lo que ingresa el user.
 	
@@ -44,36 +44,49 @@ SubProceso loopForCapLetters()
 	Escribir nPhrase;	// escribe la nueva frase con mayúsculas cada letra.
 FinSubProceso
 
-SubProceso withoutLoopForCapLetters()
-	Definir phrase, nPhrase Como Caracter;
-	phrase = "hello world";
-	Escribir "Frase original: ", phrase;
-	nPhrase = "";
-	
-	// cada parte concatenada de la frase original y elevando las inciales a mayus.
-	nPhrase = Concatenar(nPhrase, Mayusculas(Subcadena(phrase, 0, 0)));
-	nPhrase = Concatenar(nPhrase, Minusculas(Subcadena(phrase, 1, 4)));
-	nPhrase = Concatenar(nPhrase, Minusculas(Subcadena(phrase, 5, 5)));
-	nPhrase = Concatenar(nPhrase, Mayusculas(Subcadena(phrase, 6, 6)));
-	nPhrase = Concatenar(nPhrase, Minusculas(Subcadena(phrase, 7, 10)));	
-	Escribir "Cap Letter activados: ", nPhrase;
+SubProceso nP = withoutLoopForCapLetters(nP Por Referencia, p Por Referencia, longitudP, i) 
+	Si i < longitudP Entonces
+		Si i == 0 Y Subcadena(p, i, i) <> " " Entonces
+			nP = Concatenar(nP, Mayusculas(Subcadena(p, i, i)));
+		SiNo
+			Si Subcadena(p, i-1, i-1) == " " Y Subcadena(p, i, i) <> " " Y Subcadena(p, i+1, i+1) <> " " Entonces
+				nP = Concatenar(nP, Mayusculas(Subcadena(p, i, i)));
+			SiNo
+				Si Subcadena(p, i-1, i-1) == " " Y Subcadena(p, i, i) <> " " Y Subcadena(p, i+1, i+1) == " " Entonces
+					nP = Concatenar(nP, Mayusculas(Subcadena(p, i, i)));
+				SiNo
+					nP = Concatenar(nP, Minusculas(Subcadena(p, i, i)));
+				FinSi
+			FinSi
+		FinSi
+		
+		i =  i + 1;
+		np = withoutLoopForCapLetters(nP, p, longitudP, i);
+	FinSi
 FinSubProceso
-
 
 Proceso primeraLetraMayus
 	Definir opt Como Entero;
-	Escribir "Elegir resolver el algoritmo con bucle o sin bucle: ";
-	Escribir "[1] Con Bucle";
-	Escribir "[2] Sin Bucle";
+	Escribir "Choose between solving the algorythm using a loop or not (recursion): ";
+	Escribir "[1] With Loop";
+	Escribir "[2] Without Loop (Recursion)";
 	Leer opt;
 	
 	Segun opt Hacer
 		1:
+			Escribir "";
 			loopForCapLetters();	// método para elevar las primeras letras a mayus.
 		2:
-			// frase definida
-			withoutLoopForCapLetters();	// método con una frase estática en la cuál se agregan capital letters.
+			Definir p, nP Como Caracter;
+			Escribir "";
+			Escribir "Please enter a phrase you wanna add Cap Letters: ", Sin Saltar;
+			Leer p;
+			//	p = " hello world";
+			nP = "";
+			nP = withoutLoopForCapLetters(nP, p, Longitud(p), 0);
 			
+			Escribir "Original Phrase: ", p;
+			Escribir "Phrase with cap letters: ", nP;
 		De Otro Modo:
 			Escribir "";
 			Escribir "Opción no encontrada!";
