@@ -1,5 +1,5 @@
 // ////////////////////////////////////////////// //
-// 			  Est. Cristopher Vanegas 		    //
+// 			  Est. Cristopher Vanegas			  //
 //               Date: Nov 24 2022                //
 // ////////////////////////////////////////////// //
 
@@ -36,70 +36,31 @@ SubProceso palindromoWithLoop()
 FinSubProceso
 
 
-SubProceso withoutLoop()
-	Definir word, wordDivd, wordDivd2, wordDivInverted Como Caracter;
-	Definir opt, cont Como Entero;
-	
-	Repetir
-		Escribir "";
-		Escribir "Elegir parabra 1 o 2: ";
-		Escribir "[1] Palabra 1";
-		Escribir "[2] Palabra 2";
-		
-		Leer opt;
-		cont = 0;
-		
-		Segun opt Hacer
-			1:
-				word = Minusculas("palindromo");
-				Escribir "La palabra que está por default es: ", word;
-
-				Si Subcadena(word, 0, 0) == Subcadena(word, Longitud(word)-1, Longitud(word)-1) Entonces
-					cont = cont + 1;
-				FinSi
-				Si Subcadena(word, 1, 1) == Subcadena(word, Longitud(word)-2, Longitud(word)-2) Entonces
-					cont = cont + 1;
-				FinSi
-				Si Subcadena(word, 2, 2) == Subcadena(word, Longitud(word)-3, Longitud(word)-3) Entonces
-					cont = cont + 1;
-				FinSi
-				Si Subcadena(word, 3, 3) == Subcadena(word, Longitud(word)-4, Longitud(word)-4) Entonces
-					cont = cont + 1;
-				FinSi
-				Si Subcadena(word, 4, 4) == Subcadena(word, Longitud(word)-5, Longitud(word)-5) Entonces
-					cont = cont + 1;
-				FinSi
-				
-				Si cont == Longitud(word)/2 Entonces
-					Escribir "La palabra ", word, " es palíndroma!";
-				SiNo
-					Escribir "La palabra ", word, " no es palíndroma!";
-				FinSi
-				
-//				Escribir "contador: ", cont;
-				
-			2:
-				word = Minusculas("anilina");
-				Escribir "La palabra que está por default es: ", word;
-				
-				wordDivd = Subcadena(word, 0, Trunc((Longitud(word))/2)-1);
-				wordDivd2 = Concatenar("", Subcadena(word, 2*(Trunc((Longitud(word))/2)-1), Longitud(word)-1));
-				
-				wordDivInverted = Concatenar(Subcadena(wordDivd2, Longitud(wordDivd2)-1, Longitud(wordDivd2)-1), Subcadena(wordDivd2, Longitud(wordDivd2)-2, Longitud(wordDivd2)-2));
-				wordDivInverted = Concatenar(wordDivInverted, Subcadena(wordDivd2, Longitud(wordDivd2)-3, Longitud(wordDivd2)-3));
-				Escribir wordDivd, " ", wordDivInverted;
-				
-				Si wordDivd == wordDivInverted Entonces
-					Escribir "La palabra ", word, " es palíndroma!";
-				SiNo
-					Escribir "La palabra ", word, " no es palíndroma!";
-				FinSi
-				
-			De Otro Modo:
-				Escribir "Opción no encontrada!";
-		FinSegun
-	Hasta Que ((opt == 1) O (opt == 2));
+SubProceso rString(p Por Valor, rP Por Referencia, i)
+	Si (i >= 0) Entonces
+		rP = Concatenar(rP, Subcadena(p, i, i));
+		rString(p, rP, i-1);
+	FinSi
 FinSubProceso
+
+
+SubAlgoritmo palindromoR(p Por Valor, rP Por Valor, i, c)
+	Si (i >= 0) Entonces
+		Si (Subcadena(p, i, i) == Subcadena(rP, i, i)) Entonces
+			c = c + 1;
+		FinSi
+		
+		Si (i == 0) Entonces
+			Si (c == Longitud(p)) Entonces
+				Escribir "La palabra ES palíndroma!";
+			SiNo
+				Escribir "La palabra NO es palíndroma!";
+			FinSi
+		FinSi
+		
+		palindromoR(p, rP, i-1, c);
+	FinSi
+FinSubAlgoritmo
 
 
 Proceso palindromo
@@ -111,10 +72,16 @@ Proceso palindromo
 	
 	Segun opt Hacer
 		1:
-			palindromoWithLoop();	// método para elevar las primeras letras a mayus.
+			palindromoWithLoop();							// método para elevar las primeras letras a mayus.
 		2:
-			// frase definida
-			withoutLoop();	// método con una frase estática en la cuál se agregan capital letters.
+			Definir p, rP Como Caracter;
+			Escribir "Ingrese un string: ";
+			Leer p;
+			
+			rP = "";
+			rString(p, rP, Longitud(p)-1);					// método con una frase estática en la cuál se agregan capital letters.
+			Escribir "Frase invertida: ", rP;
+			palindromoR(p, rP, Longitud(p)-1, 0);			// palindromo(fraseOriginal, fraseInvertida, longitud-1, 0 contadorParaVerificarSiEsPalindromo).
 			
 		De Otro Modo:
 			Escribir "";
