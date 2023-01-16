@@ -1,9 +1,9 @@
-SubProceso r = factorial(n)
+SubProceso r = factorialRecursivo(n)
 	Definir r Como Entero;
 	Si (n >= 1) Entonces
 		Escribir "n = ", n, " is higher equal to 1, so enters the function again! -> n * !n-1";
 		
-		r = n * factorial(n-1);						// Returns n * !n-1
+		r = n * factorialRecursivo(n-1);						// Returns n * !n-1
 	SiNo
 		Escribir "Recursion end...";
 		r = 1;										// Returns 1
@@ -48,7 +48,7 @@ Proceso main
 	Segun opt Hacer
 		1:
 			// Recursion
-			r = factorial(num);
+			r = factorialRecursivo(num);
 			
 			Escribir "";
 			Escribir "The result is: ", r;

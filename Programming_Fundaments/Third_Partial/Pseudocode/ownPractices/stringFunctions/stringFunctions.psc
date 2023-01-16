@@ -8,7 +8,7 @@ SubProceso funcionesConString()
 	Escribir "[4] Subcadena(x, inicio, fin);";
 	Escribir "[5] Concatenar(x, y);";
 	Escribir "[6] ConvertirANumero(cadena);";
-	Escribir "[7] ConvertirATexto(cadena);";
+	Escribir "[7] ConvertirATexto(entero);";
 	Leer opt;
 	
 	
