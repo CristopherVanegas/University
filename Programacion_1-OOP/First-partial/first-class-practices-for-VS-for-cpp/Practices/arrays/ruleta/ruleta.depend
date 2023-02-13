@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1674571846 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\first-partial\first-class-practices-for-vs-for-cpp\practices\arrays\ruleta\main.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<stdlib.h>
+	<time.h>
+

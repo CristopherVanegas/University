@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1675471604 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\project\crud-factura\main.cpp
+	<iostream>
+	<stdlib.h>
+	<windows.h>
+

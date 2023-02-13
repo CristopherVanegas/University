@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1675177315 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\second-partial\practices\tablero caballo\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	<time.h>
+

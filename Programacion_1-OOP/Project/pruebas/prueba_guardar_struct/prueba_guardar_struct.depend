@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1675749834 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\project\pruebas\prueba_guardar_struct\main.cpp
+	<iostream>
+	<stdlib.h>
+	<string>
+	<windows.h>
+	<time.h>
+
