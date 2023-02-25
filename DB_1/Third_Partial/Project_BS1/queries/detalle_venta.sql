@@ -21,3 +21,6 @@ alter table detalle_venta
 -------------------------------------------------------------------------------------------------
 
 select * from detalle_venta;
+
+select * from detalle_venta where cod_product = 1;
+select * from detalle_productos where id = 1;
