@@ -32,3 +32,4 @@ end
 
 
 select * from detalle_venta;
+select * from detalle_productos;
