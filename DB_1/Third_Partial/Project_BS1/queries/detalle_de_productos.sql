@@ -7,7 +7,7 @@ create table detalle_productos(
 	id int identity,
 	cod_categoria int,
 	precio int,
-	descripcion varchar(15),
+	descripcion nvarchar(15),
 
 	primary key(id)
 );
