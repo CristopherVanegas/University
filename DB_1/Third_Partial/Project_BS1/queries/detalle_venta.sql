@@ -7,7 +7,8 @@ create table detalle_venta(
 	cod_product int,
 	precio float,
 	cantidad int,
-	nFactura int
+	nFactura int identity,
+	primary key (nFactura)
 );
 
 
@@ -17,9 +18,6 @@ alter table detalle_venta
 	foreign key (cod_product)
 		references detalle_productos(id);
 
-alter table detalle_venta
-	add constraint FK_nFacturas
-	foreign key (nFactura)
-		references cabecera(nFactura);
-
 -------------------------------------------------------------------------------------------------
+
+select * from detalle_venta;
