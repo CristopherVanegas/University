@@ -16,7 +16,7 @@ struct Personaje
     int fuerza;
     int vida;
     int defensa;
-    int nivel = 1;
+    int nivel;
 
     int posX;
     int posY;
@@ -34,14 +34,17 @@ string tablero[20][20];
 
 void gotoxy(int x,int y);
 void inicializarTablero();
+void estadisticas();
 void show();
 void generar_personaje(int opt);
+bool sePuedenFusionar();
 void fusionar();
 void atacar();
 
 int main()
 {
     srand(time(NULL));
+
     inicializarTablero();
     generar_personaje(1);
     show();
@@ -50,9 +53,39 @@ int main()
     {
         fusionar();
         atacar();
-        show();
+        // show();
     }
     return 0;
+}
+
+void estadisticas()
+{
+
+    int y = 2;
+    int x = 85;
+
+    gotoxy(x, y);
+    cout << " > Team / Lv / Lf / T / S / D ";
+    y++;
+
+    for (int i = 0; i < 6; i++)
+    {
+        if ( i < 3 )
+        {
+            gotoxy(x, y);
+            cout << " > PC / " << personajes_pc[i].nivel << " / " << personajes_pc[i].vida << " / " << personajes_pc[i].tipo << " / " << personajes_pc[i].fuerza << " / " << personajes_pc[i].defensa;
+            y++;
+
+        }
+        else if (( i > 2) && (i < 6))
+        {
+            gotoxy(x, y);
+            cout << " > HM / " << personajes_player[abs(i - 3)].nivel << " / " << personajes_player[abs(i - 3)].vida << " / " << personajes_player[abs(i - 3)].tipo << " / " << personajes_player[abs(i - 3)].fuerza << " / " << personajes_player[abs(i - 3)].defensa;
+            y++;
+        }
+    }
+
+
 }
 
 void atacar()
@@ -61,23 +94,31 @@ void atacar()
     {
         int random_character = rand() % 3;
 
-        // SHORTCUTS
-        int pc_posY = personajes_pc[random_character].posY;
-        int pc_posX = personajes_pc[random_character].posX;
-        int player_posY = personajes_pc[random_character].posY;
-        int player_posX = personajes_pc[random_character].posX;
-
-        // CLEAN UP THE OLD POSITION BEFORE THE FUSION
-        tablero[personajes_player[random_character].posX][personajes_player[random_character].posY] = " ";
-
         // CONDITIONAL TO ATACK
-        if ((abs(pc_posY - player_posY) == 3) && (abs(pc_posX - player_posX) == 3))
+        if ((abs(personajes_pc[random_character].posY - personajes_pc[random_character].posY) <= 3) && (abs(personajes_pc[random_character].posX - personajes_pc[random_character].posX) <= 3))
         {
-            personajes_pc[random_character].vida--;
+            if ((personajes_player[random_character].vida == 0) || (personajes_pc[random_character].vida == 0))
+            {
+                generar_personaje(2);
+            }
+
+            else
+                personajes_pc[random_character].vida--;
         }
+
         else
         {
-            switch (rand() % 8)
+            // CLEAN UP THE OLD POSITION BEFORE THE FUSION
+            tablero[personajes_player[random_character].posX][personajes_player[random_character].posY] = " ";
+
+            // SHORTCUTS
+            int pc_posY = personajes_pc[random_character].posY;
+            int pc_posX = personajes_pc[random_character].posX;
+            int player_posY = personajes_pc[random_character].posY;
+            int player_posX = personajes_pc[random_character].posX;
+            int randMov = rand() % 8;
+
+            switch (randMov)
             {
             case 0: // MOVE TO LEFT
             {
@@ -90,7 +131,7 @@ void atacar()
 
             case 1: // MOVE TO RIGHT
             {
-                if (pc_posX > player_posX)
+                // if (pc_posX > player_posX)
                 {
                     personajes_player[random_character].posX++;
                 }
@@ -99,7 +140,7 @@ void atacar()
 
             case 2: // MOVE BOTTOM
             {
-                if (pc_posY > player_posY)
+                // if (pc_posY > player_posY)
                 {
                     personajes_player[random_character].posY++;
                 }
@@ -108,7 +149,7 @@ void atacar()
 
             case 3: // MOVE TOP
             {
-                if (pc_posY < player_posY)
+                // if (pc_posY < player_posY)
                 {
                     personajes_player[random_character].posY--;
                 }
@@ -117,7 +158,7 @@ void atacar()
 
             case 4: // MOVE RIGHT TOP DIAGONAL
             {
-                if ((pc_posY < player_posY) && (pc_posX > player_posX))
+                // if ((pc_posY < player_posY) && (pc_posX > player_posX))
                 {
                     personajes_player[random_character].posY--;
                     personajes_player[random_character].posX++;
@@ -127,7 +168,7 @@ void atacar()
 
             case 5: // MOVE LEFT TOP DIAGONAL
             {
-                if ((pc_posY < player_posY) && (pc_posX < player_posX))
+                // if ((pc_posY < player_posY) && (pc_posX < player_posX))
                 {
                     personajes_player[random_character].posY--;
                     personajes_player[random_character].posX--;
@@ -137,7 +178,7 @@ void atacar()
 
             case 6: // MOVE LEFT BOTTOM DIAGONAL
             {
-                if ((pc_posY > player_posY) && (pc_posX < player_posX))
+                // if ((pc_posY > player_posY) && (pc_posX < player_posX))
                 {
                     personajes_player[random_character].posY++;
                     personajes_player[random_character].posX--;
@@ -147,7 +188,7 @@ void atacar()
 
             case 7: // MOVE RIGHT BOTTOM DIAGONAL
             {
-                if ((pc_posY > player_posY) && (pc_posX > player_posX))
+                // if ((pc_posY > player_posY) && (pc_posX > player_posX))
                 {
                     personajes_player[random_character].posY++;
                     personajes_player[random_character].posX++;
@@ -155,11 +196,14 @@ void atacar()
             }
             break;
             }
+
+            // UPDATE THE POSITION OF PLAYER'S CARACTER IN THE MATRIX
+            tablero[personajes_player[random_character].posX][personajes_player[random_character].posY] = personajes_player[random_character].tipo;
         }
 
-        // KEEPS THE TYPE OF PLAYER CARACTER IN THE MATRIX
-        tablero[personajes_player[random_character].posX][personajes_player[random_character].posY] = personajes_player[random_character].tipo;
-        Sleep(250);
+        estadisticas();
+        show();
+        Sleep(100);
     }
 }
 
@@ -209,19 +253,19 @@ void fusionar()
 
 
         gotoxy(90, gotoxY++);
-        cout << " [] Please send the coor for X: ";
+        cout << " [] Please enter X coor: ";
         int x;
         cin >> x;
         cin.get();
 
         gotoxy(90, gotoxY++);
-        cout << " [] Please send the coor for Y: ";
+        cout << " [] Please enter Y coor: ";
         int y;
         cin >> y;
         cin.get();
 
         // CLEAN UP THE OLD POSITION BEFORE THE FUSION
-        tablero[personajes_player[selection - 1].posX][personajes_player[selection - 1].posY] = " ";
+        tablero[personajes_player[selection - 1].posX][personajes_player[selection - 1].posY] = "   ";
 
         // UPDATE THE PLAYER CHARACTER POSITIONS
         personajes_player[selection - 1].posX = x;
@@ -272,23 +316,26 @@ void generar_personaje(int opt)
             personajes_pc[i].tipo = Tipos[rand() % 3];
             personajes_player[i].tipo = Tipos[rand() % 3];
 
+            // generate level
+            personajes_pc[i].nivel = 1;
+            personajes_player[i].nivel = 1;
 
             // generates vitals
             personajes_pc[i].defensa = 1 + rand() % 10;
             personajes_pc[i].fuerza = 1 + rand() % 10;
-            personajes_pc[i].vida = 1 + rand() % 10;
+            personajes_pc[i].vida = 10;
 
             personajes_player[i].defensa = 1 + rand() % 10;
             personajes_player[i].fuerza = 1 + rand() % 10;
-            personajes_player[i].vida = 1 + rand() % 10;
+            personajes_player[i].vida = 10;
 
 
             // generates X and Y positions
-            personajes_pc[i].posX = rand() % 20;
-            personajes_pc[i].posY = rand() % 10;
+            personajes_pc[i].posX = rand() % 10;
+            personajes_pc[i].posY = rand() % 20;
 
-            personajes_player[i].posX = rand() % 20;
-            personajes_player[i].posY = 10 + rand() % (20 - 11);
+            personajes_player[i].posX = 10 + rand() % 10;
+            personajes_player[i].posY = rand() % 20;
         }
     }
     break;
@@ -304,15 +351,37 @@ void generar_personaje(int opt)
                 // generates types
                 personajes_player[i].tipo = Tipos[rand() % 3];
 
+                // generate level
+                personajes_player[i].nivel = 1;
+
 
                 // generates vitals
                 personajes_player[i].defensa = 1 + rand() % 10;
                 personajes_player[i].fuerza = 1 + rand() % 10;
-                personajes_player[i].vida = 1 + rand() % 10;
+                personajes_player[i].vida = 10;
 
                 // generates X and Y positions
-                personajes_player[i].posX = rand() % 20;
-                personajes_player[i].posY = 10 + rand() % (20 - 11);
+                personajes_player[i].posX = 10 + rand() % 10;
+                personajes_player[i].posY = rand() % 20;
+            }
+
+            if (personajes_pc[i].vida == 0)
+            {
+                // generates types
+                personajes_pc[i].tipo = Tipos[rand() % 3];
+
+                // generate level
+                personajes_pc[i].nivel = 1;
+
+
+                // generates vitals
+                personajes_pc[i].defensa = 1 + rand() % 10;
+                personajes_pc[i].fuerza = 1 + rand() % 10;
+                personajes_pc[i].vida = 10;
+
+                // generates X and Y positions
+                personajes_pc[i].posX = rand() % 10;
+                personajes_pc[i].posY = rand() % 20;
             }
         }
     }
@@ -339,6 +408,7 @@ void inicializarTablero()
 
 void show()
 {
+    system("cls");
     int x = 0;
 
     for (int i = 0; i < 21; i++)
