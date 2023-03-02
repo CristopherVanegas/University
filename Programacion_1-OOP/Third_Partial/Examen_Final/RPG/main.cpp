@@ -163,72 +163,95 @@ void atacar()
     }
 }
 
+bool sePuedenFusionar()
+{
+    string caracter = personajes_player[0].tipo;
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if ((personajes_player[i].tipo == personajes_player[j].tipo) && (i != j))
+                return true;
+        }
+    }
+
+
+    return false;
+}
+
 void fusionar()
 {
-    int gotoxY = 2;
-
-    gotoxy(45, gotoxY);
-    cout << "SELECT WHICH CHARACTER DO YOU WANT TO MOVE";
-    gotoxY++;
-
-    for (int i = 0; i < 3; i++)
+    while(sePuedenFusionar())
     {
-        gotoxy(45, gotoxY++);
-        cout << "[ "<< i + 1 << " ] Character " << " " << personajes_player[i].tipo;
-    }
-    gotoxY++;
-    gotoxy(45, gotoxY++);
-    cout << "[] ";
-    int selection;
-    cin >> selection;
-    cin.get();
+        int gotoxY = 2;
+        gotoxy(45, gotoxY);
+        cout << "SELECT WHICH CHARACTER DO YOU WANT TO MOVE";
+        gotoxY++;
 
+        show();
 
-    gotoxy(45, gotoxY++);
-    cout << " [] Please send the coor for X: ";
-    int x;
-    cin >> x;
-    cin.get();
-
-    gotoxy(45, gotoxY++);
-    cout << " [] Please send the coor for Y: ";
-    int y;
-    cin >> y;
-    cin.get();
-
-    // CLEAN UP THE OLD POSITION BEFORE THE FUSION
-    tablero[personajes_player[selection - 1].posX][personajes_player[selection - 1].posY] = " ";
-
-    // UPDATE THE PLAYER CHARACTER POSITIONS
-    personajes_player[selection - 1].posX = x;
-    personajes_player[selection - 1].posY = y;
-
-    // KEEPS THE TYPE OF PLAYER CARACTER IN THE MATRIX
-    tablero[personajes_player[selection - 1].posX][personajes_player[selection - 1].posY] = personajes_player[selection - 1].tipo;
-
-    for (int i = 0; i < 3; i++)
-    {
-        if ((selection - 1) == i)
-            continue;
-        else if ((personajes_player[selection - 1].tipo == personajes_player[i].tipo) && (personajes_player[selection - 1].posY == personajes_player[i].posY) && (personajes_player[selection - 1].posX == personajes_player[i].posX))
+        for (int i = 0; i < 3; i++)
         {
-            // DELETES THE ACTUAL PLAYER TO FUSIONATE WITH THE SAME COOR
-            personajes_player[selection - 1].vida = 0;
-            generar_personaje(2);
-
-            // UPDATE THE SAME COOR CHARACTER TO INCREASE THE STATISTICS
-            personajes_player[i].defensa = personajes_pc[i].defensa + 5;
-            personajes_player[i].fuerza = personajes_pc[i].fuerza + 5;
-            personajes_player[i].nivel++;
-            personajes_player[i].vida = personajes_pc[i].vida + 5;
-
-            // PRINTS A MESSAGE
-            system("cls");
-            gotoxy(15, 10);
-            cout << "NEW LEVEL " << personajes_player[i].nivel << " FOR CHARACTER " << personajes_player[i].tipo << "!!";
-            Sleep(1200);
-            system("cls");
+            gotoxy(45, gotoxY++);
+            cout << "[ "<< i + 1 << " ] Character " << " " << personajes_player[i].tipo;
         }
+        gotoxY++;
+        gotoxy(45, gotoxY++);
+        cout << "[] ";
+        int selection;
+        cin >> selection;
+        cin.get();
+
+
+        gotoxy(45, gotoxY++);
+        cout << " [] Please send the coor for X: ";
+        int x;
+        cin >> x;
+        cin.get();
+
+        gotoxy(45, gotoxY++);
+        cout << " [] Please send the coor for Y: ";
+        int y;
+        cin >> y;
+        cin.get();
+
+        // CLEAN UP THE OLD POSITION BEFORE THE FUSION
+        tablero[personajes_player[selection - 1].posX][personajes_player[selection - 1].posY] = " ";
+
+        // UPDATE THE PLAYER CHARACTER POSITIONS
+        personajes_player[selection - 1].posX = x;
+        personajes_player[selection - 1].posY = y;
+
+        // KEEPS THE TYPE OF PLAYER CARACTER IN THE MATRIX
+        tablero[personajes_player[selection - 1].posX][personajes_player[selection - 1].posY] = personajes_player[selection - 1].tipo;
+
+        for (int i = 0; i < 3; i++)
+        {
+            if ((selection - 1) == i)
+                continue;
+            else if ((personajes_player[selection - 1].tipo == personajes_player[i].tipo) && (personajes_player[selection - 1].posY == personajes_player[i].posY) && (personajes_player[selection - 1].posX == personajes_player[i].posX))
+            {
+                // DELETES THE ACTUAL PLAYER TO FUSIONATE WITH THE SAME COOR
+                personajes_player[selection - 1].vida = 0;
+                generar_personaje(2);
+
+                // UPDATE THE SAME COOR CHARACTER TO INCREASE THE STATISTICS
+                personajes_player[i].defensa = personajes_pc[i].defensa + 5;
+                personajes_player[i].fuerza = personajes_pc[i].fuerza + 5;
+                personajes_player[i].nivel++;
+                personajes_player[i].vida = personajes_pc[i].vida + 5;
+
+                // PRINTS A MESSAGE
+                system("cls");
+                gotoxy(15, 10);
+                cout << "NEW LEVEL " << personajes_player[i].nivel << " FOR CHARACTER " << personajes_player[i].tipo << "!!";
+                Sleep(1200);
+                //Sleep(1200);
+                //system("cls");
+            }
+        }
+        system("cls");
     }
 }
 
