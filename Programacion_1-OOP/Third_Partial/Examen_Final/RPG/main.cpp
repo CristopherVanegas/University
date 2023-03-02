@@ -185,32 +185,36 @@ void fusionar()
     while(sePuedenFusionar())
     {
         int gotoxY = 2;
-        gotoxy(45, gotoxY);
-        cout << "SELECT WHICH CHARACTER DO YOU WANT TO MOVE";
+        gotoxy(90, gotoxY);
+        cout << "SELECT A CHARACTER";
+        gotoxY++;
+        gotoxy(90, gotoxY);
+        cout << "TO MERGE";
+        gotoxY++;
         gotoxY++;
 
         show();
 
         for (int i = 0; i < 3; i++)
         {
-            gotoxy(45, gotoxY++);
+            gotoxy(90, gotoxY++);
             cout << "[ "<< i + 1 << " ] Character " << " " << personajes_player[i].tipo;
         }
         gotoxY++;
-        gotoxy(45, gotoxY++);
+        gotoxy(90, gotoxY++);
         cout << "[] ";
         int selection;
         cin >> selection;
         cin.get();
 
 
-        gotoxy(45, gotoxY++);
+        gotoxy(90, gotoxY++);
         cout << " [] Please send the coor for X: ";
         int x;
         cin >> x;
         cin.get();
 
-        gotoxy(45, gotoxY++);
+        gotoxy(90, gotoxY++);
         cout << " [] Please send the coor for Y: ";
         int y;
         cin >> y;
@@ -345,15 +349,19 @@ void show()
             if (i < 20)
             {
                 // SHOW THE CONTENT OF THE TABLE
-                gotoxy(i + x + 1, j);
-                cout << tablero[i][j - 2];
+                gotoxy((i + x) * 2 + 2, j);
+                cout << " " << tablero[i][j - 2] << " ";
 
                 // SHOW THE Y VALUES
-                gotoxy(42, i + 2);
+                gotoxy(83, i + 2);
+                cout << i;
+
+                // SHOW THE X VALUES
+                gotoxy((i + x) * 2 + 2, 22);
                 cout << i;
             }
 
-            gotoxy(i * 2, j);
+            gotoxy(i * 4 + 1, j);
             cout << "|";
         }
 
