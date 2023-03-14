@@ -10,7 +10,7 @@ int main()
     const anio = 2023;
 
     printf("Escriba el anio en que nacio: ");
-    scanf("d", &fNac);
+    scanf("%d", &fNac);
 
     edad = anio - fNac;
     printf("Su edad es de %d", edad);

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1678733369 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\primer_parcial\talleres\taller_3\paises_mayor_poblacion_array_struct\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<time.h>
+
