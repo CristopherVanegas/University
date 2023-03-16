@@ -23,3 +23,20 @@ END
 select * from fechas_aleatorias;
 select min(fecha) from fechas_aleatorias;
 select max(fecha) from fechas_aleatorias;
+
+
+select dateadd(
+	day, ABS(CAST(NEWID() as binary(6)) % 31) + 1, convert(date, '2004-01-01')
+);
+
+select DATEFROMPARTS(
+	abs(cast(newid() as binary(6)) % 12) + 1,
+	abs(cast(newid() as binary(6)) % 31) + 1,
+	abs(cast(newid() as binary(6)) % 2023) + 2024
+);
+
+select dateadd(
+	day,
+	abs(cast(newid() as binary(6)) % 7300) + 1,
+	'2004-01-01'
+);
