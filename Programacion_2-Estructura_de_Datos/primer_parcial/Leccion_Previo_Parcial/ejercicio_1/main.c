@@ -1,4 +1,5 @@
-// Est. Cristopher Vanegas.
+//     Est. Cristopher Vanegas     //
+// Err: El ingreso de datos no es aleatorio, el usuario debe agregar el dato. //
 
 #include <stdio.h>
 #include <stdlib.h>
