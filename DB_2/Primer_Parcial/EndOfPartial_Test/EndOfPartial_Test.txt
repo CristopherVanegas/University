@@ -1,0 +1,25 @@
+//     First partial exam - DB2_NoSQL (Mongodb)     //
+
+db.createCollection("job_history");
+db.createCollection("job_id");
+show collections
+
+db.job_history.insert({
+	employee_id: 102,
+	start_date: "13-JAN-01",
+	end_date: "27-OCT-01",
+	job_id: "IT_PROG",
+	department_id: 60
+
+})
+
+
+db.job_id.insert({
+	job_id: "AD_PRES",
+	job_title: "President",
+	min_salary: 20080,
+	max_salary: 40000
+})
+
+db.job_history.find();
+db.job_id.find();
