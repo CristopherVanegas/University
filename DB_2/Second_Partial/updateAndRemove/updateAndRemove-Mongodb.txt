@@ -1,0 +1,106 @@
+//     Est. Cristopher Vanegas     //
+
+db.createCollection("locations");
+show collections;
+
+
+Insert:
+Insertar 3 documentos de uno en uno.
+
+db.locations.insertOne({
+	location_id:1000,
+	street_address: "1297 Via Cola di Rie",
+	postal_code:00989,
+	city:"Roma",
+	state_province:"-",
+	country_id:"IT"
+});
+
+db.locations.insertOne({
+	location_id:1100,
+	street_address: "93091 Calle della Testa",
+	postal_code:10934,
+	city:"Venice",
+	state_province:"-",
+	country_id:"IT"
+});
+
+db.locations.insertOne({
+	location_id:1200,
+	street_address: "2017 Shinjuku-ku",
+	postal_code:1689,
+	city:"Tokyo",
+	state_province:"Tokyo Prefecture",
+	country_id:"JP"
+});
+
+Luego insertar 2 documentos en el mismo comando.
+db.locations.insertMany([
+	{
+		location_id:1300,
+		street_address: "9450 Kamiya-cho",
+		postal_code:6823,
+		city:"Hiroshima",
+		state_province:"-",
+		country_id:"JP"
+	},
+	{
+		location_id:1400,
+		street_address: "2014 Jabberwocky Rd",
+		postal_code:26192,
+		city:"Southlake",
+		state_province:"Texas",
+		country_id:"US"
+	}
+]);
+
+
+remove, eliminar 2 documentos mediante el comando remove
+
+db.locations.deleteOne(
+	{location_id:1200}
+);
+
+db.locations.deleteOne(
+	{location_id:1300}
+);
+
+
+update : actualizar dos documentos de uno en uno, y luego actualizar más de dos documentos en un solo comando.
+db.locations.updateOne(
+	{location_id:1000},
+	{$set:
+		{
+			location_id:2000,
+			state_province: "-----"
+		}
+	}
+);
+
+db.locations.updateOne(
+	{location_id:1100},
+	{$set:
+		{
+			location_id:2000,
+			state_province: "-----"
+		}
+	}
+);
+
+
+Usar el upsert para crear un nuevo documento en caso de que no exista
+db.locations.updateOne(
+	{location_id:5000},
+	{$set:
+		{
+			location_id:5000,
+			street_address: "-----",
+			postal_code:9999,
+			city:"-----",
+			state_province:"-----",
+			country_id:"NA"
+		}
+	},
+	{upsert:true}
+);
+
