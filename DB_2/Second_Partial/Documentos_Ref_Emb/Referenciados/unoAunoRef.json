@@ -1,0 +1,27 @@
+
+createCollection("esposos");
+createCollection("esposa");
+
+coleccion esposo (1)
+[
+    {
+        _id: 4444,
+        cedula: 0123456789,
+        name: "Alejandro González Iñárritu",
+        edad: 30,
+
+        esposa: 5555
+    }
+]
+
+coleccion esposa (1)
+[
+    {
+        _id: 5555,
+        cedula: 0987654321,
+        name: "Jeimy Guaranda Ruiz",
+        edad: 32,
+        
+        esposo: 4444
+    }
+]

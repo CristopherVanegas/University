@@ -1,0 +1,33 @@
+
+createCollection("profesor");
+createCollection("estudiantes");
+
+coleccion profesor (1)
+[
+	{
+		_id: 1111,
+		nombre: "DANIEL HUMBERTO PLUA MORAN",
+		cod_materia: "COM338"
+	}
+]
+
+coleccion estudiantes (N)
+[
+	{
+		_id: 2222,
+		nombre: "CRISTOPHER JULINHO VANEGAS SANTI",
+		profesor: [1111]
+	},
+
+	{
+		_id: 3333,
+		nombre: "ALONDRA HIMOI VANEGAS SANTI",
+		profesor: [1111]
+	},
+
+	{
+		_id: 4444,
+		nombre: "DAMIAN JAMES VANEGAS SANTI",
+		profesor: [1111]
+	}
+]
