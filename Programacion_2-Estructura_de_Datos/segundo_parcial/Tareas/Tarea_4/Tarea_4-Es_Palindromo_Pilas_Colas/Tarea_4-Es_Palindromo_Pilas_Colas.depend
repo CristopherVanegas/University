@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1680102936 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\segundo_parcial\tareas\tarea_4\tarea_4-es_palindromo_pilas_colas\main.c
+1680180529 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\segundo_parcial\tareas\tarea_4\tarea_4-es_palindromo_pilas_colas\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<ctype.h>
 
