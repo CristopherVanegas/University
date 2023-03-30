@@ -1,0 +1,139 @@
+
+//     TALLER DE RELACIONES     //
+	          MONGODB
+
+//   Est. Cristopher Vanegas   //
+
+
+ > RELACIONES UNO A UNO CON DOCUMENTOS EMBEBIDOS
+
+db.createCollection("bookCollection");
+db.bookCollection.insertOne(
+	{
+		_id: ObjectId("61c9e9e135b5636fa3123456"),
+		title: "The Great Gatsby",
+		author: "F. Scott Fitzgerald",
+		isbn: "978-3-16-148410-0",
+	
+		cover: 
+			{
+				_id: ObjectId("61c9e9e135b5636fa3123457"),
+				boot_id: ObjectId("61c9e9e135b5636fa3123456"),
+				image: "https://example.com/great-gatsby.jpg",
+				format: "jpeg",
+				size: "2.5MB"
+			}
+	}
+);
+
+db.createCollection("bookCoverCollection");
+db.bookCoverCollection.insertOne(
+	{
+		_id: ObjectId("61c9e9e135b5636fa3123457"),
+		boot_id: ObjectId("61c9e9e135b5636fa3123456"),
+		image: "https://example.com/great-gatsby.jpg",
+		format: "jpeg",
+		size: "2.5MB"
+		
+		book: 
+			{
+				_id: ObjectId("61c9e9e135b5636fa3123456"),
+				title: "The Great Gatsby",
+				author: "F. Scott Fitzgerald",
+				isbn: "978-3-16-148410-0"
+			}
+	}
+);
+
+
+O se puede utilizar el comando lookup luego de haber insertado solo los datos sin los datos embebidos: 
+db.getCollection("bookCollection").aggregate({$lookup: {from: "bookCoverCollection", localField: "bookCollection._id", foreignField: "bookCoverCollection._id", as: "cover"}})
+db.getCollection("bookCoverCollection").aggregate({$lookup: {from: "bookCollection", localField: "bookCoverCollection._id", foreignField: "bookCollection._id", as: "book"}})
+
+
+
+ > RELACIONES UNO A MUCHOS CON DOCUMENTOS EMBEBIDOS
+db.createCollection("BlogPostCollection");
+db.BlogPostCollection.insertOne(
+	{
+		_id: ObjectId("61c9e9e135b5636fa3123456"),
+		title: "My Favorite Books",
+		content: "Lorem ipsum dolor sit amet, consectetur adi[iscing elit...",
+		
+		comments: 
+			[
+				{
+					_id: ObjectId("61c9e9e135b5636fa3123457"),
+					title: ObjectId("61c9e9e135b5636fa3123456"),
+					author: "Jane Doe",
+					text: "Great list of books! I've read most of them and loved them.",
+					date: ISODate("2022-03-29T12:00:00Z)
+				},
+				{
+					_id: ObjectId("61c9e9e135b5636fa3123458"),
+					title: ObjectId("61c9e9e135b5636fa3123456"),
+					author: "John Smith",
+					text: "Thanks for sharing! I'll definitely add some of these to my reading list.",
+					date: ISODate("2022-03-30T09:30:00Z)
+				}
+			]
+	}
+);
+
+
+db.createCollection("CommentCollection");
+db.CommentCollection.insertMany([
+	{
+		_id: ObjectId("61c9e9e135b5636fa3123457"),
+		title: ObjectId("61c9e9e135b5636fa3123456"),
+		author: "Jane Doe",
+		text: "Great list of books! I've read most of them and loved them.",
+		date: ISODate("2022-03-29T12:00:00Z)
+	},
+	{
+		_id: ObjectId("61c9e9e135b5636fa3123458"),
+		title: ObjectId("61c9e9e135b5636fa3123456"),
+		author: "John Smith",
+		text: "Thanks for sharing! I'll definitely add some of these to my reading list.",
+		date: ISODate("2022-03-30T09:30:00Z)
+	}
+]);
+
+
+O se puede utilizar el comando lookup luego de haber insertado solo los datos sin los datos embebidos: 
+db.getCollection("BlogPostCollection").aggregate({$lookup: {from: "CommentCollection", localField: "BlogPostCollection._id", foreignField: "CommentCollection._id", as: "comments"}})
+
+
+
+ > RELACIONES UNO A MUCHOS CON DOCUMENTOS REFERENCIADOS
+db.createCollection("OrderCollection");
+db.OrderCollection.insertOne(
+	{
+		_id: ObjectId("61c9e9e135b5636fa3123456"),
+		order_date: ISODate("2022-03-30T15:30:00Z"),
+		customer_name: "John Smith",
+		
+		products:
+			[
+				ObjectId("61c9e9e135b5636fa3123457"),
+				ObjectId("61c9e9e135b5636fa3123458")
+			]
+	}
+);
+
+db.createCollection("ProductCollection");
+db.ProductCollection.insertMany([
+	{
+		_id: ObjectId("61c9e9e135b5636fa3123457"),
+		name: "Smartphone",
+		price: 1000,
+		stock: 10
+	},
+	{
+		_id: ObjectId("61c9e9e135b5636fa3123458"),
+		name: "Laptop",
+		price: 2000,
+		stock: 5
+	}
+]);
+
