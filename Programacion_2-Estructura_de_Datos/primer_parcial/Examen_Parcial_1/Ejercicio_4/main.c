@@ -122,10 +122,10 @@ void llenarDatos()
     {
         for (int j = 0; j < 6; j++)     // columna
         {
-            printf("\nIngrese numero de estudiantes: ");
-            fflush(stdin);
-            scanf("%d", &matrix[i][j]);
-            // matrix[i][j] = 1 + rand() % 50;
+            // printf("\nIngrese numero de estudiantes: ");
+            // fflush(stdin);
+            // scanf("%d", &matrix[i][j]);
+            matrix[i][j] = 1 + rand() % 50;
         }
     }
 }
