@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1681532639 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\tercer_parcial\taller\temapracticoarboles-taller_1-tercerparcial\codeblocks\temapracticoarboles-taller_1-tercerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
