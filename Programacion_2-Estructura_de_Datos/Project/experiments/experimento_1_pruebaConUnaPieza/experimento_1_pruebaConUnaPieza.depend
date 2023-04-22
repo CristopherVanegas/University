@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1680329050 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\project\experiments\experimento_1_pruebaconunapieza\main.c
+	<stdio.h>
+	<stdlib.h>
+
