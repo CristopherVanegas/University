@@ -19,6 +19,13 @@
           redirigir
         );
       }
+      function closeSession() {
+        $.post(
+          "../controlador/usuariocontroller.php",
+          { opcion: "closeSession" },
+          redirigir
+        );
+      }
       function respuesta(arg) {
         $("#datos tbody").append(arg);
       }
@@ -76,7 +83,11 @@
               Usuario
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+              <li>
+                <button class="dropdown-item" onclick="closeSession()" href="#">
+                  Cerrar Sesión
+                </button>
+              </li>
             </ul>
           </div>
         </div>
