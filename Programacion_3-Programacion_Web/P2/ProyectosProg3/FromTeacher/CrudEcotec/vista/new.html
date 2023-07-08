@@ -12,6 +12,14 @@
     />
     <script type="text/javascript" src="../js/jquery-3.7.0.min.js"></script>
     <script type="text/javascript">
+      function cargardatos() {
+        $.post(
+          "../controlador/usuariocontroller.php",
+          { opcion: "validateSession" },
+          redirigir
+        );
+      }
+
       function guardar() {
         $.post(
           "../controlador/usuariocontroller.php",
@@ -19,9 +27,17 @@
           respuesta
         );
       }
+      function redirigir(arg) {
+        if (arg == false) {
+          $(location).attr("href", "login.html");
+        } else {
+          guardar();
+        }
+      }
       function respuesta(arg) {
         alert(arg);
       }
+      window.onload = cargardatos;
     </script>
   </head>
   <body>
