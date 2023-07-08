@@ -18,11 +18,6 @@
           { opcion: "validateSession" },
           redirigir
         );
-        $.post(
-          "../controlador/usuariocontroller.php",
-          { opcion: "consulta" },
-          respuesta
-        );
       }
       function respuesta(arg) {
         $("#datos tbody").append(arg);
@@ -30,6 +25,12 @@
       function redirigir(arg) {
         if (arg == false) {
           $(location).attr("href", "login.html");
+        } else {
+          $.post(
+            "../controlador/usuariocontroller.php",
+            { opcion: "consulta" },
+            respuesta
+          );
         }
       }
 
