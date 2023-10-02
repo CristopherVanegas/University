@@ -29,7 +29,7 @@ int main()
     for (int i = 8; i <= 34; i++) {
         gotoxy(i, 12);
         Sleep(250);
-        cout << char(178);
+        cout << char(173);
     }
 
 
