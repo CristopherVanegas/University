@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1689170103 source:d:\documents\source\repos\university\programacion_1-oop\oyente\arreglodeobjetosdatos\main.cpp
+	<iostream>
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
