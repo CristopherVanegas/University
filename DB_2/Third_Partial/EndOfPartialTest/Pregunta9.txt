@@ -1,0 +1,59 @@
+ > Pregunta 9: (14 puntos)
+	[] Del siguiente esquema relacional
+Convertir las tablas Job_history y Jobs a mongodb y Cassandra
+
+
+  >  MongoDB
+
+db.createCollection("Job_History", { validator: { $jsonSchema: { bsonType: "object", required: [ "employee_id", "start_date", "end_date", "job_id", "department_id" ], properties: { employee_id: { bsonType: "string" }, start_date: { bsonType: "date" }, end_date: { bsonType: "date" }, job_id: { bsonType: "string" }, department_id: { bsonType: "string" } } } } })
+
+db.createCollection("Job_history");
+db.Job_history.insertOne({
+	EMPLOYEE_ID: 102,
+	START_DATE: "13-Jan-01",
+	END_DATE: "24-Jul-06",
+	JOB_ID: "IT_PROG",
+	DEPARTMENT_ID: 60
+});
+
+db.createCollection("Jobs");
+db.Jobs.insertOne({
+	JOB_ID: "AD_PRES",
+	JOB_TITLE: "President",
+	MIN_SALARY: 20080,
+	MAX_SALARY: 40000
+});
+
+
+
+  >  Cassandra
+
+CREATE KEYSPACE job_history_keyspace
+WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+CREATE TABLE job_history (
+    EMPLOYEE_ID INT,
+    START_DATE TEXT,
+    END_DATE TEXT,
+    JOB_ID TEXT,
+    DEPARTMENT_ID INT,
+    PRIMARY KEY (EMPLOYEE_ID)
+);
+
+INSERT INTO job_history (EMPLOYEE_ID, START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID)
+VALUES (102, '13-Jan-01', '24-Jul-06', 'IT_PROG', 60);
+
+
+
+CREATE KEYSPACE jobs_keyspace
+WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+CREATE TABLE jobs (
+    JOB_ID TEXT PRIMARY KEY,
+    JOB_TITLE TEXT,
+    MIN_SALARY INT,
+    MAX_SALARY INT
+);
+
+INSERT INTO jobs (JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+VALUES ('AD_PRES', 'President', 20080, 40000);

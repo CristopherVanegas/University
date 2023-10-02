@@ -1,10 +1,8 @@
- PARCIAL DOS
+ > Pregunta 8: (7 puntos)
+	[]  En la siguiente colección orders, calcular para las ordenes de size= médium y small, obtener el minimo
+valor de quantity agrupada y ordenada de manera ascendente por name
 
- > Creo la coleccion
-db.createCollection("orders");
-
- > Data
-db.orders.insertMany( [
+db.pregunta8.insertMany( [
 { _id: 0, name: "Pepperoni", size: "small", price: 19,
 quantity: 10, date: ISODate( "2021-03-13T08:14:30Z" ) },
 { _id: 1, name: "Pepperoni", size: "medium", price: 20,
@@ -23,29 +21,9 @@ quantity: 10, date : ISODate( "2021-01-13T05:08:13Z" ) },
 quantity: 10, date : ISODate( "2021-01-13T05:10:13Z" ) }
 ] );
 
-
- > Calcular ordenes de size medium y small
-db.orders.aggregate([
-	{$match: {size: 'small'}},
-	{$group: {_id: "$name", totalQuantity: {$min: "$quantity"}}},
-	{$sort: {name: 1}}
-]);
-
-db.orders.aggregate([
-	{$match: {size: "medium"}},
-	{$group: {_id: "$name", totalQuantity: {$min: "$quantity"}}},
-	{$sort: {name: 1}}
-]);
-
 db.pregunta8.aggregate([
 	{$match: {$or: [{size: "medium"}, {size:"small"}]}},
 	{$group: {_id: "$name", totalQuantity: {$min: "$quantity"}}},
 	{$sort: {name: 1}}
 ]);
 
-
-
- > Relacionar 1 a 1 dos tablas
-db.getCollection("cochesEmpresa").aggregate({$lookup: {from: "empleados", localField: "cochesEmpresa._id", foreignField: "empleados._id", as: "cocheAEmpleado"}});
-
-db.getCollection("empleados").aggregate({$lookup: {from: "cocheEmpresa", localField: "empleados._id", foreignField: "cocheEmpresa._id", as: "empleadoACoche"}});
