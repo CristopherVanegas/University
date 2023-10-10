@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Se incluye el archivo Bootstrap: CSS-->
+    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- Incluyo estilos del footer -->
+    <link rel="stylesheet" href="../css/footer.css" />
+    <!--Se incluye el archivo JQuery-->
+    <script type="text/javascript" src="../JavaScript/JQuery.js"></script>
+    <script type="text/javascript" src="../JavaScript/DarkTheme.js"></script>
+    <link href="blog.css" rel="stylesheet" />
+
+    <style>
+      .navbar-image {
+        height: 450px;
+        background-image: url("../Img/Header_Light.png");
+        background-size: cover;
+        background-position: center;
+      }
+      .no-underline {
+        text-decoration: none;
+      }
+      .small-text {
+        font-size: 12px;
+      }
+      .medium-text {
+        font-size: 15px;
+      }
+      .card-img-top {
+        width: 410px;
+        height: 270px;
+        object-fit: cover;
+      }
+      .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .carousel-caption h3,
+      .carousel-caption p {
+        color: #fff;
+      }
+      .benefits {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      .offers {
+        margin-bottom: 30px;
+      }
+      .big-text {
+        font-size: 20px;
+        margin-left: 10px;
+      }
+    </style>
+
+    <title>HorizonTravel: Agencia de Viajes</title>
+  </head>
+
+  <body data-bs-theme="light">
+    <!--Columna 1: Navegación-->
+    <div class="container-fluid text-center">
+      <div class="col">
+        <div class="row">
+          <!-- Barra de Navegación -->
+          <div class="container-fluid text-white navbar-image px-0">
+            <nav class="navbar navbar-expand-lg bg-dark bg-opacity-50">
+              <div class="container-fluid text-white justify-content-between">
+                <a class="navbar-brand text-white">
+                  <img
+                    src="../Img/Logo_Empresa.png"
+                    alt="Logo"
+                    width="30"
+                    height="30"
+                    class="d-inline-block align-text-top"
+                  />
+                  <b class="big-text"><i>HorizonTravel</i></b>
+                </a>
+                <div>
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="Inicio.html"
+                        >Inicio</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="Destinos.html"
+                        >Destinos</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="ml-auto">
+                  <button
+                    type="button"
+                    class="btn btn-light bg-dark bg-opacity-50"
+                  >
+                    <a class="text-white no-underline" href="Login.html"
+                      ><b>Iniciar Sesión</b></a
+                    >
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-light bg-dark bg-opacity-50"
+                  >
+                    <a
+                      class="text-white no-underline"
+                      href="Usuario/RegistroUsuario.html"
+                      ><b>Registrar</b></a
+                    >
+                  </button>
+                  <button onclick="CambiarTema()" class="btn rounded-fill">
+                    <i id="dl-icon" class="bi bi-moon field"></i>
+                  </button>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Columna 2: Header de Destinos-->
+    <div class="container my-3 shadow-lg p-3">
+      <br />
+      <h4 style="text-align: center">¿A dónde deseas viajar?</h4>
+      <br />
+      <div class="row">
+        <div class="col-lg-4">
+          <img
+            class="mx-auto d-block mb-4"
+            src="../Img/Earth.png"
+            width="70"
+            height="70"
+          />
+          <h5 class="medium-text text-center"><b>GLOBALIZADO</b></h5>
+          <p class="small-text text-center">
+            Nuestros destinos son globales, es decir, ¡puedes viajar a cualquier
+            lado!.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <img
+            class="mx-auto d-block mb-4"
+            src="../Img/Hotel.png"
+            width="70"
+            height="70"
+          />
+          <h5 class="medium-text text-center"><b>HOTELERÍA</b></h5>
+          <p class="small-text text-center">
+            Los hoteles selectos cuentan con las mejores reseñas por parte de
+            los usuarios.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <img
+            class="mx-auto d-block mb-4"
+            src="../Img/Food.png"
+            width="70"
+            height="70"
+          />
+          <h5 class="medium-text text-center"><b>GASTRONOMÍA</b></h5>
+          <p class="small-text text-center">
+            Dentro de tus paquetes, encontrarás diferentes platos típicos, sin
+            costos adicionales.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--Columna 2: Ofertas-->
+    <div class="album py-4 offers">
+      <div class="container my-3 shadow-lg p-3">
+        <h4 style="text-align: center">Nuestros Destinos Principales</h4>
+        <br />
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="../Img/NewYork.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  La ciudad que nunca duerme, conocida por su icónico horizonte
+                  y diversidad cultural.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Ver más
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Comprar
+                    </button>
+                  </div>
+                  <small class="text-muted">Nueva York</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="../Img/Paris.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  La Ciudad del Amor, famosa por su ambiente romántico, moda y
+                  monumentos icónicos.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Ver más
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Comprar
+                    </button>
+                  </div>
+                  <small class="text-muted">París</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="../Img/London.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  La histórica capital del Reino Unido, famosa por sus
+                  monumentos y rica historia.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Ver más
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Comprar
+                    </button>
+                  </div>
+                  <small class="text-muted">Londres</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="../Img/Rome.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  La Ciudad Eterna, hogar de ruinas antiguas, arte renacentista
+                  y deliciosa cocina italiana.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Ver más
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Comprar
+                    </button>
+                  </div>
+                  <small class="text-muted">Roma</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="../Img/Moscow.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  La capital de Rusia, conocida por su arquitectura
+                  impresionante, Plaza Roja y vibrante escena cultural.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Ver más
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Comprar
+                    </button>
+                  </div>
+                  <small class="text-muted">Moscú</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="../Img/Beijing.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  La capital de China, llena de historia y hogar de la Gran
+                  Muralla y la Ciudad Prohibida.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Ver más
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Comprar
+                    </button>
+                  </div>
+                  <small class="text-muted">Beijing</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="../Img/Tokyo.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  La bulliciosa metrópolis de Japón, famosa por su tecnología de
+                  vanguardia y animada vida callejera.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Ver más
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Comprar
+                    </button>
+                  </div>
+                  <small class="text-muted">Tokio</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="../Img/Seul.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  La dinámica capital de Corea del Sur, que combina modernidad
+                  con palacios y templos tradicionales.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Ver más
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Comprar
+                    </button>
+                  </div>
+                  <small class="text-muted">Seúl</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img
+                class="card-img-top"
+                src="../Img/Madrid.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  La animada capital de España, conocida por su arte, tapas y
+                  vibrante vida nocturna.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Ver más
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Comprar
+                    </button>
+                  </div>
+                  <small class="text-muted">Madrid</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid dark-footer pt-4 pb-4" style="height: auto">
+      <div
+        class="row d-flex pt-2 pb-2 pl-4 pr-4 justify-content-around align-items-center"
+      >
+        <!-- Texto -->
+        <div class="col-5 pt-2 pb-2 p-0">
+          <h3 class="text-white" style="font-size: medium">
+            <b>¿Preguntas? Escribenos al +593 97 521 9643</b>
+          </h3>
+          <a class="navbar-brand text-white"
+            ><i>HorizonTravel - Copyright 2023</i></a
+          >
+        </div>
+        <!-- Iconos -->
+        <div class="col-3 p-0">
+          <ul
+            class="list-unstyled rounded d-flex align-items-center justify-content-around m-0"
+            style="height: 48px; background-color: aliceblue"
+          >
+            <li>
+              <a href="https://www.facebook.com/">
+                <img
+                  src="../Img/social_networks/fb.png"
+                  alt="Logo"
+                  width="30"
+                  height="30"
+                  class="d-inline-block align-text-top"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/">
+                <img
+                  src="../Img/social_networks/ig.png"
+                  alt="Logo"
+                  width="30"
+                  height="30"
+                  class="d-inline-block align-text-top"
+              /></a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="../Img/social_networks/ws.png"
+                  alt="Logo"
+                  width="30"
+                  height="30"
+                  class="d-inline-block align-text-top"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/feed/">
+                <img
+                  src="../Img/social_networks/lk.png"
+                  alt="Logo"
+                  width="30"
+                  height="30"
+                  class="d-inline-block align-text-top"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--Se incluye el archivo Bootstrap: JS-->
+    <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

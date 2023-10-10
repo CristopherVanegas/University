@@ -1,0 +1,281 @@
+:root {
+    --dark: #0f0f0f;
+    --light-dark: #3e3e42;
+    --white: #ffffff;
+    --black: #000000;
+    --very-light-pink: #c7c7c7;
+    --text-input-field: #f7f7f7;
+    --hospital-green: #acd9b2;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 28px;
+}
+p {
+    color: var(--white);
+}
+
+body {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+}
+
+.title {
+    font-size: var(--lg);
+    color: var(--white);
+    margin: 38px 0px 30px 0px;
+    text-align: start;
+    font-weight: bold;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark);
+}
+
+.navbar {
+    position: fixed;
+    background-color: var(--dark);
+    top: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 65px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left {
+    width: 25%;
+    height: 100%;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    align-self: start;
+}
+
+.navbar-left a {
+    height: 100%;
+    margin: 0px 0px 0px 14px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left a img {
+    height: 40px;
+}
+
+.navbar-center {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-center input {
+    width: 650px;
+    height: 40px;
+    background-color: var(--light-dark);
+    border-radius: 30px 0px 0px 30px;
+    border: none;
+    font-size: var(--lg);
+    text-indent: 16px;
+    color: #c7c7c7;
+}
+
+.navbar-center>a:nth-child(2) {
+    box-sizing: border-box;
+    height: 40px;
+    width: 85px;
+    border: 1px solid var(--text-input-field);
+    border-radius: 0px 30px 30px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-center a img {
+    box-sizing: border-box;
+    align-self: center;
+    background-color: var(--dark);
+    width: 35px;
+    height: 35px;
+}
+
+.navbar-center>a:nth-child(3) {
+    box-sizing: border-box;
+    height: 40px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-center>a:last-child img {
+    box-sizing: border-box;
+    align-self: center;
+    background-color: var(--dark);
+    margin-left: 14px;
+    width: 30px;
+    height: 32px;
+}
+
+.navbar-right {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 14px;
+}
+
+.navbar-right a {
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 0px 10px 0px 10px;
+}
+
+.navbar-right a img {
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+}
+
+
+/* MAIN CONTENT, VID AND REPRODUCTION LIST */
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    height: 250vh;
+    background-color: var(--dark);
+    display: grid;
+    column-gap: 25px;
+    grid-template-columns: 2fr 1fr;
+    padding: 10px 25px;
+    margin-top: 60px;
+}
+.main-content {
+    box-sizing: border-box;
+    width: 60%;
+}
+.main-content {
+    width: 100%;
+    grid-column: 1 / 2;
+    border: 1px solid white;
+}
+.main-content iframe {
+    width: 100%;
+}
+.main-content .video-info .buttons {
+    display: flex;
+    align-items: center;
+}
+.main-content .video-info .buttons > a:nth-child(1) {
+    height: 65px;
+    width: 65px;
+
+    display: flex;
+    border-radius: 50%;
+    
+    overflow: hidden;
+}
+.buttons a img {
+    width: 100%;
+    height: 100%;
+}
+.buttons p {
+    margin: 6px;
+}
+.buttons a {
+    margin: 15px;
+}
+.buttons > a:nth-child(3) {
+    height: 45px;
+    width: 110px;
+    background-color: var(--white);
+
+    color: var(--black);
+    font-size: var(--md);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 24px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons .options {
+    display: flex;
+    align-items: center;
+}
+.like-and-dislike span {
+    display: flex;
+    align-items: center;
+}
+.like-and-dislike span p {
+    color: var(--black);
+}
+.options .like-and-dislike {
+    width: 145px;
+    height: 45px;
+    background-color: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    padding: 6px;
+    margin: 14px;
+}
+.option .like-and-dislike img {
+    width: 45px;
+    height: 45px;
+}
+.like-and-dislike .like:hover,
+.like-and-dislike span:nth-child(2):hover {
+    cursor:pointer;
+}
+.like-and-dislike .dislike:hover {
+    cursor:pointer;
+}
+.options a:nth-child(2),
+.options a:nth-child(3),
+.options a:nth-child(4),
+.options a:nth-child(5) {
+    width: 150px;
+    height: 45px;
+
+    border-radius: 22px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    
+    background-color: var(--white);
+    overflow: hidden;
+}
+.options a:nth-child(2) p,
+.options a:nth-child(3) p,
+.options a:nth-child(4) p,
+.options a:nth-child(5) p {
+    color: var(--black);
+}
+.options a:nth-child(2) img,
+.options a:nth-child(3) img,
+.options a:nth-child(4) img,
+.options a:nth-child(5) img {
+    width: 25px;
+    height: 25px;
+    /* padding: 8px; */
+}
+
+.aside {
+    width: 100%;
+    height: 100%;
+    grid-column: 2 / 3;
+    border: 1px solid white;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Listado de estudiantes</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<br>
+		<button class="btn btn-primary" onclick="window.open('formulario.html', '_self')">Agregar</button>
+		<table class="table">
+			<tr><th>Cédula</th><th>Nombre</th><th>Correo</th><th>Imagen</th><th>Opciones</th></tr>
+			<tbody id="cuerpo-tabla">
+				
+			</tbody>
+		</table>
+	</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+	localStorage.clear();
+
+
+	function obtenerRegistros(){
+		$.ajax({
+			url:"../controladores/usuario.controller.php",
+			type: 'POST',
+			data:{
+				opcion: 'consultar'
+			},
+			success: function(datos){
+				console.log(datos);
+				for(var i= 0; i< datos.length; i++){
+					var imagen = "&nbsp";
+					if(datos[i].imagen!=null){
+						imagen = `<img src='${datos[i].imagen}' width="100px">`;
+					}
+					$("#cuerpo-tabla").append(`
+						<tr><td>${datos[i].cedula}</td>
+						<td>${datos[i].nombre}</td>
+						<td>${datos[i].correo}</td>
+						<td>${imagen}</td>
+						<td>
+							<button class="btn btn-primary" onclick="editar(${datos[i].id})">Editar</button>
+							<button class="btn btn-danger" onclick="eliminar(${datos[i].id})">Eliminar</button>
+						</td>
+						</tr>
+						`);
+				}
+			}
+		});
+	}
+	obtenerRegistros();
+
+
+	function eliminar(id){
+		$.ajax({
+			url:"../controladores/usuario.controller.php",
+			type: 'POST',
+			data:{
+				opcion: 'eliminar',
+				id: id
+			},
+			success: function(datos){
+				$("#cuerpo-tabla").html("");
+				obtenerRegistros();
+			}
+		});
+	}
+
+
+	function editar(id){
+		localStorage.setItem("id", id);
+		window.open("formulario.html", "_self");
+	}
+
+</script>
+</html>

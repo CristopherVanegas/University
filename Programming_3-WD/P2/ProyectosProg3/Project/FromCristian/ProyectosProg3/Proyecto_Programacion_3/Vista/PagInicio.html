@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Se incluye el archivo Bootstrap: CSS-->
+    <link href = "../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--Se incluye el archivo JQuery-->
+    <script type = "text/javascript" src = "../JavaScript/JQuery.js"></script>
+    <!--Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        .navbar-image {
+            height: 450px;
+            background-image: url('../Img/Header.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .no-underline {
+            text-decoration: none;
+        }
+    </style>
+
+    <title>TITULO_AGENCIA: Agencia de Viajes</title>
+</head>
+<body>
+    <!--Columna 1: Navegación-->
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col">
+                <!-- Barra de Navegación -->
+                <div class="container-fluid text-white navbar-image px-0">
+                    <nav class="navbar navbar-expand-lg bg-dark bg-opacity-50">
+                        <div class="container-fluid text-white justify-content-between">
+                            <a class="navbar-brand text-white">
+                                <img src="../Img/Logo_Empresa.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                                <b><i>HorizonTravel</i></b>
+                            </a>
+                            <div>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="fw-medium nav-link text-white" href="PagInicio.html">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="fw-medium nav-link text-white" href="#">Sobre Nosotros</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="fw-medium nav-link text-white" href="#">Paquetes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="fw-medium nav-link text-white" href="#">Vuelos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="fw-medium nav-link text-white" href="#">Promociones</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ml-auto"> <!-- Cambio: Crea un contenedor adicional para los botones y añade la clase ml-auto -->
+                                <button type="button" class="btn btn-light bg-dark bg-opacity-50">
+                                    <a class="text-white no-underline" href="Login.html"><b>Iniciar Sesión</b></a>
+                                </button>
+                                <button type="button" class="btn btn-light bg-dark bg-opacity-50">
+                                    <a class="text-white no-underline" href="RegistroUsuario.html"><b>Registrar</b></a>
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Columna 2: Beneficios-->
+    <div class="p-3 container text-center">
+        <div class="row">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sobre Nosotros</li>
+              </ol>
+            </nav>
+            <hr>
+        </div>
+    </div>
+
+    <!--Columna 3: Cuerpo de la Página-->
+    <div class="p-3 container text-center">
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Cancun"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Da Nang"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Matera"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Dubai"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Chicago"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Img/Cancun.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                               <h5>Cancún, México</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Img/DaNang.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Da Nang, Vietnam</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Img/Matera.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Matera, Italy</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Img/Dubai.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Dubai, United Arab Emirates</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Img/Chicago.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Chicago, Illinois</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Columna 4: Pie de Página-->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar bg-primary-subtle text-dark">
+                    <div class="container-fluid">
+                        <article>
+                            <i><b>¿Preguntas?</b> Escríbenos al +593 97 521 9643</i>
+                        </article>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!--Se incluye el archivo Bootstrap: JS-->
+    <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

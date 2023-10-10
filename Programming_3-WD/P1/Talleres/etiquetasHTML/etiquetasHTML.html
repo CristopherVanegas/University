@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
+    <title>etiquetasBasicas</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #000000;
+            --very-light-pink: #c7c7c7;
+            --text-input-field: #f7f7f7;
+            --hospital-green: #acd9b2;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        header {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--hospital-green);
+            text-align: center;
+        }
+
+
+        .content {
+            margin: 10px;
+        }
+
+        nav {
+            width: 100%;
+            height: 40px;
+            background-color: var(--hospital-green);
+            box-sizing: border-box;
+        }
+
+        nav ul {
+            height: 100%;
+            margin: 0px;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .main-content {
+            display: flex;
+        }
+
+        aside {
+            width: 35%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        main {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        #yeah-right-evanescence {
+            width: 100%;
+            height: 300px;
+        }
+
+        footer {
+            border: 1px solid var(--hospital-green);
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .footer-content {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+        }
+        .autor {
+            width: 100%;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <h1>HTML 5 - PROGRAMACION 3</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/">OTHER TOPICS</a></li>
+                <li><a href="/">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <aside>
+                <dl>
+                    <dt>What is Lorem Ipsum?</dt>
+                    <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nesciunt nulla mollitia,
+                        optio, beatae officia alias eveniet eius dolore vel ducimus quos aperiam sequi numquam corporis
+                        sunt ad eos vero.</dd>
+                    <br>
+
+                    <dt>Where does it come from?</dt>
+                    <dd>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque et ea labore quibusdam illo nemo
+                        aspernatur sequi beatae. Ut quam explicabo adipisci sapiente veniam dolor similique
+                        exercitationem sit asperiores. Doloremque!</dd>
+                    <br>
+
+                    <dt>Why do we use it?</dt>
+                    <dd>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nesciunt nulla mollitia,
+                        optio, beatae officia alias eveniet eius dolore vel ducimus quos aperiam sequi numquam corporis
+                        sunt ad eos vero.
+                    </dd>
+                    <br>
+
+                    <dt>Where can I get some?</dt>
+                    <dd>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque et ea labore quibusdam illo nemo
+                        aspernatur sequi beatae. Ut quam explicabo adipisci sapiente veniam dolor similique
+                        exercitationem sit asperiores. Doloremque!</dd>
+                    <br>
+                </dl>
+            </aside>
+            <main>
+                <article>
+                    <h2>What is Lorem Ipsum?</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.</p>
+                </article>
+                <article>
+                    <h2>Where does it come from?</h2>
+                    <p>
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                        classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
+                        Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin
+                        words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+                        classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
+                        and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
+                        written in 45 BC. This book is a treatise on the theory of ethics, very popular during the
+                        Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
+                        section 1.10.32.
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
+                        in their exact original form, accompanied by English versions from the 1914 translation by H.
+                        Rackham.
+                    </p>
+                </article>
+                <article>
+                    <h2>Why do we use it?</h2>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                        their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose (injected humour and the like).</p>
+                </article>
+                <article>
+                    <h3>Where can I get some?</h3>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                        alteration in some form, by injected humour, or randomised words which don't look even slightly
+                        believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                        anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
+                        Internet tend to repeat predefined chunks as necessary, making this the first true generator on
+                        the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model
+                        sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum
+                        is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                </article>
+                <article>
+                    <h2>Forms</h2>
+                    <form action="/">
+                        <fieldset>
+                            <legend>Formulario 1</legend>
+                            <label for="name">Name</label>
+                            <input type="text" id="name">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Edad</legend>
+                            <label for="age">
+                                <input type="radio" name="age" id="age">
+                                15 - 21
+                                <br>
+                            </label>
+                            <label for="age">
+                                <input type="radio" name="age" id="age">
+                                22 - 28
+                                <br>
+                            </label>
+                            <label for="age">
+                                <input type="radio" name="age" id="age">
+                                29 - 35
+                                <br>
+                            </label>
+                        </fieldset>
+                    </form>
+                </article>
+                <article>
+                    <h2>Tables</h2>
+                    <table border="1">
+                        <!-- table row -->
+                        <tr>
+                            <th>Students</th>
+                            <th>Teachers</th>
+                        </tr>
+                        <tr>
+                            <td>Cristopher</td>
+                            <td>Humberto</td>
+                        </tr>
+                        <tr>
+                            <td>Andrea</td>
+                            <td>Lissenia</td>
+                        </tr>
+                        <tr>
+                            <td>Christian</td>
+                            <td>Anibal</td>
+                        </tr>
+
+                        <!-- Columns -->
+                    </table>
+                </article>
+                <article>
+                    <h2>iFrame</h2>
+                    <h3>One of my favourite songs from Evanescence</h3>
+                    <iframe id="yeah-right-evanescence" src="https://www.youtube.com/embed/xbfFKJMdDQ8?list=RDf1QGnq9jUU0" title="Evanescence - Yeah Right (Official Audio)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </article>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div>
+                    <h3>My phone number: </h3>
+                    <span>
+                        <p>+593 9990000000</p>
+                    </span>
+                </div>
+                <div>
+                    <h3>My email: </h3>
+                    <span>
+                        <p>myemail@example.com</p>
+                    </span>
+                </div>
+                <div>
+                    <h3>Address: </h3>
+                    <span>
+                        <p>My direction example</p>
+                    </span>
+                </div>
+            </div>
+            <div class="autor">
+                <h3>Autor</h3>
+                <span>Est. Cristopher Vanegas</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

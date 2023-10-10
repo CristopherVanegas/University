@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link href="public/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<style type="text/css">
+		.top10{
+			margin-top: 10px;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<form id="formulario-registro">
+			<div>
+				<label class="form-label">Nombre</label>
+				<input placeholder="JON DOE" required="required" class="form-control" type="text" name="nombre" id="nombre">
+			</div>
+			<!-- <div class="alert alert-danger top10" role="alert" style="display: none" id="msg-nombre">
+  				Campo obligatorio
+			</div> -->
+
+			<div>
+				<label class="form-label">Correo electronico</label>
+				<input class="form-control" type="email" name="email" id="email">
+				<!-- <div class="alert alert-danger top10" role="alert" style="display: none" id="msg-email">
+  					Campo obligatorio
+				</div> -->
+			</div>
+			<div>
+				<label class="form-label">Contraseña </label>
+				<input disabled="disabled" class="form-control" type="password" name="clave" id="clave">
+			</div>
+			<div>
+				<label class="form-label">Tipo de plan</label>
+				<select class="form-control" name="tipo-plan" id="tipo-plan">
+					<option value="plan1">Plan 1</option>
+					<option value="plan2">Plan 2</option>
+					<option value="plan3">Plan 3</option>
+					<option value="plan4">Plan 4</option>
+				</select>
+			</div>
+			<div>
+				<label class="form-label">Observaciones</label>
+				<textarea class="form-control" name="observacion" id="observacion"></textarea>
+			</div>
+			<div class="alert alert-danger top10" role="alert" style="display: none" id="msg-general">
+  					Campo obligatorio
+				</div>
+			<button id="btn-guardar" type="button"  class="btn btn-primary">Aceptar</button>
+
+		</form>
+		<br><br>
+		<button id="btn-ocultar-cartas" class="btn btn-primary">Ocultar cartas</button>
+		<div class="row" id="contenedor-cartas">
+			
+		</div>
+
+
+
+	</div>
+	
+</body>
+<script src="public/js/bootstrap.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="public/js/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="public/js/index.js"></script>
+
+</html>

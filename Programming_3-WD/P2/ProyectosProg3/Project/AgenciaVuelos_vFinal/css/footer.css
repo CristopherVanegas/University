@@ -1,0 +1,25 @@
+:root {
+  --dark-footer: #2a2c2f;
+}
+.dark-footer {
+  height: 100px;
+  background-color: var(--dark-footer);
+  color: white;
+}
+
+.content-wrapper {
+  /* Ajusta el padding inferior para que haya espacio para el footer */
+  padding-bottom: 300px; /* O el valor que consideres adecuado */
+  position: relative;
+}
+
+.content-wrapper>div:nth-child(2) {
+  margin-top: 25px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}

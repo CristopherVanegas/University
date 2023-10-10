@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Se incluye el archivo Bootstrap: CSS-->
+    <link href = "../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--Se incluye el archivo JQuery-->
+    <script type = "text/javascript" src = "../JavaScript/JQuery.js"></script>
+
+    <!--Etiqueta <script> para definir las funciones JavaScript-->
+    <script type = "text/javascript">
+
+        // > Se guardan los datos del formulario form_datos
+        function GuardarDatos(){
+            $.post("../Controlador/Tablas_Controller.php", $("#form_datos").serialize(), Respuesta);
+        }
+        
+        function Respuesta(arg){
+            alert(arg);
+        }
+    </script>
+
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <!--Columna 1: Navegación-->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <!--Barra de Pregunta, Botón de Iniciar Sesión y Botón de Regístrese-->
+                <nav class="navbar bg-info text-dark">
+                    <div class="container-fluid">
+                        <article>
+                            <b> ¿Preguntas?</b> Escríbenos al +593 97 521 9643
+                        </article>
+                        <article>
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <a class="text-white" href="Login.html">Iniciar Sesión</a>
+                            </button>
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <a class="text-white" href="RegistroUsuario.html">Regístrese</a>
+                            </button>
+                        </article>
+                    </div>
+                </nav>
+
+                <!--Barra de Navegación-->
+                <nav class="navbar navbar-expand-lg bg-primary text-white">
+                    <div class="container-fluid text-white">
+                        <a class="navbar-brand text-white">
+                            <img src="../Img/Logo_Empresa.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                            <b>Nombre_Agencia</b>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="PagInicio.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Sobre Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Paquetes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Vuelos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Promociones</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!--Columna 2: Formulario-->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="PagInicio.html">Inicio</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Registro de Usuario</li>
+                            </ol>
+                        </nav>
+                        <form id = "form_datos">
+                            <input class="form-control" name = "Opcion" type="text" value = "INSERTAR_USUARIO" hidden>
+                            <!--Ingreso del Nombre-->
+                            <label for="inputUser" class="form-label">Nombre</label>
+                            <input class="form-control" name = "NOMBRE" type="text" placeholder="Ingrese su nombre" aria-label="default input example">
+                            <br>
+
+                            <!--Ingreso del Apellido-->
+                            <label for="inputUser" class="form-label">Apellido</label>
+                            <input class="form-control" name = "APELLIDO" type="text" placeholder="Ingrese su apellido" aria-label="default input example">
+                            <br>
+
+                            <!--Ingreso del Usuario-->
+                            <label for="inputUser" class="form-label">Usuario</label>
+                            <input class="form-control" name = "USUARIO" type="text" placeholder="Ingrese el usuario" aria-label="default input example">
+                            <br>
+
+                            <!--Ingreso de la Contraseña-->
+                            <label for="inputPassword5" class="form-label">Contraseña</label>
+                            <input type="password" id="inputPassword5" name = "CONTRASENIA" class="form-control" aria-labelledby="passwordHelpBlock">
+                            <div id="passwordHelpBlock" class="form-text">
+                                La contraseña debe tener de longitud 8-20 caracteres, letreas, números y no debe tener espacios en blanco, caracteres especiales o emojis.
+                            </div>
+                            <br>
+
+                            <!--Ingreso del Correo-->
+                            <label for="inputUser" class="form-label">Correo Electrónico</label>
+                            <input class="form-control" name = "CORREO" type="email" placeholder="Ingrese su correo electrónico" aria-label="default input example">
+                            <br>
+                            
+                            <!--Ingreso del Rol-->
+                            <label for="inputStatus" class="form-label">Rol de la Cuenta</label>
+                            <select name = "ROL" class="form-select" aria-label="Default select example">
+                                <option selected>Seleccione una opción</option>
+                                <option value="USUARIO">Usuario</option>
+                                <option value="ADMINISTRADOR">Administrador</option>
+                            </select>
+                            <br>
+
+                            <!--Ingreso de la Tarjeta-->
+                            <label for="inputUser" class="form-label">Tarjeta: Crédito o Débito</label>
+                            <input class="form-control" name = "TARJETA" type="text" placeholder="Ingrese su tarjeta. No es necesario colocar el CVV." aria-label="default input example">
+                            <br>
+
+                            <!--Ingreso del Teléfono-->
+                            <label for="inputUser" class="form-label">Teléfono</label>
+                            <input class="form-control" name = "TELEFONO" type="text" placeholder="Ingrese su número telefónico." aria-label="default input example">
+                            <br>
+
+                            <!--Ingreso de la dirección-->
+                            <label for="inputUser" class="form-label">Dirección Domiciliaria</label>
+                            <input class="form-control" name = "DIRECCION" type="text" placeholder="Ingrese su dirección domiciliaria." aria-label="default input example">
+                            <br>
+
+                            <!--Botones: Guardar y Cancelar-->
+                            <div class="d-grid gap-2 col-4 mx-auto">
+                                <button class="btn btn-primary" type="button" onclick = "GuardarDatos();">Guardar</button>
+                                <button class="btn btn-primary" type="button">Cancelar</button>
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Se incluye el archivo Bootstrap: JS-->
+    <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+h1{
+    color: black;
+    background-color: bisque;
+}
+p{
+    color: red;
+    background-color: #11f78a;
+    /*word-spacing: 30px;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    text-align: center;*/
+    text-align: justify;
+    font-size: 2em;
+}
+
+.favorito{
+    background-color: orange;
+}
+
+.impar{
+    color: black;
+    background-color: yellowgreen;
+}
+
+#noticia-principal{
+    background-color: cornflowerblue;
+}

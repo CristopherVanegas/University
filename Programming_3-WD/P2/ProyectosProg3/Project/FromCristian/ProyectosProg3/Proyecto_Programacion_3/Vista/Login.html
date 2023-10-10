@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Se incluye el archivo Bootstrap: CSS-->
+    <link href = "../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--Se incluye el archivo JQuery-->
+    <script type = "text/javascript" src = "../JavaScript/JQuery.js"></script>
+
+    <!--Etiqueta <style> para definir el fondo de la página-->
+    <style>
+        img{
+          width: 100%;
+        }
+        body {
+          background: url("../Img/Fondo_Login.jpg") ; 
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin: 0;
+          height: 100vh;
+        }
+    </style>
+
+    <!--Etiqueta <script> para definir las funciones JavaScript-->
+    <script type = "text/javascript">
+
+        // > Función Login() que envía los parámetros USUARIO y CONTRASENIA para comprobarse.
+        function Login(){
+            $.post("../Controlador/Login_Controller.php",
+            {"Opcion": "LOGIN", 
+            "User_Usuario":$("#USUARIO").val(), "Contrasenia_Usuario":$("#CONTRASENIA").val()},
+            Respuesta);
+        }
+
+        function Respuesta(arg) {
+            if (arg == 'USER') {
+                window.location.href = "PagInicio.html";
+            } else if (arg == 'ADMIN'){
+                window.location.href = "Administrador.html";
+            } else {
+                alert(arg);
+            }
+        }
+    </script>
+
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+    <!--Columna 1: Encabezado del Login-->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand text-white">
+                            <b>Nombre_Agencia</b>
+                        </a>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+    </div>
+
+    <br> <br>
+
+    <!--Columna 2: Cuerpo de la página: Ingreso de credenciales-->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-3">
+                        <!--Columna 1-->
+                        </div>
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    Inicio de Sesión
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="exampleInput" class="form-label">Ingrese su Usuario</label>
+                                        <input type="text" id="USUARIO" class="form-control"  aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Ingrese su Contraseña</label>
+                                        <input type="password" id="CONTRASENIA" class="form-control">
+                                        <div id="emailHelp" class="form-text">Recuerde no compartir su contraseña con nadie.</div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" onclick = "Login();">Ingresar</button>
+                                </div>
+                            </div>
+                        </div>
+                      <div class="col-3">
+                        <!--Columna 3-->
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br> <br>
+
+    <!--Columna 3: Pie de Página-->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar bg-secondary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand text-white">
+                            --Aquí van los derechos de la página--
+                        </a>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+    </div>
+
+    <!--Se incluye el archivo Bootstrap: JS-->
+    <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

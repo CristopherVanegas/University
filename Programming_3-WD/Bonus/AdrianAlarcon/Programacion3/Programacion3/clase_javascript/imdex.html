@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	//alert("Mi primera alerta");
+	/*
+	var nombre = "Adri A";
+	console.log(nombre)
+	console.log(typeof nombre);
+
+	var edad = 36.7;
+	console.log(edad)
+	console.log(typeof edad);
+
+	var confir = true;
+	console.log(confir)
+	console.log(typeof confir);
+
+	
+	var persona = {nombre:nombre, edad:22, esHombre: true}
+	console.log(typeof persona.nombre);
+
+	var arreglo = ["Miguel",38,confir, persona]
+	console.log(arreglo[1]);*/
+
+	var numero1 = 12;
+	var numero2 = 23;
+
+	console.log(numero1 + numero2);
+	console.log(numero1 - numero2);
+	console.log(numero1 * numero2);
+	console.log(numero1 / numero2);
+	
+
+	if(numero1 < numero2){
+		console.log(numero1 + " es mayor a " + numero2);
+	}
+	else if(numero1 == numero2){
+		console.log("Son iguales");
+	}
+	else{
+		console.log(`Opcion 2: ${numero2} es mayor a ${numero1} `);
+		//console.log($`Opcion 2: {numero1}`);
+	}
+
+	for(var i=1; i<=12; i++){
+		console.log(`${numero1} * ${i} es igual a ${numero1 * i}`);
+	}
+
+	function sumar(operando1, operando2){
+		return operando1 + operando2;
+	}
+
+	function restar(operando1, operando2){
+		return operando1 - operando2;
+	}
+
+	function multiplicar(operando1, operando2){
+		return operando1 * operando2;
+	}
+
+	function dividir(operando1, operando2){
+		return operando1 / operando2;
+	}
+
+	function calc(operacion, operando1, operando2){
+		return operacion(operando1, operando2);
+	}
+
+	console.log(calc(sumar,numero1,numero2));
+
+	console.log(sumar(numero1,numero2));
+
+</script>
+</html>

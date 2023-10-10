@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen-Parcial1</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-body-tertiary">
+      <!-- Logo and Slogan -->
+      <div class="container-fluid" style="background-color: #00b0f6">
+        <a
+          class="navbar-brand d-flex justify-content-center align-content-center"
+          href="./index.html"
+        >
+          <img
+            src="https://play-lh.googleusercontent.com/fAoZQImmYJGymKIVGpXHwuMvz17rYQ8LuCltYwnK6kRNAD-_bw5RFDRVElO4H2_yNA"
+            alt="Bootstrap"
+            width="44"
+            height="44"
+          />
+
+          <p class="container d-flex align-items-center m-0">
+            SOFTEC | Innovating in Software
+          </p>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+
+            <!-- SOCIAL NETWORKS -->
+            <ul class="list-group list-group-horizontal p-2">
+              <li class="list-group-item">
+                <a href="#"
+                  ><img
+                    height="25"
+                    width="25"
+                    src="https://cdn.worldvectorlogo.com/logos/facebook-3-3.svg"
+                    alt="facebook logo"
+                /></a>
+              </li>
+
+              <li class="list-group-item">
+                <a href="#"
+                  ><img
+                    height="25"
+                    width="25"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+                    alt="Instagram logo"
+                /></a>
+              </li>
+              <li class="list-group-item">
+                <a href="#"
+                  ><img
+                    height="25"
+                    width="25"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/WhatsApp_logo-color-vertical.svg/2048px-WhatsApp_logo-color-vertical.svg.png"
+                    alt="whatsapp logo"
+                /></a>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+      <div class="row d-flex justify-content-center">
+        <!-- MENU - LEFT ASIDE -->
+        <div class="col-2">
+          <ol class="list-group">
+            <li class="list-group-item active" aria-current="true">MENU</li>
+            <li class="list-group-item">
+              <a href="./src/nodeJS.html" class="text-decoration-none"
+                >Node.JS</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="./src/Bootstrap.html" class="text-decoration-none"
+                >Bootstrap</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="./src/ReactJS.html" class="text-decoration-none"
+                >ReactJS</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="./src/Angular.html" class="text-decoration-none"
+                >Angular</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="./src/Vue.html" class="text-decoration-none">Vue</a>
+            </li>
+          </ol>
+        </div>
+
+        <div class="container col-10 d-flex justify-content-center flex-column">
+          <!-- FIRST CONTENT -->
+          <div class="container-fluid border border-1">
+            <h1>What is Software Development?</h1>
+            <p>
+              Software development refers to the process of creating, designing,
+              and maintaining computer programs that enable devices and systems
+              to perform various tasks. It involves using programming skills and
+              engineering techniques to turn ideas and requirements into
+              functional software. Software development encompasses different
+              stages, from requirements analysis and design, through coding and
+              testing, to implementation and ongoing maintenance. Software
+              developers utilize programming languages, tools, and frameworks to
+              build applications that can range from simple scripts to complex
+              systems. Team collaboration, problem-solving, and continuous
+              improvement are key elements in successful software development.
+              In summary, software development is a creative and technical
+              process that involves creating computer solutions to meet the
+              needs of users and organizations.
+            </p>
+
+            <!--CARROUSEL-->
+            <div class="row">
+              <h2>Some used technologies</h2>
+              <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="4"
+                    aria-label="Slide 5"
+                  ></button>
+                </div>
+                <div class="carousel-inner mt-3 mb-3">
+                  <center>
+                    <div class="carousel-item active">
+                      <div class="card" style="width: 18rem">
+                        <img
+                          src="https://assets.toptal.io/images?url=https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/content/cover_image_file/cover_image/1275224/regular_1708x683_cover-secure-rest-api-in-nodejs-18f43b3033c239da5d2525cfd9fdc98f.png"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">Node.JS</h5>
+                          <p class="card-text">
+                            Node.js: Powerful runtime for server-side JavaScript
+                            development. Non-blocking, event-driven I/O for
+                            efficient concurrency. Extensive library ecosystem
+                            (npm). Ideal for web servers, APIs, and
+                            microservices. Revolutionizing backend development
+                            with JavaScript simplicity.
+                          </p>
+                          <a
+                            href="https://nodejs.org/en"
+                            class="btn btn-primary"
+                            >Official Page</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="card" style="width: 18rem">
+                        <img
+                          src="https://i.pinimg.com/564x/92/d6/60/92d660adb69ff63b4d133cda9592d848.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">Bootstrap</h5>
+                          <p class="card-text">
+                            Versatile front-end framework for responsive web
+                            development. Offers a wide range of pre-designed
+                            components and styles. Mobile-first approach ensures
+                            compatibility across devices. Grid system for
+                            flexible layouts. Simplifies UI design with reusable
+                            classes. Rapidly build modern, professional websites
+                            with ease.
+                          </p>
+                          <a
+                            href="https://getbootstrap.com/"
+                            class="btn btn-primary"
+                            >Official Page</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="card" style="width: 18rem">
+                        <img
+                          src="https://i.pinimg.com/564x/5b/b5/65/5bb565e7df13daaba127eb06bbf6c9cc.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">ReactJS</h5>
+                          <p class="card-text">
+                            JavaScript library for building interactive,
+                            reusable, and scalable user interfaces. Declarative
+                            approach simplifies UI development. Efficiently
+                            updates and renders components with a virtual DOM.
+                            Ideal for single-page applications and mobile apps.
+                            Popular choice in the web development community.
+                          </p>
+                          <a href="https://react.dev/" class="btn btn-primary"
+                            >Official Page</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="card" style="width: 18rem">
+                        <img
+                          src="https://logowik.com/content/uploads/images/angular6660.logowik.com.webp"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">Angular</h5>
+                          <p class="card-text">
+                            Angular is a popular JavaScript framework for
+                            building web applications. It provides a robust and
+                            efficient platform for creating dynamic and
+                            interactive user interfaces. With its powerful
+                            features like two-way data binding, dependency
+                            injection, and component-based architecture, Angular
+                            enables developers to create scalable and
+                            maintainable applications. It also offers a
+                            comprehensive ecosystem of tools and libraries,
+                            making it easier to develop, test, and deploy
+                            applications. Overall, Angular empowers developers
+                            to build modern and responsive web applications with
+                            ease.
+                          </p>
+                          <a href="https://angular.io/" class="btn btn-primary"
+                            >Official Page</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="card" style="width: 18rem">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/2367px-Vue.js_Logo_2.svg.png"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">Vue</h5>
+                          <p class="card-text">
+                            VUE is a popular JavaScript framework for building
+                            user interfaces. It offers a lightweight and
+                            flexible approach to web development, allowing
+                            developers to create interactive and dynamic
+                            applications. VUE's key features include a reactive
+                            data binding system, component-based architecture,
+                            and a virtual DOM for efficient rendering. With its
+                            simplicity and scalability, VUE has gained a strong
+                            following in the web development community and is
+                            widely used in both small-scale projects and
+                            large-scale applications.
+                          </p>
+                          <a href="https://vuejs.org/" class="btn btn-primary"
+                            >Official Page</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </center>
+                </div>
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="4"
+                    aria-label="Slide 5"
+                  ></button>
+                </div>
+                <button
+                  class="carousel-control-prev bg-dark"
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next bg-dark"
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- SECOND CONTENT -->
+          <div class="container d-flex">
+            <div class="row">
+              <!-- DATA INPUT -->
+              <div class="col-5 p-0">
+                <div class="card" style="width: 100%">
+                  <img
+                    src="https://www.solucionex.com/sites/default/files/posts/imagen/jquery.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Data</h5>
+                    <p class="card-text">
+                      jQuery is a JavaScript library that simplifies web
+                      development by providing an easy-to-use and efficient way
+                      to interact with HTML elements, handle events, create
+                      animations, and perform various tasks on web pages. It
+                      offers a concise syntax and a wide range of built-in
+                      functions, making it a popular choice for enhancing
+                      interactivity and functionality in web cards.
+                    </p>
+                    <div class="row">
+                      <label for="name">Name </label>
+                      <input
+                        id="name"
+                        type="text"
+                        placeholder="Escriba su nombre"
+                      />
+                    </div>
+                    <div class="row">
+                      <label for="surname">Surname</label>
+                      <input
+                        id="surname"
+                        type="text"
+                        placeholder="Escriba su apellido"
+                      />
+                    </div>
+                    <button class="boton btn btn-primary mt-2">
+                      Haz click aqui
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DATA TABLE -->
+              <table class="col m-0 table myTable">
+                <thead>
+                  <tr>
+                    <th scope="col-1">FirstName</th>
+                    <th scope="col-1">LastName</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="row-3">
+        <div class="card text-center mt-5 mb-5">
+          <div class="card-header">Cristopher Vanegas - +593 093 950 0816</div>
+          <div class="card-body">
+            <h5 class="card-title">Ecotec - Software Engeneering</h5>
+            <p class="card-text">
+              "Software engineering is the art of creating reliable, efficient,
+              and innovative solutions through the systematic application of
+              engineering principles to software development."
+            </p>
+            <a
+              href="https://ecotec.edu.ec/grado/grado-presencial/ingenierias/sistemas-inteligentes/"
+              class="btn btn-primary"
+              >Go</a
+            >
+          </div>
+          <div class="card-footer text-body-secondary">
+            Copyright 2023 - 3 days ago
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
