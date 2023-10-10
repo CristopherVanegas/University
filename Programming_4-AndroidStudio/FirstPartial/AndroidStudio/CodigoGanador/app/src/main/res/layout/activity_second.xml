@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".secondActivity">
+
+    <TextView
+        android:id="@+id/txtGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtGreeting"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="60dp" />
+
+    <Button
+        android:id="@+id/btnGenerateCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtNumber"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="13dp"
+        android:layout_toLeftOf="@id/txtNumber"
+        android:text="Generate Code" />
+
+    <Button
+        android:id="@+id/btnSendByEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnGenerateCode"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="38dp"
+        android:layout_toEndOf="@+id/btnGenerateCode"
+        android:layout_toRightOf="@id/btnGenerateCode"
+        android:text="Send by email" />
+</RelativeLayout>
