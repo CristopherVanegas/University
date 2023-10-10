@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1674050070 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\first-partial\first-class-practices-for-vs-for-cpp\practices\arrays\verificarsielvectorestaordenado\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	<time.h>
+

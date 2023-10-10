@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1676484954 source:c:\users\ismrj\onedrive\documents\source\repos\university\programacion_1-oop\third_partial\practices\multiplosdedos\main.cpp
+	<iostream>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<time.h>
+
+1676490332 source:d:\documents\source\repos\university\programacion_1-oop\third_partial\practices\multiplosdedos\main.cpp
+	<iostream>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<time.h>
+

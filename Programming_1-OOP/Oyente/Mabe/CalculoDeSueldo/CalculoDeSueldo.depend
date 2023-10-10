@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1682178276 source:c:\users\ismrj\documents\source\repos\university\bonus\c\mabe\calculodesueldo\main.c
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+

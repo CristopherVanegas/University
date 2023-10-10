@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1674020645 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\first-partial\first-class-practices-for-vs-for-cpp\practices\conejovstortuga\conejovstortuga\main.cpp
+	<iostream>
+	<conio.h>
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	<windows.h>
+

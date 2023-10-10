@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1684376012 source:c:\users\user alienware\desktop\scroll\main.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+
+1684376012 source:d:\documents\source\repos\university\programacion_1-oop\oyente\scroll\main.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+

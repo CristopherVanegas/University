@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1675088425 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\second-partial\practices\hck_arreglos\main.cpp
+	<iostream>
+	<windows.h>
+	<time.h>
+
+1675092021 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\second-partial\practices\hck_matrix\main.cpp
+	<iostream>
+	<windows.h>
+	<time.h>
+

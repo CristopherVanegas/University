@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1674414475 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\first-partial\first-class-practices-for-vs-for-cpp\practices\arrays\minibattleship\minibattleship2\minibattleship2\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	<time.h>
+
