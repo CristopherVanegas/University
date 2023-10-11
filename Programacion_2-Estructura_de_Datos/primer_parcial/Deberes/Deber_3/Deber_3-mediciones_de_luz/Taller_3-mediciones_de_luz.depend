@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1678398979 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\primer_parcial\talleres\taller_3\taller_3-mediciones_de_luz\main.c
-	<stdio.h>
-	<stdlib.h>
-	<time.h>
-

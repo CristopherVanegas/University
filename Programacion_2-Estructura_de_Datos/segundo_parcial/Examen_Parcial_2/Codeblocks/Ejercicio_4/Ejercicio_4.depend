@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1681137273 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\segundo_parcial\examen_parcial_2\ejercicio_4\main.c
-	<stdio.h>
-	<stdlib.h>
-	<conio.h>
-	<string.h>
-

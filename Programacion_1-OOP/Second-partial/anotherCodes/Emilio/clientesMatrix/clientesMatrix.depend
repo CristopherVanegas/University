@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1675915101 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\second-partial\anothercodes\emilio\clientesmatrix\main.cpp
-	<iostream>
-	<stdlib.h>
-	<windows.h>
-	<time.h>
-

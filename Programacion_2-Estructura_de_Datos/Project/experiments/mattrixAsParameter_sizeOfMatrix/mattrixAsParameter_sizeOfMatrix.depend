@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1681713448 source:c:\users\ismrj\desktop\mattrixasparameter_sizeofmatrix\main.c
-	<stdio.h>
-	<stdlib.h>
-	<time.h>
-

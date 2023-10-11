@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1679327225 source:c:\users\ismrj\desktop\experimentbinarch\main.c
-	<stdio.h>
-	<stdlib.h>
-	<conio.h>
-	<string.h>
-

@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1680942449 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\segundo_parcial\talleres\taller_2-parcial_2-lista_doblemente_enlazada\main.c
-	<stdio.h>
-	<stdlib.h>
-	<conio.h>
-	<time.h>
-

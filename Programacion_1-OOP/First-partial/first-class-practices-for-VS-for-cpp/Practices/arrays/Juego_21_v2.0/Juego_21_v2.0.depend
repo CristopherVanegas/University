@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1674738263 source:c:\users\cristopher vanegas\source\repos\programacion_1-oop\first-partial\first-class-practices-for-vs-for-cpp\practices\arrays\juego_21_v2.0\main.cpp
-	<iostream>
-	<conio.h>
-	<stdlib.h>
-	<stdio.h>
-	<windows.h>
-
