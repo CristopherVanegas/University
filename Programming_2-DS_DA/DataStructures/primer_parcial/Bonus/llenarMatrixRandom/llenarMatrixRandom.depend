@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1680030587 source:c:\users\ismrj\desktop\llenarmatrixrandom\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

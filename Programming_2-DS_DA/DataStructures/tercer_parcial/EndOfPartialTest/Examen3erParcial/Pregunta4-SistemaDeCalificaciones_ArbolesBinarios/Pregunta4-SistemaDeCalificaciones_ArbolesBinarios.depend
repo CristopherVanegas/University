@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1682005687 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\tercer_parcial\endofpartialtest\pregunta4-sistemadecalificaciones_arbolesbinarios\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+

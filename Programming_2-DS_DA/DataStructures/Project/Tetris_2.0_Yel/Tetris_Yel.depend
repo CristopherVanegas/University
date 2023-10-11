@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1682087858 source:c:\users\ismrj\desktop\tetris_yel\main.c
+	<stdio.h>
+	<unistd.h>
+	<stdbool.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+	<string.h>
+	<windows.h>
+

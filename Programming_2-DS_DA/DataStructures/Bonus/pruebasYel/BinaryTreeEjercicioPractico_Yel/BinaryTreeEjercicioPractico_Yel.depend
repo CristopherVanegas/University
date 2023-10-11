@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1681604456 source:c:\users\ismrj\desktop\pruebasyel\binarytreeejerciciopractico_yel\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

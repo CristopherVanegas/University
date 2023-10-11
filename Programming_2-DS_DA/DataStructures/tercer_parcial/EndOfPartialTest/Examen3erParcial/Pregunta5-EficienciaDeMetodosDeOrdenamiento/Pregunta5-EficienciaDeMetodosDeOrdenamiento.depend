@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1682006879 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\tercer_parcial\endofpartialtest\pregunta5-eficienciademetodosdeordenamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+
+1682011912 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\tercer_parcial\endofpartialtest\examen3erparcial\pregunta5-eficienciademetodosdeordenamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+

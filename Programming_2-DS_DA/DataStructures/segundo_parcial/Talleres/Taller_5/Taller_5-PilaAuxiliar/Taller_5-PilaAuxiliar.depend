@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1680108786 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\segundo_parcial\tareas\talleres\taller_5\taller_5-pilaauxiliar\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

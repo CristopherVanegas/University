@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1680422621 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\project\experiments\experimento_2-matrixofstructs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<time.h>
+

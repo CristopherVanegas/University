@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1681612736 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\project\taller_1-arbolbinariotemapractico-tienda_de_souvenirs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

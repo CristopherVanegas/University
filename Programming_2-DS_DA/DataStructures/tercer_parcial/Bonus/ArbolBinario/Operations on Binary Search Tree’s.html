@@ -1,0 +1,793 @@
+
+<!-- saved from url=(0072)https://www.cs.cmu.edu/~clo/www/CMU/DataStructures/Lessons/lesson4_3.htm -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:p="urn:schemas-microsoft-com:office:powerpoint" xmlns:oa="urn:schemas-microsoft-com:office:activation" xmlns:st1="urn:schemas-microsoft-com:office:smarttags" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 11">
+<meta name="Originator" content="Microsoft Word 11">
+<link rel="File-List" href="https://www.cs.cmu.edu/~clo/www/CMU/DataStructures/Lessons/lesson4_3_files/filelist.xml">
+<link rel="Edit-Time-Data" href="https://www.cs.cmu.edu/~clo/www/CMU/DataStructures/Lessons/lesson4_3_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Operations on Binary Search Tree’s </title>
+</head><body lang="EN-US" link="blue" vlink="purple" style="tab-interval:.5in"><o:smarttagtype namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="place">
+<o:smarttagtype namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="City">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Ananda Gunawardena</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Ananda Gunawardena</o:LastAuthor>
+  <o:Revision>10</o:Revision>
+  <o:TotalTime>120</o:TotalTime>
+  <o:Created>2007-11-05T15:14:00Z</o:Created>
+  <o:LastSaved>2007-11-05T16:17:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1977</o:Words>
+  <o:Characters>11275</o:Characters>
+  <o:Company>Carnegie Mellon University</o:Company>
+  <o:Lines>93</o:Lines>
+  <o:Paragraphs>26</o:Paragraphs>
+  <o:CharactersWithSpaces>13226</o:CharactersWithSpaces>
+  <o:Version>11.8132</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+code
+	{font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:325715457;
+	mso-list-template-ids:744547156;}
+@list l0:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:810094808;
+	mso-list-template-ids:-1586210368;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:950169637;
+	mso-list-template-ids:431884004;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:1540312967;
+	mso-list-template-ids:1980956060;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:1669214173;
+	mso-list-template-ids:-25386276;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:1735466726;
+	mso-list-template-ids:1319157434;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:1850220428;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-730982010 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:1973511787;
+	mso-list-template-ids:-1190365982;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050">
+  <o:colormenu v:ext="edit" strokecolor="red"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+
+
+
+
+<div class="Section1">
+
+<h2 align="center" style="text-align:center">Advanced BST Operations</h2>
+
+<h2><span style="font-size:16.0pt">Topics Discussed<o:p></o:p></span></h2>
+
+<h2><i style="mso-bidi-font-style:normal"><span style="font-size:14.0pt;
+font-weight:normal;mso-bidi-font-weight:bold">Tree Traversals, Delete operation
+(more examples) and AVL trees<o:p></o:p></span></i></h2>
+
+<h2>Traversing Trees</h2>
+
+<p>One of the important operations on a BST is to find a way to traverse all
+the nodes in the tree. As we know traversing a linked list or array is easy. We
+just start from the first node and traverse linearly until we come to the end
+of the list. But, it is not so trivial in a BST. Consider the binary search
+tree </p>
+
+<pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 38</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp; \</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 47</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp; 46</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13</pre>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto">There
+are several methods of traversing trees. Among them are the <span class="SpellE">inorder</span>,
+preorder and <span class="SpellE">postorder</span> traversal of nodes. Each of
+these traversal algorithms <span class="GramE">visit</span> every node of the BST
+in a particular order. </p>
+
+<p><span class="SpellE"><span class="GramE"><i>InOrderTraversal</i></span></span><span class="GramE"> :</span> The idea of <span class="SpellE">inorder</span> traversal
+is that we visit the nodes in the order left-root-right, meaning for any <span class="SpellE">subtree</span> in the path, left node must be visited first
+followed by root and right node.</p>
+
+<ul type="disc">
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l5 level1 lfo3;tab-stops:list .5in">Left, Root, Right</li>
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l5 level1 lfo3;tab-stops:list .5in">Prints the values in
+     ascending order</li>
+</ul>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto">In
+the above example, the in-order traversal is </p>
+
+<pre style="margin-left:.5in">1, 5, 8, 9, 13, 15, 38, 45, 46, 47</pre>
+
+<p><span class="SpellE">Inorder</span> traversal is always symmetrical.</p>
+
+<p><u>Implementation</u>: The implementation of <span class="SpellE">inorder</span>
+traversal is fairly straightforward. </p>
+
+<p style="line-height:12.0pt"><span class="GramE">private</span> void <span class="SpellE">inorder</span>(Node root){</p>
+
+<p style="line-height:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">if</span> (root != null) { </p>
+
+<p style="line-height:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="SpellE"><span class="GramE">inorder</span></span><span class="GramE">(</span><span class="SpellE">root.leftChild</span>); </p>
+
+<p style="line-height:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// visit root; </p>
+
+<p style="line-height:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="SpellE"><span class="GramE">inorder</span></span><span class="GramE">(</span><span class="SpellE">root.rightChild</span>); </p>
+
+<p style="line-height:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</p>
+
+<p><span class="SpellE"><i>PreOrderTraversal</i></span> </p>
+
+<ul type="disc">
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo4;tab-stops:list .5in">root, left, right</li>
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo4;tab-stops:list .5in">processed as the node is
+     visited </li>
+</ul>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto">In
+the above example, the pre-order traversal is </p>
+
+<pre style="margin-left:.5in">38, 5, 1, 9, 8, 15, 13, 45, 47, 46</pre>
+
+<p>Imagine a car, which goes around a tree, starting with a root and keeping
+the tree on a left side.</p>
+
+<p><span class="SpellE"><i>PostOrderTraversal</i></span> </p>
+
+<ul type="disc">
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo5;tab-stops:list .5in">left, right, root</li>
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo5;tab-stops:list .5in">node is not processed until
+     the children are </li>
+</ul>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto">In
+the above example, the post-order traversal is </p>
+
+<pre style="margin-left:.5in">1, 8, 13, 15, 9, 5, 46, 47, 45, 38</pre>
+
+<p>This picture demonstrates the order of node <span class="SpellE">visitaion</span>
+in <span class="SpellE">postorder</span>, preorder, and <span class="SpellE">inorder</span>
+traversals: </p>
+
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:431.25pt;
+ height:178.5pt'>
+ <v:imagedata src="lesson4_3_files/image001.gif" o:href="http://www.cs.cmu.edu/%7Eclo/www/CMU/DataStructures/Lessons/lesson4_3_files/image001.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img width="575" height="238" src="./Operations on Binary Search Tree’s_files/image001.gif" v:shapes="_x0000_i1025"><!--[endif]--></p>
+
+<p><span class="SpellE"><i>LevelOrderTraversal</i></span> </p>
+
+<ul type="disc">
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l7 level1 lfo6;tab-stops:list .5in">Processing nodes from top to
+     bottom, left to right</li>
+</ul>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto">In
+the above example, the level-order traversal is </p>
+
+<pre style="margin-left:.5in">38, 5, 45, 1, 9, 47, 8, 15, 46, 13</pre>
+
+<p>We can implement the level-order traversal using the API's <a href="http://java.sun.com/j2se/1.3/docs/api/java/util/LinkedList.html"><span class="SpellE">LinkedList</span></a> class. </p>
+
+<p>There are number of other operations that can be performed on <span class="SpellE">BSTs</span>. Among them finding the height of a tree, depth of a
+node, counting the total nodes, computing the balance factor of a node is
+important. </p>
+
+<p><u>Path from Node A to Node B</u></p>
+
+<p>First we must define the notion of a path. We say there is a path from node
+A to node B if there is a (unique) way to get from A to B. The path length is
+defined as the number of edges in the path from A to B. Note that number of
+nodes is one more than the number of edges. The height of a tree is defined as
+the length of the longest path from root to any leaf node. Depth of a node is
+defined as the path length from root to node. The height of a node is defined
+as path length from node to the deepest leaf node in the tree. </p>
+
+<p><b><u>Euler <st1:place w:st="on"><st1:city w:st="on">Tours</st1:city></st1:place></u></b>:
+</p>
+
+<p>The three common traversal algorithms can be represented as a single
+algorithm by assuming that we visit each node three times. An Euler tour is a
+walk around the perimeter of a binary tree where each edge is a wall, which you
+cannot cross. In this walk each node will be visited (touched) either on the
+left, or in the below, or on the right. For a left these three visits <span class="GramE">happen</span> one right after the other, whereas for interior nodes
+that is not a case. The Euler tour in which we visit nodes on the left produces
+a preorder traversal. When we visit nodes from the below, we get an <span class="SpellE">inorder</span> traversal. And when we visit nodes on the right, we
+get a <span class="SpellE">postorder</span> traversal. </p>
+
+<p><span class="GramE"><b>Exercise</b> :</span> Is it possible that the preorder
+traversal of a binary tree with more than one node visits the nodes in the same
+order as the <span class="SpellE">postorder</span> traversal? </p>
+
+<p><b>Exercise</b>: Draw a binary tree T such <span class="GramE">that :</span>
+each node stores a single character , a preorder traversal of T yields BINARY,
+a <span class="SpellE">postorder</span> traversal of T yields NRYAIB </p>
+
+<pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp; B</pre><pre style="margin-left:
+.5in">&nbsp;&nbsp; /</pre><pre style="margin-left:.5in">&nbsp; I</pre><pre style="margin-left:.5in"> / \</pre><pre style="margin-left:.5in">N&nbsp;&nbsp; A</pre><pre style="margin-left:.5in">&nbsp;&nbsp; / \</pre><pre style="margin-left:.5in">&nbsp; R&nbsp;&nbsp; Y</pre>
+
+<h2 align="center" style="text-align:center">Delete Operation</h2>
+
+<p><i>Algorithm:</i> (two steps) </p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;margin-right:.5in;mso-margin-bottom-alt:
+auto;margin-left:.5in"><span style="font-family:Symbol">·</span><span class="GramE">&nbsp; 1</span>. Find a node to be deleted (throw an exception
+otherwise) </p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;margin-right:.5in;mso-margin-bottom-alt:
+auto;margin-left:.5in"><span style="font-family:Symbol">·</span><span class="GramE">&nbsp; 2</span>. Delete the node </p>
+
+<p style="margin-right:.5in">Depending on where the node is found, we will
+consider three sub-cases: Deleting a leaf node, deleting a node with one child;
+and deleting an internal <span class="GramE">node(</span> node with 2 children). </p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;margin-right:1.0in;
+margin-bottom:12.0pt;margin-left:1.0in"><span style="font-family:Symbol">·</span><span class="GramE">&nbsp; <span class="SpellE"><code><span style="font-size:10.0pt">node.left</span></code></span></span><code><span style="font-size:10.0pt"> == null</span></code> <br>
+- make a parent node point to a right child;</p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;margin-right:1.0in;
+mso-margin-bottom-alt:auto;margin-left:1.0in"><span style="font-family:Symbol">·</span><span class="GramE">&nbsp; <span class="SpellE"><code><span style="font-size:10.0pt">node.right</span></code></span></span><code><span style="font-size:10.0pt"> == null</span></code><br>
+- make a parent node point to a left child;</p>
+
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center"><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ alt="" style='width:306.75pt;height:213.75pt'>
+ <v:imagedata src="lesson4_3_files/image002.gif" o:href="http://www.cs.cmu.edu/%7Eclo/www/CMU/DataStructures/Lessons/lesson4_3_files/image002.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="409" height="285" src="./Operations on Binary Search Tree’s_files/image002.gif" v:shapes="_x0000_i1026"><!--[endif]--></p>
+
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center">Deleting a Node with one child</p>
+
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center"><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ alt="" style='width:258pt;height:201pt'>
+ <v:imagedata src="lesson4_3_files/image003.gif" o:href="http://www.cs.cmu.edu/%7Eclo/www/CMU/DataStructures/Lessons/lesson4_3_files/image004.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="344" height="268" src="./Operations on Binary Search Tree’s_files/image003.gif" v:shapes="_x0000_i1027"><!--[endif]--></p>
+
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center">Deleting an internal Node</p>
+
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center"><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ alt="" style='width:180pt;height:148.5pt'>
+ <v:imagedata src="lesson4_3_files/image004.jpg" o:href="http://www.cs.cmu.edu/%7Eclo/www/CMU/DataStructures/Lessons/lesson4_3_files/image006.jpg"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="240" height="198" src="./Operations on Binary Search Tree’s_files/image004.jpg" v:shapes="_x0000_i1028"><!--[endif]--></p>
+
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center">Deleting the root of the tree</p>
+
+<p><u>Implementation (part I)</u>: </p>
+
+<pre style="margin-left:.5in"><span class="GramE">public</span> void delete (Comparable d)</pre><pre style="margin-left:.5in">{</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">root</span> = <span class="SpellE">deleteHelper</span>(root, d);</pre><pre style="margin-left:.5in">}</pre><pre style="margin-left:.5in"><span class="GramE">private</span> <span class="SpellE">BNode</span> <span class="SpellE">deleteHelper</span> (<span class="SpellE">BNode</span> r, Comparable d)</pre><pre style="margin-left:.5in">{</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">if</span> (r == null)</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">throw</span> new <span class="SpellE">RuntimeException</span>("cannot delete.");</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">else</span></pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">if</span> (<span class="SpellE">d.compareTo</span>(<span class="SpellE">r.data</span>) &lt; 0)</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="SpellE">r.left</span> = <span class="SpellE">deleteHelper</span> (<span class="SpellE">r.left</span>, d);</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">else</span></pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">if</span> (<span class="SpellE">d.compareTo</span>(<span class="SpellE">r.data</span>) &gt; 0)</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="SpellE">r.right</span> = <span class="SpellE">deleteHelper</span> (<span class="SpellE">r.right</span>, d);</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">else</span></pre><pre style="margin-left:.5in">&nbsp;&nbsp; {</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">size--</span>;</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">if</span> (<span class="SpellE">r.left</span> == null)</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">return</span> <span class="SpellE">r.right</span>;</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">else</span></pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">if</span> (<span class="SpellE">r.right</span> == null)</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">return</span> <span class="SpellE">r.left</span>;</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">else</span></pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // to be continued...</pre><pre style="margin-left:.5in">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;}</pre><pre style="margin-left:.5in">&nbsp;&nbsp; }</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">return</span> r;</pre><pre style="margin-left:.5in">}</pre>
+
+<p>Consider the binary search tree </p>
+
+<pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 38</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp; \</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 47</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp; 46</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13</pre>
+
+<p><span class="GramE">and</span> suppose we want to delete a node with the label
+15. Here is a stack of recursive calls: </p>
+
+<pre style="margin-left:.5in">38<span class="GramE">.left</span> = <span class="SpellE">deleteHelper</span>(5_node, 15)</pre><pre style="margin-left:.5in"><span class="GramE">5.right</span> = <span class="SpellE">deleteHelper</span>(9_node, 15)</pre><pre style="margin-left:.5in"><span class="GramE">9.right</span> = <span class="SpellE">deleteHelper</span>(15_node, 15)</pre><pre style="margin-left:.5in"><span class="SpellE"><span class="GramE">deleteHelper</span></span><span class="GramE">(</span>15_node, 15) returns 13_node</pre>
+
+<p>Because of the last two lines, the node 9 is <span class="GramE">be</span>
+connected to 13, and the node 15 is deleted (since there is no references
+pointed to it). </p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;margin-right:1.0in;
+mso-margin-bottom-alt:auto;margin-left:1.0in"><span style="font-family:Symbol">·</span><span class="GramE">&nbsp; delete</span> a node with TWO children <br>
+<br>
+- find the rightmost node in the left <span class="SpellE">subtree</span> and
+swap data between these two nodes. </p>
+
+<p style="margin-top:5.0pt;margin-right:1.0in;margin-bottom:5.0pt;margin-left:
+1.0in">The rightmost node will be the node with the greatest value in the left <span class="SpellE">subtree</span>. Why do we need this node? One way of thinking
+about it is that you want to replace the node to be deleted with a node that
+has the biggest value in the left <span class="SpellE">subtree</span>.&nbsp;
+Alternatively, you can swap data between the node to be deleted and the
+leftmost node in the right <span class="SpellE">subtree</span>.</p>
+
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;margin-right:
+1.0in;mso-margin-bottom-alt:auto;margin-left:1.0in;text-align:center"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1034" type="#_x0000_t75" alt="" style='width:214.5pt;height:177pt'>
+ <v:imagedata src="lesson4_3_files/image005.gif" o:href="http://www.cs.cmu.edu/%7Eclo/www/CMU/DataStructures/Lessons/lesson4_3_files/image007.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="286" height="236" src="./Operations on Binary Search Tree’s_files/image005.gif" v:shapes="_x0000_i1034"><!--[endif]--></p>
+
+<p><u>Implementation (part II)</u>: </p>
+
+<pre style="margin-left:.5in"><span class="SpellE">r.data</span> = <span class="SpellE"><span class="GramE">getNode</span></span><span class="GramE">(</span><span class="SpellE">r.left</span>).data;&nbsp;&nbsp;&nbsp; // swap data</pre>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span class="GramE">where</span> </p>
+
+<pre style="margin-left:.5in"><span class="GramE">private</span> <span class="SpellE">BNode</span> <span class="SpellE">getNode</span>(<span class="SpellE">BNode</span> r)</pre><pre style="margin-left:.5in">{</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">while</span> (<span class="SpellE">r.right</span> != null) r = <span class="SpellE">r.right</span>;</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">return</span> r;</pre><pre style="margin-left:.5in">}</pre>
+
+<p style="margin-top:5.0pt;margin-right:1.0in;margin-bottom:5.0pt;margin-left:
+1.0in">-<span class="SpellE"><b>Note.</b>A</span> node to be _actually_ deleted
+can have a left <span class="SpellE">subtree</span>: </p>
+
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;margin-right:
+1.0in;mso-margin-bottom-alt:auto;margin-left:1.0in;text-align:center"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1037" type="#_x0000_t75" alt="" style='width:214.5pt;height:177pt'>
+ <v:imagedata src="lesson4_3_files/image005.gif" o:href="http://www.cs.cmu.edu/%7Eclo/www/CMU/DataStructures/Lessons/lesson4_3_files/image007.gif"/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="286" height="236" src="./Operations on Binary Search Tree’s_files/image005.gif" v:shapes="_x0000_i1037"><!--[endif]--></p>
+
+<p style="margin-top:5.0pt;margin-right:1.0in;margin-bottom:5.0pt;margin-left:
+1.0in">To delete 15 you need to go to 9 and change the right reference to 15's
+left reference. </p>
+
+<p><u>Implementation (part III)</u>: </p>
+
+<pre style="margin-left:.5in"><span class="SpellE">r.left</span> = <span class="SpellE"><span class="GramE">getLink</span></span><span class="GramE">(</span><span class="SpellE">r.left</span>);&nbsp; //why do we need an assignment here??</pre>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span class="GramE">where</span> </p>
+
+<pre style="margin-left:.5in"><span class="GramE">private</span> <span class="SpellE">BNode</span> <span class="SpellE">getLink</span>(<span class="SpellE">BNode</span> r)</pre><pre style="margin-left:.5in">{</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">if</span> (<span class="SpellE">r.right</span> != null)</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="SpellE">r.right</span> = <span class="SpellE"><span class="GramE">getLink</span></span><span class="GramE">(</span><span class="SpellE">r.right</span>);</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">else</span></pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r = <span class="SpellE">r.left</span>;</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">return</span> r;</pre><pre style="margin-left:.5in">}</pre>
+
+<p><u>Answer</u>: Consider a tree </p>
+
+<pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 38</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 45</pre>
+
+<p style="margin-top:6.0pt;margin-right:0in;margin-bottom:0in;margin-left:0in;
+margin-bottom:.0001pt"><span class="GramE">in</span> which you want to delete 38.
+On the first step you will move 5 to 38 <span class="GramE">node</span> </p>
+
+<pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 45</pre>
+
+<p class="MsoNormal" style="margin-top:6.0pt;mso-margin-bottom-alt:auto">On the
+second step you will need to remove the left <span class="SpellE">subtree</span>.
+If you do not do the assignment you will never set a left reference to null. </p>
+
+<p><span class="GramE"><b>Exercise</b> :</span> If you delete a node from a BST
+and then insert it back, will you change the shape of the tree? </p>
+
+<h2 align="center" style="text-align:center">Traversing Trees using the <span class="SpellE">Iterator</span> class</h2>
+
+<p><span class="SpellE"><code><span style="font-size:10.0pt">Iterator</span></code></span>
+is the API interface. A class which implements <span class="SpellE">Iterator</span>
+should implement three methods </p>
+
+<ul type="disc">
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo7;tab-stops:list .5in"><span class="SpellE"><span class="GramE"><code><span style="font-size:10.0pt">boolean</span></code></span></span><code><span style="font-size:10.0pt"> <span class="SpellE">hasNext</span>()</span></code>
+     - Returns true if the iteration has more elements. </li>
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo7;tab-stops:list .5in"><code><span style="font-size:
+     10.0pt">Object <span class="GramE">next(</span>)</span></code> - Returns the
+     next element in the iteration. </li>
+ <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo7;tab-stops:list .5in"><span class="GramE"><code><span style="font-size:10.0pt">void</span></code></span><code><span style="font-size:10.0pt"> remove()</span></code> - (optional operation)
+     Removes from the underlying collection the last element returned by
+     next(). </li>
+</ul>
+
+<p>We implement a preorder traversal by <span class="SpellE">ading</span> a new
+method <span class="SpellE"><code><span style="font-size:10.0pt">iterator</span></code></span>
+to the <span class="SpellE">BSTree</span> class. This method returns an <span class="SpellE">iterator</span> over the nodes of a binary tree in pre-order: </p>
+
+<pre style="margin-left:.5in"><span class="GramE">public</span> <span class="SpellE">Iterator</span> <span class="SpellE">iterator</span>()</pre><pre style="margin-left:.5in">{</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">return</span> new <span class="SpellE">PreOrderIterator</span>();</pre><pre style="margin-left:.5in">}</pre>
+
+<p>Class <span class="SpellE"><code><span style="font-size:10.0pt">preOrderIterator</span></code></span>
+is an inner private class of <span class="SpellE">BSTree</span>. This class
+implements the <span class="SpellE">Iterator</span> interface. We use the Stack
+as an intermediate storage: </p>
+
+<pre style="margin-left:.5in"><span class="GramE">private</span> class <span class="SpellE">PreOrderIterator</span> implements <span class="SpellE">Iterator</span></pre><pre style="margin-left:.5in">{</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">private</span> Stack <span class="SpellE">stk</span> = new Stack();</pre><pre style="margin-left:.5in">&nbsp;&nbsp; // Construct the <span class="SpellE">iterator</span>.</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">public</span> <span class="SpellE">PreOrderIterator</span>()</pre><pre style="margin-left:.5in">&nbsp;&nbsp; {</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="SpellE"><span class="GramE">stk.push</span></span><span class="GramE">(</span>root);</pre><pre style="margin-left:.5in">&nbsp;&nbsp; }</pre><pre style="margin-left:.5in">&lt; ...skip...&gt;</pre><pre style="margin-left:.5in">}</pre>
+
+<p class="MsoNormal" style="margin-top:6.0pt;mso-margin-bottom-alt:auto">We
+implement <span class="GramE"><code><span style="font-size:10.0pt">next()</span></code></span>
+</p>
+
+<pre style="margin-left:.5in"><span class="GramE">public</span> Object next()</pre><pre style="margin-left:.5in">{</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="SpellE">BNode</span> cur = (<span class="SpellE">BNode</span>) <span class="SpellE"><span class="GramE">stk.peek</span></span><span class="GramE">(</span>);</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">if(</span><span class="SpellE">cur.left</span> != null)</pre><pre style="margin-left:.5in">&nbsp;&nbsp; {</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="SpellE"><span class="GramE">stk.push</span></span><span class="GramE">(</span><span class="SpellE">cur.left</span>);</pre><pre style="margin-left:.5in">&nbsp;&nbsp; }</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">else</span></pre><pre style="margin-left:.5in">&nbsp;&nbsp; {</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //if a left child is null</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="DA" style="mso-ansi-language:DA">BNode tmp = (BNode) stk.pop();<o:p></o:p></span></pre><pre style="margin-left:.5in"><span lang="DA" style="mso-ansi-language:DA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="GramE">while(</span><span class="SpellE">tmp.right</span> == null)</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="GramE">if</span> (<span class="SpellE">stk.isEmpty</span>()) return cur;</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="SpellE"><span class="GramE">tmp</span></span> = (<span class="SpellE">BNode</span>) <span class="SpellE">stk.pop</span>();</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre><pre style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="SpellE"><span class="GramE">stk.push</span></span><span class="GramE">(</span><span class="SpellE">tmp.right</span>);</pre><pre style="margin-left:.5in">&nbsp;&nbsp; }</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">return</span> cur;</pre><pre style="margin-left:.5in">}</pre>
+
+<p><u>Algorithm</u> - If there is a left child, we push the child on a stack
+and return a parent node. If there is no left child, we check for a right child.
+If there is a right child, we push the right child on a stack and return a
+parent node. If there is no right child, we move back up the tree (while-loop)
+until we find a node with a right child. </p>
+
+<p>Here is a stack after returning 38 and 5: </p>
+
+<pre style="margin-left:.5in">|<span class="GramE">&nbsp; |</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cur&nbsp; |&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; |</pre><pre style="margin-left:.5in">|1 | &lt;--- <span class="SpellE">tmp</span><span class="GramE">&nbsp; |</span>&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; |</pre><pre style="margin-left:.5in">|5 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |5 |&lt;--- <span class="SpellE">tmp</span><span class="GramE">&nbsp; |</span>9 |&lt;--- <span class="SpellE">tmp</span></pre><pre style="margin-left:.5in">|38|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |38|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |38|</pre><pre style="margin-left:.5in">----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ----</pre>
+
+<p>We shall leave the method <span class="GramE"><code><span style="font-size:
+10.0pt">remove(</span></code></span><code><span style="font-size:10.0pt">)</span></code>
+unimplemented. Since a binary tree has a nonlinear structure, removing a node
+might cause the major tree rearrangement, which will lead to incorrect output
+from <span class="GramE">next(</span>): </p>
+
+<pre style="margin-left:.5in"><span class="GramE">public</span> void remove()</pre><pre style="margin-left:.5in">{</pre><pre style="margin-left:.5in">&nbsp;&nbsp; <span class="GramE">throw</span> new <span class="SpellE">java.lang.UnsupportedOperationException</span>();</pre><pre style="margin-left:.5in">}</pre>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:18.0pt">Balanced Trees<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">One strength of binary search trees (over other data
+structures) is its ability to maintain items in a way that search can be
+performed in <span class="GramE">O(</span>log n)</p>
+
+<p class="MsoNormal">Time, where n is the number of nodes. However this requires
+that we maintain the tree in a “balanced” form where entries are distributed
+evenly</p>
+
+<p class="MsoNormal"><span class="GramE">among</span> left and right sub trees of
+each node. Since most data sets in real life situations may come almost sorted
+or in some kind of order</p>
+
+<p class="MsoNormal">(<span class="GramE">reverse</span> sorted, already sorted).
+Therefore a naïve insertion into the tree may cause the tree to grow
+unbalanced. <span style="mso-spacerun:yes">&nbsp;</span>There are two ways to deal
+with</p>
+
+<p class="MsoNormal"><span class="GramE">this</span> situation. One option is to
+randomize the data before inserting to the tree. The cost of doing this
+operation is <span class="GramE">O(</span>n). The drawback in this approach is
+that we need to know all the data in advance in order to randomize the set. Later
+when new data is inserted, we may not be able to apply the randomized algorithm
+again (unless we randomize the whole set). Therefore we need to think of ways
+to maintain a tree balanced (at low cost), when frequent insertions are
+performed. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt">AVL Trees<o:p></o:p></span></b></p>
+
+<p class="MsoNormal">AVL trees, named after G. M. <span class="SpellE">Adelson-Velskii</span>
+and E. M. Landis were invented in 1962. The definition of an AVL tree is as follows.
+First we define the balanced factor of a node to be the absolute difference in
+heights of its left <span class="SpellE">subtree</span> and right <span class="SpellE">subtree</span>. For example, a given node with a left sub tree of
+height 4 and right sub tree of height 7 will have a balance factor of 3. We
+define an AVL tree to be a tree such that the balance factor of each node is</p>
+
+<p class="MsoNormal"><span class="GramE">less</span> or equal to 1. <span style="mso-spacerun:yes">&nbsp;</span></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1029" type="#_x0000_t75" style='width:203.25pt;height:205.5pt'>
+ <v:imagedata src="lesson4_3_files/image006.png" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="271" height="274" src="./Operations on Binary Search Tree’s_files/image007.jpg" v:shapes="_x0000_i1029"><!--[endif]--></p>
+
+<p class="MsoNormal">In order to maintain a tree in AVL order, one must consider
+four cases. It is important to observe that when a new node is inserted into an
+AVL tree, a tree may become unbalanced as a result. Only the nodes in path of
+the tree will have their balanced conditions altered. So we need to consider
+few cases.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Case 1: The balance condition is violated for a node X by
+the left child of its left sub tree</p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1030" type="#_x0000_t75" style='width:452.25pt;height:230.25pt'>
+ <v:imagedata src="lesson4_3_files/image008.png" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="603" height="307" src="./Operations on Binary Search Tree’s_files/image009.jpg" v:shapes="_x0000_i1030"><!--[endif]--></p>
+
+<p class="MsoNormal">In this case we rotate the tree right over x and fix the
+tree</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Case <span class="GramE">2 :</span> <span style="mso-spacerun:yes">&nbsp;</span>The balance condition is violated for a node X
+by the right child of its right sub tree</p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1031" type="#_x0000_t75" style='width:409.5pt;height:224.25pt'>
+ <v:imagedata src="lesson4_3_files/image010.png" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="546" height="299" src="./Operations on Binary Search Tree’s_files/image011.jpg" v:shapes="_x0000_i1031"><!--[endif]--></p>
+
+<p class="MsoNormal">In this case we rotate the tree left over x and fix the tree</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Case 3: The balance condition is violated for node X by the
+right child of the left sub tree. In this case we fix the tree by doing two
+operations</p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1032" type="#_x0000_t75" style='width:423pt;height:231pt'>
+ <v:imagedata src="lesson4_3_files/image012.png" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="564" height="308" src="./Operations on Binary Search Tree’s_files/image013.jpg" v:shapes="_x0000_i1032"><!--[endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Next we do the following</p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1033" type="#_x0000_t75" style='width:444.75pt;height:246.75pt'>
+ <v:imagedata src="lesson4_3_files/image014.png" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="593" height="329" src="./Operations on Binary Search Tree’s_files/image015.jpg" v:shapes="_x0000_i1033"><!--[endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Case 4: The balance condition is violated for node X by the left
+child of the right sub tree. In this case we fix the tree by doing two
+operations</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1035" type="#_x0000_t75" style='width:445.5pt;height:226.5pt'>
+ <v:imagedata src="lesson4_3_files/image016.png" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="594" height="302" src="./Operations on Binary Search Tree’s_files/image017.jpg" v:shapes="_x0000_i1035"><!--[endif]--></p>
+
+<p class="MsoNormal">And then we do the following</p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1036" type="#_x0000_t75" style='width:447pt;height:244.5pt'>
+ <v:imagedata src="lesson4_3_files/image018.png" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img border="0" width="596" height="326" src="./Operations on Binary Search Tree’s_files/image019.jpg" v:shapes="_x0000_i1036"><!--[endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">AVL trees are good data structures to maintain an “almost”
+balanced tree. However, AVL trees are no longer used in practice. For the most
+part</p>
+
+<p class="MsoNormal"><span class="GramE">practical</span> applications use other
+types of trees, in particular, “Splay Trees” (invented by CMU Professor Danny <span class="SpellE">Sleator</span>). Splay trees maintain access</p>
+
+<p class="MsoNormal"><span class="GramE">to</span> most frequently accessed
+elements by bringing them closer to the root. The discussion of splay trees is
+an appropriate topic for 15-211</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+</div>
+
+
+
+
+</o:smarttagtype></o:smarttagtype></body></html>

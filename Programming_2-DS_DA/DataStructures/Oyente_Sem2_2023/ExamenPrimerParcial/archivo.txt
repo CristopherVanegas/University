@@ -1,0 +1,15 @@
+Suma por materia 1: 11145
+Suma por materia 2: 12578457
+Suma por materia 3: 29760
+Suma por materia 4: 247248
+Suma por materia 5: 842086
+Suma por materia 1: 15370
+Suma por materia 2: 39091
+Suma por materia 3: 55166
+Suma por materia 4: 2617
+Suma por materia 5: 8916
+Suma por materia 6: 762827
+Suma por materia 7: 14951
+Suma por materia 8: 131119
+Suma por materia 9: 359530
+Suma por materia 10: 12319109

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1680015322 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\segundo_parcial\codelabs\codelab_6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

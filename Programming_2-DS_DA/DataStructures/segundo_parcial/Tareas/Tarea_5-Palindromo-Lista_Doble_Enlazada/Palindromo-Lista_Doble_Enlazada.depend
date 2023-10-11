@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1680995607 source:c:\users\ismrj\documents\source\repos\university\programacion_2-estructura_de_datos\segundo_parcial\tareas\tarea_5\palindromo-lista_doble_enlazada\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
