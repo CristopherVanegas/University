@@ -12,7 +12,7 @@ class LogIn : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
-        val username : String = "vgalarza"
+        val username : String = "ItsMrJkali21"
         val passwd : String = "root"
 
         val btnLogIn : Button = findViewById(R.id.btnLogIn)
