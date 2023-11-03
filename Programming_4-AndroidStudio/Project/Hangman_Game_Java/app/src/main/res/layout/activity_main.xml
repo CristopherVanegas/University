@@ -26,7 +26,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorSecondary"
         android:gravity="center">
 
         <TextView
@@ -35,7 +35,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="My word"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/txtWordToBeGuessed" />
     </TableRow>
 
@@ -43,12 +43,13 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorSecondary"
         android:layout_weight="1" >
     <EditText
             android:maxLength="1"
             android:textStyle="italic"
-            android:textColorHint="@color/colorSecondary"
-            android:textColor="@color/colorSecondary"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:textSize="@dimen/edtInput"
             android:layout_gravity="center"
             android:gravity="center"
@@ -63,27 +64,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/colorSecondary">
 
         <TextView
-            android:textStyle="bold"
             android:id="@+id/txtTriesLeft"
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text=" X X X X X"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/txtTriesLeft" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtTriesLeft"
+            android:textStyle="bold" />
     </TableRow>
 
     <TableRow
-        android:background="@color/colorPrimary"
+        android:background="@color/colorSecondary"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" >
     <TextView
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/black"
             android:textSize="@dimen/txtLettersTried"
             android:layout_gravity="center"
             android:id="@+id/txtLettersTried"
@@ -103,9 +105,9 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:layout_column="0"
-            android:background="@color/colorSecondary"
+            android:background="@color/colorPrimary"
             android:text="RESET"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorSecondary"
             android:textSize="@dimen/btnReset" />
     </TableRow>
 </TableLayout>
