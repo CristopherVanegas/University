@@ -27,13 +27,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" >
-    <TextView
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/txtWordToBeGuessed"
-            android:layout_gravity="center"
+
+        <TextView
             android:id="@+id/txtWordToBeGuessed"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:text="My word"
-            android:layout_column="0"/>
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/txtWordToBeGuessed" />
     </TableRow>
 
     <TableRow
