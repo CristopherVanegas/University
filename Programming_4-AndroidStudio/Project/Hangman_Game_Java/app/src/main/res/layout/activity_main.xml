@@ -22,11 +22,12 @@
     </TableRow>
 
     <TableRow
-        android:background="@color/colorPrimaryDark"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" >
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/txtWordToBeGuessed"
@@ -57,7 +58,26 @@
     </TableRow>
 
     <TableRow
-        android:background="@color/colorPrimaryDark"
+        android:id="@+id/trTriesLeft"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/txtTriesLeft"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:text=" X X X X X"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/txtTriesLeft" />
+    </TableRow>
+
+    <TableRow
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,23 +92,7 @@
     </TableRow>
 
     <TableRow
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" >
-
-        <TextView
-            android:textStyle="bold"
-            android:id="@+id/txtTriesLeft"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_gravity="center"
-            android:text=" X X X X X"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/txtTriesLeft" />
-    </TableRow>
-
-    <TableRow
+        android:id="@+id/trReset"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
