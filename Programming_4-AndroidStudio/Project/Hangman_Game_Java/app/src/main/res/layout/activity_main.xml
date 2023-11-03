@@ -98,14 +98,17 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" >
+        android:layout_weight=".7"
+        android:background="@color/colorSecondary"
+        >
 
         <Button
+
             android:id="@+id/btnReset"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:layout_column="0"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/rounded_button"
             android:text="RESET"
             android:textColor="@color/colorSecondary"
             android:textSize="@dimen/btnReset" />
