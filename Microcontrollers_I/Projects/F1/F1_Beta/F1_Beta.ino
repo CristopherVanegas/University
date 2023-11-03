@@ -1,8 +1,4 @@
 // Programa principal del F1 //
-// Centro = Servo a 130 grados
-// Izquierda = Servo a 100 grados
-// Derecha = Servo a 160
-
 #include <SoftwareSerial.h>
 #include <AFMotor.h>
 #include <Servo.h>
@@ -14,7 +10,17 @@ AF_DCMotor motor3(3);
 AF_DCMotor motor2(2);
 AF_DCMotor motor1(1);
 
+int leftD = 106, centerD = 126, rightD = 146;     // izquierda, centro, derecha //
+
 void setup() {
+
+  // retro light conf
+  pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH);
+  delay(500);
+  digitalWrite(13, LOW);
+
+  int speed = 255;
   // BT conf
   Serial.begin(9600);     // Inicializa la comunicación serie con la computadora
   delay(1000);            // Espera un segundo para asegurarte de que el módulo esté listo
@@ -24,10 +30,10 @@ void setup() {
   myservo.write(130);
 
   //Set initial speed of the motor & stop
-	motor4.setSpeed(255);
-  motor3.setSpeed(255);
-	motor2.setSpeed(255);
-	motor1.setSpeed(255);
+	motor4.setSpeed(170);
+  motor3.setSpeed(speed);
+	motor2.setSpeed(speed);
+	motor1.setSpeed(speed);
 
 	motor4.run(RELEASE);
   motor3.run(RELEASE);
@@ -73,15 +79,15 @@ void loop() {
 }
 
 void center() {
-  myservo.write(130);
+  myservo.write(centerD);
 }
 
 void left() {
-  myservo.write(100);
+  myservo.write(leftD);
 }
 
 void right() {
-  myservo.write(160);
+  myservo.write(rightD);
 }
 
 void stop() {
@@ -93,31 +99,21 @@ void stop() {
 }
 
 void forward() {
+  digitalWrite(13, LOW);
   // Turn on motor
 	motor4.run(FORWARD);
 	motor3.run(FORWARD);
 	motor2.run(FORWARD);
 	motor1.run(FORWARD);
-
-  // Motor Speed to 255
-  motor4.setSpeed(255);  
-  motor3.setSpeed(255);  
-  motor2.setSpeed(255); 
-  motor1.setSpeed(255);
 }
 
 void backward() {
+  digitalWrite(13, HIGH);
   // Turn on motor
 	motor4.run(BACKWARD);
 	motor3.run(BACKWARD);
 	motor2.run(BACKWARD);
 	motor1.run(BACKWARD);
-
-  // Motor Speed to 255
-  motor4.setSpeed(255);  
-  motor3.setSpeed(255);  
-  motor2.setSpeed(255); 
-  motor1.setSpeed(255);  
 }
 
 
