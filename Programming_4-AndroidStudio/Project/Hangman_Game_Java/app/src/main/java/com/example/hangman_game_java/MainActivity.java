@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        4. Tries left
 //        initialize the string for tries left
-        triesLeft = " X X X X X";
+        triesLeft = " \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80 \uD83D\uDC80";
         txtTriesLeft.setText(triesLeft);
     }
 
@@ -227,10 +227,13 @@ public class MainActivity extends AppCompatActivity {
 
 //        display the letter that was tried
         if (lettersTried.indexOf(letter) < 0) {
-            lettersTried += letter + ", ";
+            if (lettersTried.length() == 1) lettersTried += letter;
+            else lettersTried += ", " + letter;
+
             String messageToBeDisplayed = MESSAGE_WITH_LETTERS_TRIED + lettersTried;
             txtLettersTried.setText(messageToBeDisplayed);
         }
+
     } /* end of checkIfLetterIsInWord() method */
 
     void decreaseAndDisplayTriesLeft() {
@@ -240,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
             trTriesLeft.startAnimation(scaleAnimation);
 
 //            take out the last 2 characters from this string
-            triesLeft = triesLeft.substring(0, triesLeft.length() - 2);
+            triesLeft = triesLeft.substring(0, triesLeft.length() - 3);
             txtTriesLeft.setText(triesLeft);
         }
     }

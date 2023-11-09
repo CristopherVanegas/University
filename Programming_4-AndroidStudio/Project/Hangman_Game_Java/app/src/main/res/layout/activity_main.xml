@@ -17,7 +17,7 @@
             android:textSize="@dimen/txtTitle"
             android:layout_gravity="center"
             android:id="@+id/txtTitle"
-            android:text="Hangman"
+            android:text="Ahorcado"
             android:layout_column="0" />
     </TableRow>
 
@@ -34,10 +34,32 @@
             android:layout_column="0"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="My word"
+            android:text="Palabra"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/txtWordToBeGuessed" />
     </TableRow>
+
+    <TableRow
+        android:id="@+id/trTriesLeft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/colorSecondary"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtTriesLeft"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text=" 💀 💀 💀 💀 💀"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtTriesLeft"
+            android:textStyle="bold" />
+    </TableRow>
+
 
     <TableRow
         android:gravity="center"
@@ -54,43 +76,26 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:id="@+id/edtInput"
-            android:hint="Input one letter"
+            android:hint="Ingrese solo una letra"
             android:layout_column="0"/>
     </TableRow>
 
     <TableRow
-        android:id="@+id/trTriesLeft"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="@color/colorSecondary">
+        android:background="@color/colorSecondary"
+        android:gravity="center">
 
         <TextView
-            android:id="@+id/txtTriesLeft"
-            android:layout_height="wrap_content"
+            android:id="@+id/txtLettersTried"
             android:layout_column="0"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text=" X X X X X"
+            android:text="Letras Intentadas"
             android:textColor="@color/black"
-            android:textSize="@dimen/txtTriesLeft"
-            android:textStyle="bold" />
-    </TableRow>
-
-    <TableRow
-        android:background="@color/colorSecondary"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" >
-    <TextView
-            android:textColor="@color/black"
-            android:textSize="@dimen/txtLettersTried"
-            android:layout_gravity="center"
-            android:id="@+id/txtLettersTried"
-            android:text="LettersTried"
-            android:layout_column="0"/>
+            android:textSize="@dimen/txtLettersTried" />
     </TableRow>
 
     <TableRow
@@ -109,7 +114,7 @@
             android:layout_height="match_parent"
             android:layout_column="0"
             android:background="@drawable/rounded_button"
-            android:text="RESET"
+            android:text="RESETEAR"
             android:textColor="@color/colorSecondary"
             android:textSize="@dimen/btnReset" />
     </TableRow>
