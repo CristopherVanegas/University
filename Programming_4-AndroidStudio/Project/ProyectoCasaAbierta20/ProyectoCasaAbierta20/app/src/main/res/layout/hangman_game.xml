@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary" >
+
+
+    <TableRow
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+        <TextView
+            android:textStyle="bold|italic"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/txtTitle"
+            android:layout_gravity="center"
+            android:id="@+id/txtTitle"
+            android:text="Ahorcado"
+            android:layout_column="0" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/colorSecondary"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtWordToBeGuessed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Palabra"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/txtWordToBeGuessed" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/trTriesLeft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/colorSecondary"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtTriesLeft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text=" 💀 💀 💀 💀 💀"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtTriesLeft"
+            android:textStyle="bold" />
+    </TableRow>
+
+
+    <TableRow
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorSecondary"
+        android:layout_weight="1" >
+    <EditText
+            android:maxLength="1"
+            android:textStyle="italic"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="@dimen/edtInput"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/edtInput"
+            android:hint="Ingrese solo una letra"
+            android:layout_column="0"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/colorSecondary"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtLettersTried"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Letras Intentadas"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txtLettersTried" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/trReset"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".7"
+        android:background="@color/colorSecondary"
+        >
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:background="@drawable/rounded_button"
+            android:text="RESETEAR"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/btnReset" />
+    </TableRow>
+</TableLayout>

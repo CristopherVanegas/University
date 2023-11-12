@@ -1,11 +1,13 @@
 package com.example.proyectocasaabierta20
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectocasaabierta20.adapter.UsuarioAdapter
@@ -44,7 +46,7 @@ class ActivityProfile : AppCompatActivity() {
         }
 
         botonJugarYa.setOnClickListener {
-            var i: Intent = Intent(this, hangman_game::class.java)
+            var i: Intent = Intent(this, juegoPrueba::class.java)
             i.putExtra("id", id_usuario)
             startActivity(i)
         }
