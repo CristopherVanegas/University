@@ -102,22 +102,57 @@
     </TableRow>
 
     <TableRow
-        android:id="@+id/trReset"
-        android:gravity="center"
+        android:id="@+id/trOptions"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight=".7"
-        android:background="@color/colorSecondary"
-        >
+        android:paddingLeft="8dp"
+        android:paddingTop="16dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="16dp"
+        android:background="@color/colorSecondary">
 
-        <Button
-            android:id="@+id/btnReset"
-            android:layout_weight="1"
+        <TableRow
+            android:id="@+id/trReset"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_column="0"
-            android:background="@drawable/rounded_button"
-            android:text="RESETEAR"
-            android:textColor="@color/colorSecondary"
-            android:textSize="@dimen/btnReset" />
+            android:layout_weight=".7"
+            android:background="@color/colorSecondary"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:background="@drawable/rounded_button"
+                android:text="RESETEAR"
+                android:textColor="@color/colorSecondary"
+                android:textSize="24sp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="8dp"
+            android:background="@color/colorSecondary"></TableRow>
+
+        <TableRow
+            android:id="@+id/trGoBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".7"
+            android:background="@color/colorSecondary"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnGoBack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:background="@drawable/rounded_button"
+                android:text="IR ATRÁS"
+                android:textColor="@color/colorSecondary"
+                android:textSize="24sp" />
+        </TableRow>
     </TableRow>
+
 </TableLayout>

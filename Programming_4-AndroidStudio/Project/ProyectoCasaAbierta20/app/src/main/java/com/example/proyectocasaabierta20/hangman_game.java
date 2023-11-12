@@ -1,6 +1,8 @@
 package com.example.proyectocasaabierta20;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -41,6 +43,7 @@ public class hangman_game extends AppCompatActivity {
     Animation scaleAnimation;
     Animation scaleAndRotateAnimation;
     TableRow trReset;
+    TableRow trGoBack;
     TableRow trTriesLeft;
 
     void revealLetterInWord(char letter) {
@@ -122,6 +125,7 @@ public class hangman_game extends AppCompatActivity {
         scaleAndRotateAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_and_rotate);
         scaleAndRotateAnimation.setFillAfter(true);
         trReset = (TableRow) findViewById(R.id.trReset);
+        trGoBack = (TableRow) findViewById(R.id.trGoBack);
         trTriesLeft = (TableRow) findViewById(R.id.trTriesLeft);
 
 //        traverse database file and populate array list
@@ -222,6 +226,24 @@ public class hangman_game extends AppCompatActivity {
                 initializeGame();
             }
         });
+
+
+        // Go back to profile
+        Button btnGoBack = (Button) findViewById(R.id.btnGoBack);
+        btnGoBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // start animation
+                trGoBack.startAnimation(rotateAnimation);
+
+                // clearAnimations on table row
+                trTriesLeft.clearAnimation();
+
+                // Go back to ActivityProfile
+                Intent intent = new Intent(hangman_game.this, ActivityProfile.class);
+                startActivity(intent);
+            }
+        });
     } /* end of onCreate method */
 
     void checkIfLetterIsInWord(char letter) {
@@ -266,7 +288,6 @@ public class hangman_game extends AppCompatActivity {
             String messageToBeDisplayed = MESSAGE_WITH_LETTERS_TRIED + lettersTried;
             txtLettersTried.setText(messageToBeDisplayed);
         }
-
     } /* end of checkIfLetterIsInWord() method */
 
     void decreaseAndDisplayTriesLeft() {
