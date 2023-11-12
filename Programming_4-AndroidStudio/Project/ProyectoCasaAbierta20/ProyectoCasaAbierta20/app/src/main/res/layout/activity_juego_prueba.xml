@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5A5959"
+    android:orientation="vertical"
+    tools:context=".juegoPrueba">
+
+    <TextView
+        android:id="@+id/tV_Contador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="96sp" />
+
+    <Button
+        android:id="@+id/btn_Presionar"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="100dp"
+        android:backgroundTint="#3E3E3E"
+        android:text="Pulsa aquí"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_Tiempo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="Tiempo restante: 60s"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/btn_volverjugar"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="100dp"
+        android:backgroundTint="#3E3E3E"
+        android:text="Volver a jugar"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="24sp"
+        android:visibility="gone" />
+
+</LinearLayout>

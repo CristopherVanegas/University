@@ -2,6 +2,8 @@ package com.example.hangman_game_java;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -170,6 +172,40 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public void afterTextChanged(Editable s) {
+            }
+        });
+
+
+        // Limpia edtInput luego de ingresar una letra
+        final EditText edtInput = findViewById(R.id.edtInput);
+        final Handler handler = new Handler(Looper.getMainLooper());
+
+        edtInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // No es necesario implementar nada aquí
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // No es necesario implementar nada aquí
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() > 0) {
+                    // Realiza tu lógica para verificar si la letra está en la palabra
+                    checkIfLetterIsInWord(s.charAt(0));
+
+                    // Establece un retraso de 1 segundo para borrar el texto
+                    handler.removeCallbacksAndMessages(null); // Cancela cualquier retraso pendiente
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            edtInput.getText().clear();
+                        }
+                    }, 250); // 1000 milisegundos = 1 segundo
+                }
             }
         });
 

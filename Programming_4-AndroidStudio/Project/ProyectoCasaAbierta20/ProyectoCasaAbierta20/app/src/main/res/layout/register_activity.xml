@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/fondo"
+    tools:context=".ActivityRegister">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp"
+            android:background="@drawable/custom_editext">
+
+            <TextView
+                android:id="@+id/LoginText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textAlignment="center"
+                android:textColor="#723EFF"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#723EFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Nombres:" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/nombres"
+                android:background="@drawable/custom_editext"
+                android:layout_marginTop="5dp"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:hint="Ingrese sus nombres"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"
+                android:inputType="text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#723EFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Apellidos:" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/apellidos"
+                android:background="@drawable/custom_editext"
+                android:layout_marginTop="5dp"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:hint="Ingrese sus apellidos"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"
+                android:inputType="text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#723EFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Username:" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/r_username"
+                android:background="@drawable/custom_editext"
+                android:layout_marginTop="5dp"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:hint="Cree un usuario"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"
+                android:inputType="text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#723EFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Password:" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/r_password"
+                android:background="@drawable/custom_editext"
+                android:layout_marginTop="5dp"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:hint="Contraseña 8 caracteres min"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"
+                android:inputType="textPassword"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#723EFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Genero:"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <CheckBox
+                    android:id="@+id/gnMasculino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Masculino"
+                    android:textSize="16sp"/>
+
+                <CheckBox
+                    android:id="@+id/gnFemenino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Femenino"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/RegisterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#723EFF"
+                android:layout_gravity="center"
+                android:text="Register"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
