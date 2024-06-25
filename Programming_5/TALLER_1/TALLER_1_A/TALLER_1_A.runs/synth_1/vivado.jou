@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon May 20 21:02:17 2024
+# Process ID: 2772
+# Current directory: C:/Users/SMB_D2_05/Documents/CV/TALLER_1/TALLER_1_A/TALLER_1_A.runs/synth_1
+# Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: C:/Users/SMB_D2_05/Documents/CV/TALLER_1/TALLER_1_A/TALLER_1_A.runs/synth_1/main.vds
+# Journal file: C:/Users/SMB_D2_05/Documents/CV/TALLER_1/TALLER_1_A/TALLER_1_A.runs/synth_1\vivado.jou
+# Running On: SMB_D2_05, OS: Windows, CPU Frequency: 3418 MHz, CPU Physical cores: 20, Host memory: 34163 MB
+#-----------------------------------------------------------
+source main.tcl -notrace
