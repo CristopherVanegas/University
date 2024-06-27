@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Jun 26 20:35:05 2024
+# Process ID: 16376
+# Current directory: C:/Users/usuario/Documents/Drive/FromAlienware/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL2/Multiplexores
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9280 C:\Users\usuario\Documents\Drive\FromAlienware\source\University\Programming_5-VivadoStudio_Verilog\PARCIAL2\Multiplexores\Multiplexores.xpr
+# Log file: C:/Users/usuario/Documents/Drive/FromAlienware/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL2/Multiplexores/vivado.log
+# Journal file: C:/Users/usuario/Documents/Drive/FromAlienware/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL2/Multiplexores\vivado.jou
+# Running On: ItsMrJkali21, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 14, Host memory: 16849 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/usuario/Documents/Drive/FromAlienware/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL2/Multiplexores/Multiplexores.xpr
+update_compile_order -fileset sources_1
+close_project
+open_project C:/Users/usuario/Documents/Drive/FromAlienware/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL2/Multiplexores/Multiplexores.xpr
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_project
