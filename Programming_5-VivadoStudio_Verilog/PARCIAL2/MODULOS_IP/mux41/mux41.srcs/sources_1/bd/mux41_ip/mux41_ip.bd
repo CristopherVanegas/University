@@ -1,0 +1,122 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xC018B6A0C018B6A0",
+      "device": "xc7z020clg484-1",
+      "gen_directory": "../../../../mux41.gen/sources_1/bd/mux41_ip",
+      "name": "mux41_ip",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "mux21_0": "",
+      "mux21_1": "",
+      "mux21_2": ""
+    },
+    "ports": {
+      "i0": {
+        "direction": "I"
+      },
+      "i1": {
+        "direction": "I"
+      },
+      "S1": {
+        "direction": "I"
+      },
+      "S2": {
+        "direction": "I"
+      },
+      "i3": {
+        "direction": "I"
+      },
+      "i2": {
+        "direction": "I"
+      },
+      "sout_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "mux21_0": {
+        "vlnv": "xilinx.com:user:mux21:1.0",
+        "ip_revision": "2",
+        "xci_name": "mux41_ip_mux21_0_0",
+        "xci_path": "ip\\mux41_ip_mux21_0_0\\mux41_ip_mux21_0_0.xci",
+        "inst_hier_path": "mux21_0"
+      },
+      "mux21_1": {
+        "vlnv": "xilinx.com:user:mux21:1.0",
+        "ip_revision": "2",
+        "xci_name": "mux41_ip_mux21_0_1",
+        "xci_path": "ip\\mux41_ip_mux21_0_1\\mux41_ip_mux21_0_1.xci",
+        "inst_hier_path": "mux21_1"
+      },
+      "mux21_2": {
+        "vlnv": "xilinx.com:user:mux21:1.0",
+        "ip_revision": "2",
+        "xci_name": "mux41_ip_mux21_0_2",
+        "xci_path": "ip\\mux41_ip_mux21_0_2\\mux41_ip_mux21_0_2.xci",
+        "inst_hier_path": "mux21_2"
+      }
+    },
+    "nets": {
+      "I0_0_1": {
+        "ports": [
+          "i1",
+          "mux21_0/I0"
+        ]
+      },
+      "I0_0_2": {
+        "ports": [
+          "i3",
+          "mux21_1/I0"
+        ]
+      },
+      "I1_0_1": {
+        "ports": [
+          "S1",
+          "mux21_0/I1",
+          "mux21_1/I1"
+        ]
+      },
+      "I1_0_2": {
+        "ports": [
+          "S2",
+          "mux21_2/I1"
+        ]
+      },
+      "mux21_0_O": {
+        "ports": [
+          "mux21_0/O",
+          "mux21_2/sel"
+        ]
+      },
+      "mux21_1_O": {
+        "ports": [
+          "mux21_1/O",
+          "mux21_2/I0"
+        ]
+      },
+      "mux21_2_O": {
+        "ports": [
+          "mux21_2/O",
+          "sout_0"
+        ]
+      },
+      "sel_0_1": {
+        "ports": [
+          "i0",
+          "mux21_0/sel"
+        ]
+      },
+      "sel_0_2": {
+        "ports": [
+          "i2",
+          "mux21_1/sel"
+        ]
+      }
+    }
+  }
+}

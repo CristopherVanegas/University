@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Jul 17 20:33:15 2024
+# Process ID: 3660
+# Current directory: C:/Users/usuario/Documents/Drive/FromAlienware/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL2/EXAMENP2/PREGUNTA4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14540 C:\Users\usuario\Documents\Drive\FromAlienware\source\University\Programming_5-VivadoStudio_Verilog\PARCIAL2\EXAMENP2\PREGUNTA4\PREGUNTA4.xpr
+# Log file: C:/Users/usuario/Documents/Drive/FromAlienware/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL2/EXAMENP2/PREGUNTA4/vivado.log
+# Journal file: C:/Users/usuario/Documents/Drive/FromAlienware/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL2/EXAMENP2/PREGUNTA4\vivado.jou
+# Running On: ItsMrJkali21, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 14, Host memory: 16849 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/usuario/Documents/Drive/FromAlienware/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL2/EXAMENP2/PREGUNTA4/PREGUNTA4.xpr
+update_compile_order -fileset sources_1

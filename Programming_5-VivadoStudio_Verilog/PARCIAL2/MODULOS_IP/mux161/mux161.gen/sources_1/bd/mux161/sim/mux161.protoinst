@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"mux161": {
+			"proto_instances": {
+			}
+		}
+	}
+}

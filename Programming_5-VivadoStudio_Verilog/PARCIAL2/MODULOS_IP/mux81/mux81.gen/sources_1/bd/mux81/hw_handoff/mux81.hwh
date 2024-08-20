@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jul 29 21:00:06 2024" VIVADOVERSION="2023.2">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc702:part0:1.4" DEVICE="7z020" NAME="mux81" PACKAGE="clg484" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="S1_0" SIGIS="undef" SIGNAME="External_Ports_S1_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_0" PORT="S1"/>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_1" PORT="S1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="S2_0" SIGIS="undef" SIGNAME="External_Ports_S2_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_0" PORT="S2"/>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_1" PORT="S2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="Z" SIGIS="undef" SIGNAME="mux21_0_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux21_0" PORT="O"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i0_0" SIGIS="undef" SIGNAME="External_Ports_i0_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_0" PORT="i0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i0_1" SIGIS="undef" SIGNAME="External_Ports_i0_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_1" PORT="i0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i1_0" SIGIS="undef" SIGNAME="External_Ports_i1_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_0" PORT="i1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i1_1" SIGIS="undef" SIGNAME="External_Ports_i1_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_1" PORT="i1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i2_0" SIGIS="undef" SIGNAME="External_Ports_i2_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_0" PORT="i2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i2_1" SIGIS="undef" SIGNAME="External_Ports_i2_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_1" PORT="i2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i3_0" SIGIS="undef" SIGNAME="External_Ports_i3_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_0" PORT="i3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i3_1" SIGIS="undef" SIGNAME="External_Ports_i3_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux41_ip_v1_0_1" PORT="i3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="sel_0" SIGIS="undef" SIGNAME="External_Ports_sel_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux21_0" PORT="sel"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="2" FULLNAME="/mux21_0" HWVERSION="1.0" INSTANCE="mux21_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mux21" VLNV="xilinx.com:user:mux21:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="mux81_mux21_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="I0" SIGIS="undef" SIGNAME="mux41_ip_v1_0_0_sout_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux41_ip_v1_0_0" PORT="sout_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I1" SIGIS="undef" SIGNAME="mux41_ip_v1_0_1_sout_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux41_ip_v1_0_1" PORT="sout_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O" SIGIS="undef" SIGNAME="mux21_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="Z"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sel" SIGIS="undef" SIGNAME="External_Ports_sel_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sel_0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/mux41_ip_v1_0_0" HWVERSION="1.0" INSTANCE="mux41_ip_v1_0_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mux41_ip_v1_0" VLNV="xilinx.com:user:mux41_ip_v1_0:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="mux81_mux41_ip_v1_0_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="S1" SIGIS="undef" SIGNAME="External_Ports_S1_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="S1_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S2" SIGIS="undef" SIGNAME="External_Ports_S2_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="S2_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i0" SIGIS="undef" SIGNAME="External_Ports_i0_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i0_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i1" SIGIS="undef" SIGNAME="External_Ports_i1_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i1_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i2" SIGIS="undef" SIGNAME="External_Ports_i2_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i2_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i3" SIGIS="undef" SIGNAME="External_Ports_i3_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i3_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="sout_0" SIGIS="undef" SIGNAME="mux41_ip_v1_0_0_sout_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux21_0" PORT="I0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/mux41_ip_v1_0_1" HWVERSION="1.0" INSTANCE="mux41_ip_v1_0_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mux41_ip_v1_0" VLNV="xilinx.com:user:mux41_ip_v1_0:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="mux81_mux41_ip_v1_0_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="S1" SIGIS="undef" SIGNAME="External_Ports_S1_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="S1_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S2" SIGIS="undef" SIGNAME="External_Ports_S2_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="S2_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i0" SIGIS="undef" SIGNAME="External_Ports_i0_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i0_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i1" SIGIS="undef" SIGNAME="External_Ports_i1_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i1_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i2" SIGIS="undef" SIGNAME="External_Ports_i2_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i2_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i3" SIGIS="undef" SIGNAME="External_Ports_i3_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i3_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="sout_0" SIGIS="undef" SIGNAME="mux41_ip_v1_0_1_sout_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux21_0" PORT="I1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

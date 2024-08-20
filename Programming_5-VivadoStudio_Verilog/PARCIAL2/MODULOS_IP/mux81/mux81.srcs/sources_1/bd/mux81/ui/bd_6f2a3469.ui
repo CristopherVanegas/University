@@ -1,0 +1,54 @@
+{
+   "ActiveEmotionalView":"Color Coded",
+   "Color Coded_ExpandedHierarchyInLayout":"",
+   "Color Coded_Layout":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 threadsafe
+#  -string -flagsOSRD
+preplace port port-id_Z -pg 1 -lvl 3 -x 490 -y 360 -defaultsOSRD
+preplace port port-id_S1_0 -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
+preplace port port-id_i3_0 -pg 1 -lvl 0 -x 0 -y 370 -defaultsOSRD
+preplace port port-id_i2_0 -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
+preplace port port-id_i1_0 -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace port port-id_i0_0 -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
+preplace port port-id_S2_0 -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port port-id_i3_1 -pg 1 -lvl 0 -x 0 -y 550 -defaultsOSRD
+preplace port port-id_i2_1 -pg 1 -lvl 0 -x 0 -y 520 -defaultsOSRD
+preplace port port-id_i1_1 -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
+preplace port port-id_i0_1 -pg 1 -lvl 0 -x 0 -y 460 -defaultsOSRD
+preplace port port-id_sel_0 -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace inst mux41_ip_v1_0_0 -pg 1 -lvl 1 -x 230 -y 270 -defaultsOSRD
+preplace inst mux41_ip_v1_0_1 -pg 1 -lvl 1 -x 230 -y 470 -defaultsOSRD
+preplace inst mux21_0 -pg 1 -lvl 2 -x 400 -y 360 -defaultsOSRD -resize 83 116
+preplace netloc mux41_ip_v1_0_0_sout_0 1 1 1 320 270n
+preplace netloc mux41_ip_v1_0_1_sout_0 1 1 1 330 380n
+preplace netloc mux21_0_O 1 2 1 N 360
+preplace netloc S1_0_1 1 0 1 140J 190n
+preplace netloc i3_0_1 1 0 1 20J 320n
+preplace netloc i2_0_1 1 0 1 20J 300n
+preplace netloc i1_0_1 1 0 1 NJ 280
+preplace netloc i0_0_1 1 0 1 130J 250n
+preplace netloc S2_0_1 1 0 1 120J 220n
+preplace netloc i3_1_1 1 0 1 50J 520n
+preplace netloc i2_1_1 1 0 1 20J 500n
+preplace netloc i1_1_1 1 0 1 20J 480n
+preplace netloc i0_1_1 1 0 1 NJ 460
+preplace netloc sel_0_1 1 0 2 NJ 160 330J
+levelinfo -pg 1 0 230 400 490
+pagesize -pg 1 -db -bbox -sgen -80 0 560 580
+",
+   "Color Coded_ScaleFactor":"2.67943",
+   "Color Coded_TopLeft":"-80,157",
+   "Default View_ScaleFactor":"1.5",
+   "Default View_TopLeft":"-345,-265",
+   "ExpandedHierarchyInLayout":"",
+   "Interfaces View_ScaleFactor":"1.5",
+   "Interfaces View_TopLeft":"-345,-265",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 threadsafe
+#  -string -flagsOSRD
+preplace inst mux41_ip_v1_0_0 -pg 1 -lvl 2 -x 250 -y -150 -defaultsOSRD
+preplace inst mux41_ip_v1_0_1 -pg 1 -lvl 2 -x 250 -y 50 -defaultsOSRD
+preplace inst mux21_0 -pg 1 -lvl 1 -x 70 -y -230 -defaultsOSRD -resize 83 116
+levelinfo -pg 1 -20 70 250 340
+pagesize -pg 1 -db -bbox -sgen -20 -340 360 240
+"
+}
+

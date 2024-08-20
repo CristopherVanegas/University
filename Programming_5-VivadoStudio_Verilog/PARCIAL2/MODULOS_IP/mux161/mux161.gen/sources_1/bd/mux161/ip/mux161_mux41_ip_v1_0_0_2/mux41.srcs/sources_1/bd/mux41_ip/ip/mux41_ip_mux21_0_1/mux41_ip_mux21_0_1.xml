@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>unknown</spirit:vendor>
+  <spirit:library>customized_ip</spirit:library>
+  <spirit:name>mux41_ip_mux21_0_1</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:model>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>sel</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>I0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>I1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>O</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+  </spirit:model>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name">mux41_ip_mux21_0_1</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ARCHITECTURE</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.ARCHITECTURE">zynq</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>BASE_BOARD_PART</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.BASE_BOARD_PART">xilinx.com:zc702:part0:1.4</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>BOARD_CONNECTIONS</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.BOARD_CONNECTIONS"/>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>DEVICE</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.DEVICE">xc7z020</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>PACKAGE</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.PACKAGE">clg484</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>PREFHDL</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.PREFHDL">VERILOG</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>SILICON_REVISION</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.SILICON_REVISION"/>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>SIMULATOR_LANGUAGE</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.SIMULATOR_LANGUAGE">MIXED</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>SPEEDGRADE</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.SPEEDGRADE">-1</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>STATIC_POWER</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.STATIC_POWER"/>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>TEMPERATURE_GRADE</spirit:name>
+      <spirit:value spirit:id="PROJECT_PARAM.TEMPERATURE_GRADE"/>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo/>
+  </spirit:vendorExtensions>
+</spirit:component>

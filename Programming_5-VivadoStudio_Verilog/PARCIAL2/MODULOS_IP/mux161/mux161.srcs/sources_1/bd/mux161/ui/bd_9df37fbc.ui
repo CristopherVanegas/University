@@ -1,0 +1,63 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.27771",
+   "Default View_TopLeft":"-325,-490",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port port-id_i3_0 -pg 1 -lvl 0 -x -30 -y 160 -defaultsOSRD
+preplace port port-id_i2_0 -pg 1 -lvl 0 -x -30 -y 190 -defaultsOSRD
+preplace port port-id_i3_1 -pg 1 -lvl 0 -x -30 -y -270 -defaultsOSRD
+preplace port port-id_i1_0 -pg 1 -lvl 0 -x -30 -y 130 -defaultsOSRD
+preplace port port-id_i2_1 -pg 1 -lvl 0 -x -30 -y -300 -defaultsOSRD
+preplace port port-id_i0_0 -pg 1 -lvl 0 -x -30 -y 100 -defaultsOSRD
+preplace port port-id_i3_2 -pg 1 -lvl 0 -x -30 -y 70 -defaultsOSRD
+preplace port port-id_i1_1 -pg 1 -lvl 0 -x -30 -y -330 -defaultsOSRD
+preplace port port-id_i2_2 -pg 1 -lvl 0 -x -30 -y -20 -defaultsOSRD
+preplace port port-id_i3_3 -pg 1 -lvl 0 -x -30 -y -50 -defaultsOSRD
+preplace port port-id_i0_1 -pg 1 -lvl 0 -x -30 -y -360 -defaultsOSRD
+preplace port port-id_i1_2 -pg 1 -lvl 0 -x -30 -y 40 -defaultsOSRD
+preplace port port-id_i2_3 -pg 1 -lvl 0 -x -30 -y -80 -defaultsOSRD
+preplace port port-id_S2_1 -pg 1 -lvl 0 -x -30 -y -390 -defaultsOSRD
+preplace port port-id_i0_2 -pg 1 -lvl 0 -x -30 -y 10 -defaultsOSRD
+preplace port port-id_i1_3 -pg 1 -lvl 0 -x -30 -y -160 -defaultsOSRD
+preplace port port-id_S1_2 -pg 1 -lvl 0 -x -30 -y -420 -defaultsOSRD
+preplace port port-id_i0_3 -pg 1 -lvl 0 -x -30 -y -190 -defaultsOSRD
+preplace port port-id_S2_0 -pg 1 -lvl 0 -x -30 -y -240 -defaultsOSRD
+preplace port port-id_S1_0 -pg 1 -lvl 0 -x -30 -y -130 -defaultsOSRD
+preplace port port-id_sout_0_0 -pg 1 -lvl 3 -x 560 -y -80 -defaultsOSRD
+preplace inst mux41_ip_v1_0_0 -pg 1 -lvl 1 -x 190 -y -150 -defaultsOSRD
+preplace inst mux41_ip_v1_0_1 -pg 1 -lvl 1 -x 190 -y 50 -defaultsOSRD
+preplace inst mux41_ip_v1_0_2 -pg 1 -lvl 2 -x 450 -y -80 -defaultsOSRD
+preplace inst mux41_ip_v1_0_3 -pg 1 -lvl 1 -x 190 -y -370 -defaultsOSRD
+preplace inst mux41_ip_v1_0_4 -pg 1 -lvl 1 -x 190 -y 260 -defaultsOSRD
+preplace netloc i3_0_1 1 0 1 0J 160n
+preplace netloc i2_0_1 1 0 1 -10J 190n
+preplace netloc i3_1_1 1 0 1 50J -320n
+preplace netloc i1_0_1 1 0 1 10J 130n
+preplace netloc i2_1_1 1 0 1 40J -340n
+preplace netloc i0_0_1 1 0 1 20J 100n
+preplace netloc i3_2_1 1 0 1 30J 70n
+preplace netloc i1_1_1 1 0 1 30J -360n
+preplace netloc i2_2_1 1 0 1 40J -20n
+preplace netloc i3_3_1 1 0 1 100J -100n
+preplace netloc i0_1_1 1 0 1 -10J -380n
+preplace netloc i1_2_1 1 0 1 -10J 40n
+preplace netloc i2_3_1 1 0 1 90J -120n
+preplace netloc S2_1_1 1 0 1 80J -400n
+preplace netloc i0_2_1 1 0 1 50J 10n
+preplace netloc i1_3_1 1 0 1 90J -160n
+preplace netloc S1_2_1 1 0 1 70J -420n
+preplace netloc i0_3_1 1 0 1 100J -190n
+preplace netloc mux41_ip_v1_0_0_sout_0 1 1 1 280 -150n
+preplace netloc mux41_ip_v1_0_1_sout_0 1 1 1 310 -70n
+preplace netloc mux41_ip_v1_0_4_sout_0 1 1 1 300 -90n
+preplace netloc S2_0_1 1 0 2 20J -480 310J
+preplace netloc S1_0_1 1 0 2 40J -260 300J
+preplace netloc mux41_ip_v1_0_2_sout_0 1 2 1 N -80
+preplace netloc mux41_ip_v1_0_3_sout_0 1 1 1 290 -370n
+levelinfo -pg 1 -30 190 450 560
+pagesize -pg 1 -db -bbox -sgen -110 -500 670 370
+"
+}
+
