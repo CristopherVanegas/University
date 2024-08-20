@@ -1,0 +1,204 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xD389A20FD389A20F",
+      "device": "xc7z020clg484-1",
+      "gen_directory": "../../../../ripple_borrow_substractor.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "full_substractor_0": "",
+      "full_substractor_1": "",
+      "full_substractor_2": "",
+      "full_substractor_3": ""
+    },
+    "ports": {
+      "D_0": {
+        "direction": "O"
+      },
+      "Br_0": {
+        "direction": "O"
+      },
+      "C_0": {
+        "direction": "I"
+      },
+      "B_0": {
+        "direction": "I"
+      },
+      "A_0": {
+        "direction": "I"
+      },
+      "D": {
+        "direction": "O"
+      },
+      "B_1": {
+        "direction": "I"
+      },
+      "A_1": {
+        "direction": "I"
+      },
+      "D_1": {
+        "direction": "O"
+      },
+      "B_2": {
+        "direction": "I"
+      },
+      "A_2": {
+        "direction": "I"
+      },
+      "D_2": {
+        "direction": "O"
+      },
+      "B_3": {
+        "direction": "I"
+      },
+      "A_3": {
+        "direction": "I"
+      },
+      "D_3": {
+        "direction": "O"
+      },
+      "Br": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "full_substractor_0": {
+        "vlnv": "xilinx.com:user:full_substractor:1.0",
+        "ip_revision": "2",
+        "xci_name": "design_1_full_substractor_0_0",
+        "xci_path": "ip\\design_1_full_substractor_0_0\\design_1_full_substractor_0_0.xci",
+        "inst_hier_path": "full_substractor_0"
+      },
+      "full_substractor_1": {
+        "vlnv": "xilinx.com:user:full_substractor:1.0",
+        "ip_revision": "2",
+        "xci_name": "design_1_full_substractor_0_1",
+        "xci_path": "ip\\design_1_full_substractor_0_1\\design_1_full_substractor_0_1.xci",
+        "inst_hier_path": "full_substractor_1"
+      },
+      "full_substractor_2": {
+        "vlnv": "xilinx.com:user:full_substractor:1.0",
+        "ip_revision": "2",
+        "xci_name": "design_1_full_substractor_0_2",
+        "xci_path": "ip\\design_1_full_substractor_0_2\\design_1_full_substractor_0_2.xci",
+        "inst_hier_path": "full_substractor_2"
+      },
+      "full_substractor_3": {
+        "vlnv": "xilinx.com:user:full_substractor:1.0",
+        "ip_revision": "2",
+        "xci_name": "design_1_full_substractor_0_3",
+        "xci_path": "ip\\design_1_full_substractor_0_3\\design_1_full_substractor_0_3.xci",
+        "inst_hier_path": "full_substractor_3"
+      }
+    },
+    "nets": {
+      "A_0_1": {
+        "ports": [
+          "A_0",
+          "full_substractor_2/A"
+        ]
+      },
+      "A_1_1": {
+        "ports": [
+          "A_1",
+          "full_substractor_3/A"
+        ]
+      },
+      "A_2_1": {
+        "ports": [
+          "A_2",
+          "full_substractor_1/A"
+        ]
+      },
+      "A_3_1": {
+        "ports": [
+          "A_3",
+          "full_substractor_0/A"
+        ]
+      },
+      "B_0_1": {
+        "ports": [
+          "B_0",
+          "full_substractor_2/B"
+        ]
+      },
+      "B_1_1": {
+        "ports": [
+          "B_1",
+          "full_substractor_3/B"
+        ]
+      },
+      "B_2_1": {
+        "ports": [
+          "B_2",
+          "full_substractor_1/B"
+        ]
+      },
+      "B_3_1": {
+        "ports": [
+          "B_3",
+          "full_substractor_0/B"
+        ]
+      },
+      "C_0_1": {
+        "ports": [
+          "C_0",
+          "full_substractor_2/C"
+        ]
+      },
+      "full_substractor_0_Br": {
+        "ports": [
+          "full_substractor_0/Br",
+          "Br"
+        ]
+      },
+      "full_substractor_0_D": {
+        "ports": [
+          "full_substractor_0/D",
+          "D_3"
+        ]
+      },
+      "full_substractor_1_Br": {
+        "ports": [
+          "full_substractor_1/Br",
+          "full_substractor_0/C"
+        ]
+      },
+      "full_substractor_1_D": {
+        "ports": [
+          "full_substractor_1/D",
+          "D_2"
+        ]
+      },
+      "full_substractor_2_Br": {
+        "ports": [
+          "full_substractor_2/Br",
+          "full_substractor_3/C"
+        ]
+      },
+      "full_substractor_2_D": {
+        "ports": [
+          "full_substractor_2/D",
+          "D"
+        ]
+      },
+      "full_substractor_3_Br": {
+        "ports": [
+          "full_substractor_3/Br",
+          "full_substractor_1/C"
+        ]
+      },
+      "full_substractor_3_D": {
+        "ports": [
+          "full_substractor_3/D",
+          "D_1"
+        ]
+      }
+    }
+  }
+}

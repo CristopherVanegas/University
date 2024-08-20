@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul 24 21:01:53 2024" VIVADOVERSION="2023.2">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc702:part0:1.4" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="i0" SIGIS="undef" SIGNAME="External_Ports_i0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux21_0" PORT="i0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i1" SIGIS="undef" SIGNAME="External_Ports_i1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux21_0" PORT="i1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i2" SIGIS="undef" SIGNAME="External_Ports_i2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux21_2" PORT="i0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i3" SIGIS="undef" SIGNAME="External_Ports_i3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux21_2" PORT="i1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="out_0" SIGIS="undef" SIGNAME="mux21_1_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux21_1" PORT="out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="s1" SIGIS="undef" SIGNAME="External_Ports_s1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux21_0" PORT="sel"/>
+        <CONNECTION INSTANCE="mux21_2" PORT="sel"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="s2" SIGIS="undef" SIGNAME="External_Ports_s2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="mux21_1" PORT="sel"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="2" FULLNAME="/mux21_0" HWVERSION="1.0" INSTANCE="mux21_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mux21" VLNV="ecotec.dc:user:mux21:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_mux21_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="i0" SIGIS="undef" SIGNAME="External_Ports_i0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i1" SIGIS="undef" SIGNAME="External_Ports_i1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="out" SIGIS="undef" SIGNAME="mux21_0_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux21_1" PORT="i0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sel" SIGIS="undef" SIGNAME="External_Ports_s1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/mux21_1" HWVERSION="1.0" INSTANCE="mux21_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mux21" VLNV="ecotec.dc:user:mux21:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_mux21_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="i0" SIGIS="undef" SIGNAME="mux21_0_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux21_0" PORT="out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i1" SIGIS="undef" SIGNAME="mux21_2_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux21_2" PORT="out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="out" SIGIS="undef" SIGNAME="mux21_1_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="out_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sel" SIGIS="undef" SIGNAME="External_Ports_s2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/mux21_2" HWVERSION="1.0" INSTANCE="mux21_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="mux21" VLNV="ecotec.dc:user:mux21:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_mux21_0_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="i0" SIGIS="undef" SIGNAME="External_Ports_i2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i1" SIGIS="undef" SIGNAME="External_Ports_i3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="out" SIGIS="undef" SIGNAME="mux21_2_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mux21_1" PORT="i1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sel" SIGIS="undef" SIGNAME="External_Ports_s1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="s1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

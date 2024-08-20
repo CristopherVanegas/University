@@ -1,0 +1,122 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xE953BCDDE953BCDD",
+      "device": "xc7z020clg484-1",
+      "gen_directory": "../../../../mux41_ip.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "mux21_0": "",
+      "mux21_1": "",
+      "mux21_2": ""
+    },
+    "ports": {
+      "i0": {
+        "direction": "I"
+      },
+      "i1": {
+        "direction": "I"
+      },
+      "s1": {
+        "direction": "I"
+      },
+      "i2": {
+        "direction": "I"
+      },
+      "i3": {
+        "direction": "I"
+      },
+      "s2": {
+        "direction": "I"
+      },
+      "out_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "mux21_0": {
+        "vlnv": "ecotec.dc:user:mux21:1.0",
+        "ip_revision": "2",
+        "xci_name": "design_1_mux21_0_0",
+        "xci_path": "ip\\design_1_mux21_0_0\\design_1_mux21_0_0.xci",
+        "inst_hier_path": "mux21_0"
+      },
+      "mux21_1": {
+        "vlnv": "ecotec.dc:user:mux21:1.0",
+        "ip_revision": "2",
+        "xci_name": "design_1_mux21_0_1",
+        "xci_path": "ip\\design_1_mux21_0_1\\design_1_mux21_0_1.xci",
+        "inst_hier_path": "mux21_1"
+      },
+      "mux21_2": {
+        "vlnv": "ecotec.dc:user:mux21:1.0",
+        "ip_revision": "2",
+        "xci_name": "design_1_mux21_0_2",
+        "xci_path": "ip\\design_1_mux21_0_2\\design_1_mux21_0_2.xci",
+        "inst_hier_path": "mux21_2"
+      }
+    },
+    "nets": {
+      "i0_0_1": {
+        "ports": [
+          "i0",
+          "mux21_0/i0"
+        ]
+      },
+      "i0_0_2": {
+        "ports": [
+          "i2",
+          "mux21_2/i0"
+        ]
+      },
+      "i1_0_1": {
+        "ports": [
+          "i1",
+          "mux21_0/i1"
+        ]
+      },
+      "i1_0_2": {
+        "ports": [
+          "i3",
+          "mux21_2/i1"
+        ]
+      },
+      "mux21_0_out": {
+        "ports": [
+          "mux21_0/out",
+          "mux21_1/i0"
+        ]
+      },
+      "mux21_1_out": {
+        "ports": [
+          "mux21_1/out",
+          "out_0"
+        ]
+      },
+      "mux21_2_out": {
+        "ports": [
+          "mux21_2/out",
+          "mux21_1/i1"
+        ]
+      },
+      "sel_0_1": {
+        "ports": [
+          "s1",
+          "mux21_0/sel",
+          "mux21_2/sel"
+        ]
+      },
+      "sel_0_2": {
+        "ports": [
+          "s2",
+          "mux21_1/sel"
+        ]
+      }
+    }
+  }
+}
