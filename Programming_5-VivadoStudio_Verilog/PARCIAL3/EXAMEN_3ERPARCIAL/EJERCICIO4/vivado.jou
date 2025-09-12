@@ -1,17 +1,27 @@
 #-----------------------------------------------------------
-# Vivado v2023.2 (64-bit)
-# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
-# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
-# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Aug 14 20:40:04 2024
-# Process ID: 32788
-# Current directory: C:/Users/usuario/Desktop/PROV_WS/EXAMEN_3ERPARCIAL/EJERCICIO4
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29332 C:\Users\usuario\Desktop\PROV_WS\EXAMEN_3ERPARCIAL\EJERCICIO4\EJERCICIO4.xpr
-# Log file: C:/Users/usuario/Desktop/PROV_WS/EXAMEN_3ERPARCIAL/EJERCICIO4/vivado.log
-# Journal file: C:/Users/usuario/Desktop/PROV_WS/EXAMEN_3ERPARCIAL/EJERCICIO4\vivado.jou
-# Running On: ItsMrJkali21, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 14, Host memory: 16849 MB
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Aug 21 23:27:39 2025
+# Process ID         : 14768
+# Current directory  : D:/Respaldos/usuario/Documents/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL3/EXAMEN_3ERPARCIAL/EJERCICIO4
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent11712 D:\Respaldos\usuario\Documents\source\University\Programming_5-VivadoStudio_Verilog\PARCIAL3\EXAMEN_3ERPARCIAL\EJERCICIO4\EJERCICIO4.xpr
+# Log file           : D:/Respaldos/usuario/Documents/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL3/EXAMEN_3ERPARCIAL/EJERCICIO4/vivado.log
+# Journal file       : D:/Respaldos/usuario/Documents/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL3/EXAMEN_3ERPARCIAL/EJERCICIO4\vivado.jou
+# Running On         : AWX
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency      : 2688 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16849 MB
+# Swap memory        : 12884 MB
+# Total Virtual      : 29734 MB
+# Available Virtual  : 11449 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/usuario/Desktop/PROV_WS/EXAMEN_3ERPARCIAL/EJERCICIO4/EJERCICIO4.xpr
+open_project D:/Respaldos/usuario/Documents/source/University/Programming_5-VivadoStudio_Verilog/PARCIAL3/EXAMEN_3ERPARCIAL/EJERCICIO4/EJERCICIO4.xpr
 update_compile_order -fileset sources_1
 synth_design -rtl -rtl_skip_mlo -name rtl_1
